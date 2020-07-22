@@ -76,9 +76,10 @@ void Datos::cargarNombres(){
         qDebug()<<i;
         nombres[i]=listaNombres[i];
     }
+    /*
     for(int i = 0 ; i<1000; i++){
         qDebug()<<nombres[i];
-    }
+    }*/
 }
 void Datos::cargarApellidos(){
     QStringList listaApellidos =leerArchivo(2);
@@ -88,9 +89,10 @@ void Datos::cargarApellidos(){
         qDebug()<<i;
         apellidos[i]=listaApellidos[i];
     }
+    /*
     for(int i = 0 ; i<200; i++){
         qDebug()<<apellidos[i];
-    }
+    }*/
 }
 void Datos::cargarPaises(){
     QStringList listaPaises =leerArchivo(3);
@@ -101,10 +103,11 @@ void Datos::cargarPaises(){
         paises[0][i]=listaPaises[i].split("\t")[0];
         paises[1][i]=listaPaises[i].split("\t")[1];
     }
+    /*
     for(int i = 0 ; i<25; i++){
         qDebug()<<paises[0][i];
         qDebug()<<paises[1][i];
-    }
+    }*/
 }
 void Datos::cargarCreencias(){
     QStringList listaCreencias =leerArchivo(4);
@@ -114,9 +117,10 @@ void Datos::cargarCreencias(){
         qDebug()<<i;
         creencias[i]=listaCreencias[i];
     }
+    /*
     for(int i = 0 ; i<10; i++){
         qDebug()<<creencias[i];
-    }
+    }*/
 }
 void Datos::cargarProfesiones(){
     QStringList listaProfesiones=leerArchivo(5);
@@ -126,9 +130,30 @@ void Datos::cargarProfesiones(){
         qDebug()<<i;
         profesiones[i]=listaProfesiones[i];
     }
-    for(int i = 0 ; i<50; i++){
-        qDebug()<<profesiones[i];
-    }
+}
+QString Datos::obtenerNombre(){
+    return nombres[random(100)];
+}
+QString Datos::obtenerApellido(){
+    return apellidos[random(200)];
+}
+QString * Datos::obtenerpaises(){
+
+    int i=random(25);
+    QString dato[2]={paises[0][i],paises[1][i]};
+    return dato;
+}
+QString Datos::obtenerCreencias(){
+    return creencias[random(10)];
+}
+QString Datos::obtenerProfesiones(){
+    return profesiones[random(50)];
+}
+int Datos::random(int seed){
+    std::uniform_int_distribution<int> distrib(0, seed-1);
+    return distrib(*QRandomGenerator::global());
+
+
 }
 
 void imprimirArreglo(QString arreglo[]){
@@ -136,6 +161,7 @@ void imprimirArreglo(QString arreglo[]){
         qDebug()<<arreglo[i];
     }
 }
+
 
 
 

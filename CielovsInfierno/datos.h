@@ -24,12 +24,13 @@ struct Datos{
     void cargarProfesiones();
     QString obtenerNombre();
     QString obtenerApellido();
-    QString obtenerpaises();
+    QString * obtenerpaises();
     QString obtenerCreencias();
     QString obtenerProfesiones();
     QString abrirArchivo(QString file);
     QStringList leerArchivo(int pn);
     bool validarId();
+    int random(int seed);
     void imprimirArreglo(QString arreglo[]);
 };
 

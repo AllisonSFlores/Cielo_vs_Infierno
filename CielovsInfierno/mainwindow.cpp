@@ -27,7 +27,19 @@ void MainWindow::on_pushButton_3_clicked()
     }
     tabla->insertar(9999);//estar en key 1
     tabla->insertar(4999);//estar en key 0
-    tabla->imprimirTabla();
+    Datos * datos =new Datos();
+    datos->cargarNombres();
+    datos->cargarApellidos();
+    datos->cargarProfesiones();
+    //datos->cargarPaises();
+    datos->cargarCreencias();
+    for (int i =0;i<10;i++) {
+        qDebug()<<datos->obtenerNombre();
+        qDebug()<<datos->obtenerApellido();
+        //qDebug()<<datos->obtenerpaises()->size();
+        qDebug()<<datos->obtenerProfesiones();
+        qDebug()<<datos->obtenerCreencias();
+    }
 
 
 }
