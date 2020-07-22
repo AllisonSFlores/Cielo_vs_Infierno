@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "datos.h"
-#include "tablahashenteros.h"
+#include "tablahashID.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,12 +19,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    TablaHashEnteros * tabla =new TablaHashEnteros();
+    TablaHashID * tabla =new TablaHashID();
     //estas eran pruebas cuando puse que la tabla fuera solo de 10 buckets
-    for(int i=0;i<10;i++){
+    for(int i=0;i<1000000;i++){
+        i = i+1000;
         tabla->insertar(i);
     }
-    tabla->insertar(22);
-    tabla->insertar(35);
+    tabla->insertar(9999);//estar en key 1
+    tabla->insertar(4999);//estar en key 0
     tabla->imprimirTabla();
+
+
 }

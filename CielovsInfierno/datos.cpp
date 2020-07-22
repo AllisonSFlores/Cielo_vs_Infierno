@@ -1,7 +1,7 @@
 #include "datos.h"
 Datos::Datos()
 {
-    tabla = new TablaHashEnteros();
+    tabla = new TablaHashID();
 
 }
 QString Datos::abrirArchivo(QString file){

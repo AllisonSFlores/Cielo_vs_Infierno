@@ -21,7 +21,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     persona.cpp \
-    tablahashenteros.cpp
+    tablahashID.cpp
 
 HEADERS += \
     datos.h \
@@ -29,7 +29,7 @@ HEADERS += \
     lsint.h \
     mainwindow.h \
     persona.h \
-    tablahashenteros.h
+    tablahashID.h
 
 FORMS += \
     mainwindow.ui

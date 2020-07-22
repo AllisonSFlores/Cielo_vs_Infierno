@@ -6,15 +6,16 @@
 #include <QIODevice>
 #include <QStringList>
 #include <QTextStream>
-#include "tablahashenteros.h"
+#include "tablahashID.h"
 
 struct Datos{
     QString nombres[1000];
     QString apellidos[200];
-    TablaHashEnteros * tabla;
+    TablaHashID * tabla;
     QString paises[2][25];
     QString creencias[10];
     QString profesiones[50];
+
     Datos();
     void cargarNombres();
     void cargarApellidos();

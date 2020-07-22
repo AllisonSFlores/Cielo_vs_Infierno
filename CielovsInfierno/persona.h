@@ -17,6 +17,7 @@ struct Persona{
     QVector<Persona *> hijos;
     Estado estado;
     QString nacimiento;
+
     Persona(){
         id=-1;
         nombre="";
@@ -28,6 +29,7 @@ struct Persona{
         estado=mundo;
     }
     Persona(int pid, QString pnombre, QString papellido,QString ppais, QString pcreencia, QString pprofesion, QString pcorreo);
+
     void setId(int pid);
     int getId();
     QString getApellido();
@@ -37,6 +39,7 @@ struct Persona{
     QVector<Persona *> getHijos();
     QVector<int> getBuenasAcciones();
     Estado getEstado();
+
 };
 
 #endif // PERSONA_H

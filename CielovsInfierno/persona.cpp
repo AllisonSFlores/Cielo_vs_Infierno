@@ -18,6 +18,7 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString ppais, QStr
     //o con la lista de hijos nula
     //hijos = NULL;
 }
+
 void Persona::setId(int pid){
     id=pid;
 }
