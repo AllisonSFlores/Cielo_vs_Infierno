@@ -1,13 +1,11 @@
 #include "tablahashID.h"
 
-TablaHashID::TablaHashID()
-{
-    qDebug()<<"Tabla creada";
+TablaHashID::TablaHashID(){
+   // qDebug()<<"Tabla creada";
 }
 
 int TablaHashID::funcionHash(int n){
     int a = n/5000;
-    //qDebug()<<"Generando key para "+QString::number(n)+" salio "+QString::number(a);
     return a;
 }
 bool TablaHashID::insertar(int pn){
@@ -39,3 +37,17 @@ void TablaHashID::imprimirTabla(){
     }
 }
 
+
+int TablaHashID::obtenerIDValido(){
+    //Me da un ID rando entre 0 y 9999999
+    int idRandom = randomID(9999999);
+    while(!(insertar(idRandom))){ //mientras no sea valido para insertar
+        idRandom = randomID(9999999);       // busque otro random
+    }
+    return idRandom;
+}
+
+int TablaHashID::randomID(int seed){
+    std::uniform_int_distribution<int> distrib(0, seed);
+    return distrib(*QRandomGenerator::global());
+}

@@ -1,27 +1,48 @@
 #include "persona.h"
 
-Persona::Persona(int pid, QString pnombre, QString papellido,QString ppais, QString pcreencia, QString pprofesion, QString pcorreo)
+Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, QString pprofesion)
 {
-    id=pid;
-    nombre = pnombre;
-    apellido = papellido;
-    pais=ppais;
-    creencia=pcreencia;
-    profesion=pprofesion;
-    correo=pcorreo;
+    this->id=pid;
+    this->nombre = pnombre;
+    this->apellido = papellido;
+    //pais=ppais;
+    this->creencia=pcreencia;
+    this->profesion=pprofesion;
+    this->correo= nombre+QString::number(id)+"@gmail.com";   //FUNCION??
+
     //No estoy segura si esto se hace asi jaja
-    pecados=QVector<int>(7);
-    buenasAcciones = QVector<int>(7);
-    padre = NULL;
+    this->pecados=QVector<int>(7);
+    this->buenasAcciones = QVector<int>(7);
+    this->padre = NULL;
+
     //No se si inicializar la vara con 5 personas con un contructor por defecto
-    hijos = QVector<Persona *>(5);
+    this->hijos = QVector<Persona *>(5);
+
     //o con la lista de hijos nula
     //hijos = NULL;
+    this->nacimiento = getHoraNacimiento();
 }
 
 void Persona::setId(int pid){
     id=pid;
 }
+
+void Persona::setNombre(QString pnombre){
+    nombre=pnombre;
+}
+void Persona::setApellido(QString papellido){
+    apellido=papellido;
+}
+void Persona::setPais(QString ppais){
+    pais=ppais;
+}
+void Persona::setCreencia(QString pcredo){
+    creencia=pcredo;
+}
+void Persona::setProfesion(QString pprofesion){
+    profesion=pprofesion;
+}
+
 int Persona::getId(){
     return id;
 }
@@ -47,4 +68,21 @@ QVector<int> Persona::getBuenasAcciones(){
 Estado Persona::getEstado(){
     return estado;
 }
+QString Persona::getNombre(){
+    return nombre;
+}
+QString Persona::getCorreo(){
+    return correo;
+}
 
+///
+/// \brief Persona::getHoraNacimiento
+/// \return nac
+///
+QString Persona::getHoraNacimiento(){
+
+    QDateTime UTC(QDateTime::currentDateTimeUtc());
+    QDateTime local(UTC.toLocalTime());
+    QString nac ="\t"+local.toString(Qt::SystemLocaleLongDate);
+    return nac;
+}

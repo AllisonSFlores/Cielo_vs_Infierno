@@ -1,0 +1,10 @@
+debug/controlador.o
+debug/datos.o
+debug/lsint.o
+debug/main.o
+debug/mainwindow.o
+debug/mundo.o
+debug/persona.o
+debug/tablahashID.o
+debug/qrc_Recursos.o
+debug/moc_mainwindow.o

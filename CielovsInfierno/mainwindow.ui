@@ -61,7 +61,7 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <property name="minimumSize">
@@ -82,24 +82,40 @@
      <widget class="QWidget" name="verticalLayoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>240</y>
-        <width>160</width>
-        <height>218</height>
+        <x>30</x>
+        <y>70</y>
+        <width>181</width>
+        <height>111</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QLineEdit" name="txtCant"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnGenerar">
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="text">
-          <string>Generación</string>
+          <string>Generar humanos</string>
          </property>
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>43</y>
+        <width>179</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>   Cantidad de humanos a generar</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="Cielo">

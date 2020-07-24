@@ -28,10 +28,18 @@ struct Persona{
         correo="";
         estado=mundo;
     }
-    Persona(int pid, QString pnombre, QString papellido,QString ppais, QString pcreencia, QString pprofesion, QString pcorreo);
+    //QString ppais,
+    Persona(int pid, QString pnombre, QString papellido, QString pcreencia, QString pprofesion);
 
     void setId(int pid);
+    void setNombre(QString);
+    void setApellido(QString);
+    void setPais(QString);
+    void setCreencia(QString);
+    void setProfesion(QString);
     int getId();
+    QString getNombre();
+    QString getCorreo();
     QString getApellido();
     QString getPais();
     QString getCreencia ();
@@ -39,6 +47,7 @@ struct Persona{
     QVector<Persona *> getHijos();
     QVector<int> getBuenasAcciones();
     Estado getEstado();
+    QString getHoraNacimiento();
 
 };
 

@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -32,7 +33,9 @@ public:
     QWidget *tab;
     QWidget *verticalLayoutWidget_3;
     QVBoxLayout *verticalLayout_3;
-    QPushButton *pushButton_3;
+    QLineEdit *txtCant;
+    QPushButton *btnGenerar;
+    QLabel *label_2;
     QWidget *Cielo;
     QLabel *label;
     QLabel *label_3;
@@ -84,16 +87,24 @@ public:
         tab->setMaximumSize(QSize(1900, 990));
         verticalLayoutWidget_3 = new QWidget(tab);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(400, 240, 160, 218));
+        verticalLayoutWidget_3->setGeometry(QRect(30, 70, 181, 111));
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        pushButton_3 = new QPushButton(verticalLayoutWidget_3);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setCursor(QCursor(Qt::PointingHandCursor));
+        txtCant = new QLineEdit(verticalLayoutWidget_3);
+        txtCant->setObjectName(QString::fromUtf8("txtCant"));
 
-        verticalLayout_3->addWidget(pushButton_3);
+        verticalLayout_3->addWidget(txtCant);
 
+        btnGenerar = new QPushButton(verticalLayoutWidget_3);
+        btnGenerar->setObjectName(QString::fromUtf8("btnGenerar"));
+        btnGenerar->setCursor(QCursor(Qt::PointingHandCursor));
+
+        verticalLayout_3->addWidget(btnGenerar);
+
+        label_2 = new QLabel(tab);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(40, 43, 179, 21));
         tabWidget->addTab(tab, QString());
         Cielo = new QWidget();
         Cielo->setObjectName(QString::fromUtf8("Cielo"));
@@ -237,7 +248,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -246,7 +257,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Generaci\303\263n", nullptr));
+        btnGenerar->setText(QCoreApplication::translate("MainWindow", "Generar humanos", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "   Cantidad de humanos a generar", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Inicio", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/cieloo.jpg\"/></p></body></html>", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Cielo", nullptr));

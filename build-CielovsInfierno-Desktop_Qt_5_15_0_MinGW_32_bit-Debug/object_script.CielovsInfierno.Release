@@ -1,0 +1,10 @@
+release/controlador.o
+release/datos.o
+release/lsint.o
+release/main.o
+release/mainwindow.o
+release/mundo.o
+release/persona.o
+release/tablahashID.o
+release/qrc_Recursos.o
+release/moc_mainwindow.o
