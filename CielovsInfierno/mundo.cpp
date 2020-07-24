@@ -4,28 +4,81 @@
 #include <conio.h>
 #include <QDebug>
 
-void arbolMundo::insertar(Persona *persona){
 
-    raiz = insertar(persona, raiz);
+void arbolMundo::pasarDatoAinsertar(QVector<NodoParaArbol*> nodosDelArbol){
+
+
+    int largo = nodosDelArbol.length();
+    if (largo>3){
+        while (largo>4){
+            int mitad=largo/2;
+            //solo es impar una vez
+            if(largo%2 == 1){
+                NodoParaArbol* borrado = nodosDelArbol[mitad];
+                insertar(borrado->persona->getId(),borrado->puntero); //falta el puntero lo paso al insertar
+                nodosDelArbol.remove(mitad);
+
+            }
+            else{
+                int mediaMitad = mitad/2;
+                NodoParaArbol* borrado1 = nodosDelArbol[mediaMitad];
+                insertar(borrado1->persona->getId(),borrado1->puntero);
+                nodosDelArbol.remove(mediaMitad);
+                NodoParaArbol* borrado2 = nodosDelArbol[(mitad+mediaMitad)-1];
+                insertar(borrado2->persona->getId(),borrado2->puntero);
+                nodosDelArbol.remove((mitad+mediaMitad)-1);
+            }
+
+            largo = nodosDelArbol.length();
+        }
+    //cuando solo quedan 4 noditos, metalos
+        for (int i=0;i<largo;i++){
+            NodoParaArbol* borrado = nodosDelArbol[i];
+            insertar(borrado->persona->getId(),borrado->puntero);
+        }
+    }
+    else if (largo==1){
+        NodoParaArbol* borrado = nodosDelArbol[0];
+        insertar(borrado->persona->getId(),borrado->puntero);
+    }
+    else{
+        //si es un arbol de 3, el del medio es la raiz
+        int mitad=largo/2;
+        NodoParaArbol* borrado = nodosDelArbol[mitad];
+        insertar(borrado->persona->getId(),borrado->puntero); //falta el puntero lo paso al insertar
+        nodosDelArbol.remove(mitad);
+
+        //insertar los otros 2
+        for (int i=0;i<largo;i++){
+            NodoParaArbol* borrado = nodosDelArbol[i];
+            insertar(borrado->persona->getId(),borrado->puntero);
+        }
+    }
 }
 
-Nodo* arbolMundo::insertar(Persona *persona, Nodo* nodo){
+
+void arbolMundo::insertar(int id, NodoLd* puntero){
+
+    raiz = insertar(id, raiz,puntero);
+}
+
+Nodo* arbolMundo::insertar(int id, Nodo* nodo,NodoLd* puntero){
 
     /*Cuando el nodo es nulo ahí debe insertar*/
     if (nodo == nullptr){
-        nodo = new Nodo(persona); //return new Nodo(valor);  es lo mismo
+        nodo = new Nodo(id,puntero); //return new Nodo(valor);  es lo mismo
     }
     /*Si el dato del nodo a insertar es mayor busca donde insertar
     a la derecha
     */
-    else if (nodo->persona->getId() < persona->getId()){
-        nodo->hijoderecho = insertar(persona, nodo->hijoderecho);
+    else if (nodo->ID < id){
+        nodo->hijoderecho = insertar(id, nodo->hijoderecho,puntero);
     }
     /*Si el dato del nodo a insertar es menor busca donde insertar
     a la izquierda
     */
-    else if (nodo->persona->getId() >= persona->getId()){
-        nodo->hijoizquierdo = insertar(persona, nodo->hijoizquierdo);
+    else if (nodo->ID >= id){
+        nodo->hijoizquierdo = insertar(id, nodo->hijoizquierdo,puntero);
     }
     return nodo;
 }
@@ -38,16 +91,19 @@ void arbolMundo::mostrarMundo(Nodo* nodo, int contador){
         for (int i=0;i<contador;i++){
             qDebug()<<"         ";
         }
-        qDebug()<<nodo->persona->getId()<<Qt::endl<<Qt::endl;
+        qDebug()<<nodo->ID<<Qt::endl<<Qt::endl;
         mostrarMundo(nodo->hijoizquierdo,contador+1);//luego toda la izquierda
     }
 }
 
-
-
-
-
-
+void arbolMundo::inOrder(Nodo* nodo){
+    if (nodo != NULL){
+        inOrder(nodo->hijoizquierdo);
+        //Nomás para comprobar
+        qDebug()<<"Nodo ID: "<<nodo->ID << " -- Puntero a sí mismo en lista "<<nodo->punteroALista<< " -- con ID de persona "<<nodo->punteroALista->persona->getId();
+        inOrder(nodo->hijoderecho);
+    }
+}
 
 
 //LISTA DEL MUNDO
@@ -181,7 +237,7 @@ QVector<int> listaDoble::devolverRandom(){
 
     int valor;
     int porcentajeL = porcentaje();
-    qDebug()<<"porcentaje"<<porcentaje();
+    //qDebug()<<"porcentaje"<<porcentaje();
     QVector<int> indicesParaArbol;
 
     for(int i=0;i<=porcentajeL-1;i++){  //hagalo la cantidad 10%
@@ -198,26 +254,26 @@ QVector<int> listaDoble::devolverRandom(){
 /// \brief listaDoble::listaParaArbol
 /// \return nodosDelArbol
 ///
-QVector<Persona*> listaDoble::listaParaArbol(){
+QVector<NodoParaArbol*> listaDoble::listaParaArbol(){
 
-    QVector<Persona*> nodosDelArbol;
+    QVector<NodoParaArbol*> nodosDelArbol;
     QVector<int> indicesParaArbol= devolverRandom();
-    qDebug()<<"indices"<<indicesParaArbol;
+   // qDebug()<<"indices"<<indicesParaArbol;
 
     int j=0;
     int i=0;
     NodoLd *temporal= primerNodo;  //lista del mundo
     while(temporal != NULL && i<=indicesParaArbol.length()-1){
         if (j == indicesParaArbol[i]){
-            qDebug()<<"indice i"<<indicesParaArbol[i];
-            nodosDelArbol.append(temporal->persona);
+            NodoParaArbol *nodo = new NodoParaArbol(temporal->persona,temporal);
+            nodosDelArbol.append(nodo);
             i++;
         }
         j++;
         temporal = temporal->siguiente;
     }
 
-    qDebug()<<"indices"<<nodosDelArbol;
+    //qDebug()<<"indices"<<nodosDelArbol;
     //Ya está ordenada
     return nodosDelArbol;
 }

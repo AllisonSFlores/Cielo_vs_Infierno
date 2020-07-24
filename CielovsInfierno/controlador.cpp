@@ -39,11 +39,11 @@ void Controlador::crearHumanos(int cantidadHumanos){
         profesion= getDatos()->obtenerProfesiones();
         Persona *persona = new Persona(ID,nombre,apellido,creencia,profesion);
         listaMundo->insertarAlFinal(persona);
-       // qDebug()<<persona->getCorreo();
     }
     listaMundo->metodoOrdenamiento();
-    //qDebug()<<"Lista de personas para arbol "<<
-    listaMundo->listaParaArbol();
-    //int porcentaje = listaMundo->porcentaje();
-   // qDebug()<<"posiciones random"<<listaMundo->devolverRandom();
+     QVector<NodoParaArbol*> datosArbol= listaMundo->listaParaArbol();
+     _arbolMundo->pasarDatoAinsertar(datosArbol);
+     _arbolMundo->inOrder(_arbolMundo->raiz);
+     //_arbolMundo->mostrarMundo(_arbolMundo->raiz,0);  //no me sirve aqui
+
 }

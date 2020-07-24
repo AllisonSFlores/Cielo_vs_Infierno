@@ -7,16 +7,19 @@ struct Nodo;
 struct arbolMundo;
 struct listaDoble;
 struct NodoLd;
+struct NodoParaArbol;
 
 struct Nodo{
 
-    Persona *persona;
+    int ID;
+    NodoLd* punteroALista;
     Nodo* hijoizquierdo;
     Nodo* hijoderecho;
 
-    Nodo (Persona *_persona){
-        persona = _persona;
+    Nodo (int id,NodoLd* puntero){
+        ID = id;
         hijoizquierdo = hijoderecho = NULL;
+        punteroALista = puntero;
     }
 
 };
@@ -28,10 +31,11 @@ struct arbolMundo{
         raiz = NULL;
     }
 
-    void insertar (Persona *);
-    Nodo* insertar(Persona *, Nodo*);
-    void pasarDatoAinsertar(listaDoble*);
+    void insertar (int id,NodoLd*);
+    Nodo* insertar(int, Nodo*,NodoLd*);
+    void pasarDatoAinsertar(QVector<NodoParaArbol*>);
     void mostrarMundo(Nodo*, int);
+    void inOrder(Nodo*);
 };
 
 //Para la lista ordenada de humanos
@@ -63,11 +67,10 @@ struct listaDoble{
     void imprimir();
     int porcentaje();
     void metodoOrdenamiento();
- //   listaDoble *devolverRandom(); //devuelve lista ordenada de indices random
- //   listaDoble *listaParaArbol();
- //   bool inLista(int);
     QVector<int> devolverRandom();
-    QVector<Persona*> listaParaArbol();
+  //  QVector<Persona*> listaParaArbol();
+    QVector<NodoParaArbol*> listaParaArbol();
+
     //COSAS REPETIDAS, NO SÉ (por hacerlo con qvector):C
     QVector<int> ordenarIndices(QVector<int>);
     bool inLista(int,QVector<int>);
@@ -80,5 +83,15 @@ struct listaDoble{
 
 };
 
+struct NodoParaArbol{
+
+    Persona *persona;
+    NodoLd* puntero;
+
+    NodoParaArbol(Persona *p,NodoLd* pt){
+        persona = p;
+        puntero = pt;
+    }
+};
 
 #endif // MUNDO_H
