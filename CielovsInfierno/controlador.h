@@ -4,13 +4,15 @@
 #include "datos.h"
 #include "persona.h"
 #include "mundo.h"
-
-class Controlador{
+#include "cielo.h"
+struct Controlador{
        TablaHashID * tabla;
        Datos *datos;
        listaDoble *listaMundo;
        arbolMundo *_arbolMundo;
-public:
+
+       Cielo * cielo;
+
 
        Controlador(){}
        void __init__();
@@ -18,6 +20,8 @@ public:
        Datos *getDatos();
        void crearHumanos(int);
        void cargarDatos();
+
+       void salvacion();
 };
 
 #endif // CONTROLADOR_H

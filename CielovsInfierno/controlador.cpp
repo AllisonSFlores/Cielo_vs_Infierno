@@ -5,6 +5,8 @@ void Controlador::__init__(){
     this->datos = new Datos();
     this->listaMundo = new listaDoble();
     this->_arbolMundo = new arbolMundo();
+
+    this->cielo = new Cielo();
 }
 
 
@@ -46,4 +48,9 @@ void Controlador::crearHumanos(int cantidadHumanos){
      _arbolMundo->inOrder(_arbolMundo->raiz);
      //_arbolMundo->mostrarMundo(_arbolMundo->raiz,0);  //no me sirve aqui
 
+}
+
+void Controlador::salvacion(){
+    //FALTA HACER QUE LOS ANGELES CONOZCAN EL INFIERNO O NO SE, DESPUES VEO
+    cielo->salvacion();
 }

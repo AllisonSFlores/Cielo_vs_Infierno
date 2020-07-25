@@ -28,7 +28,7 @@ struct Persona{
         correo="";
         estado=mundo;
     }
-    //QString ppais,
+
     Persona(int pid, QString pnombre, QString papellido, QString pcreencia, QString pprofesion);
 
     void setId(int pid);

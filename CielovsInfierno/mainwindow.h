@@ -13,7 +13,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-   Controlador *controlador = new Controlador();
+   Controlador * controlador = new Controlador();
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -21,6 +21,10 @@ private slots:
     //void on_pushButton_3_clicked();
 
     void on_btnGenerar_clicked();
+
+    void on_btnInicioCieloPrueba_clicked();
+
+    void on_btnCieloSalvacion_clicked();
 
 private:
     Ui::MainWindow *ui;
