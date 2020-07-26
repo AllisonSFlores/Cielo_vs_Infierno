@@ -18,13 +18,14 @@ public:
     ~MainWindow();
 
 private slots:
-    //void on_pushButton_3_clicked();
 
     void on_btnGenerar_clicked();
 
     void on_btnInicioCieloPrueba_clicked();
 
     void on_btnCieloSalvacion_clicked();
+
+    void on_btnBuscar_clicked();
 
 private:
     Ui::MainWindow *ui;

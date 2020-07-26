@@ -20,8 +20,8 @@ struct Controlador{
        Datos *getDatos();
        void crearHumanos(int);
        void cargarDatos();
-
        void salvacion();
+       void buscarPersona(int);
 };
 
 #endif // CONTROLADOR_H

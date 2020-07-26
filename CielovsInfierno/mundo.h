@@ -31,11 +31,14 @@ struct arbolMundo{
         raiz = NULL;
     }
 
-    void insertar (int id,NodoLd*);
+    void insertar (int,NodoLd*);
     Nodo* insertar(int, Nodo*,NodoLd*);
     void pasarDatoAinsertar(QVector<NodoParaArbol*>);
     void mostrarMundo(Nodo*, int);
     void inOrder(Nodo*);
+    NodoLd* recorrerArbol(int,Nodo*);
+    NodoLd* recorrerListaMundo(int);
+
 };
 
 //Para la lista ordenada de humanos
@@ -61,24 +64,20 @@ struct listaDoble{
     }
 
     //Prototipos de funciones
-
     void insertarAlFinal(Persona *);
     int largoLista();
     void imprimir();
     int porcentaje();
     void metodoOrdenamiento();
     QVector<int> devolverRandom();
-  //  QVector<Persona*> listaParaArbol();
     QVector<NodoParaArbol*> listaParaArbol();
-
-    //COSAS REPETIDAS, NO SÉ (por hacerlo con qvector):C
     QVector<int> ordenarIndices(QVector<int>);
     bool inLista(int,QVector<int>);
     int indiceRandom(int);
     int cercanoAux(int);
     int cercanoAlaPotencia(int,int,int);
-    NodoLd* borrarEnPosicion(int);
-    NodoLd* find(int);
+
+ //   NodoLd* find(int);
 
 
 };

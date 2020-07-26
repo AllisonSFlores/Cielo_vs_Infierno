@@ -9,9 +9,11 @@ void arbolMundo::pasarDatoAinsertar(QVector<NodoParaArbol*> nodosDelArbol){
 
 
     int largo = nodosDelArbol.length();
+   // qDebug()<<"Largo"<<largo;
     if (largo>3){
         while (largo>4){
             int mitad=largo/2;
+            //qDebug()<<"mitad"<<mitad;
             //solo es impar una vez
             if(largo%2 == 1){
                 NodoParaArbol* borrado = nodosDelArbol[mitad];
@@ -42,12 +44,15 @@ void arbolMundo::pasarDatoAinsertar(QVector<NodoParaArbol*> nodosDelArbol){
         insertar(borrado->persona->getId(),borrado->puntero);
     }
     else{
+        //qDebug()<<"arbol de 3 nodos "<<largo;
         //si es un arbol de 3, el del medio es la raiz
         int mitad=largo/2;
+       // qDebug()<<"mitad arbol de 3 nodos "<<mitad;
         NodoParaArbol* borrado = nodosDelArbol[mitad];
         insertar(borrado->persona->getId(),borrado->puntero); //falta el puntero lo paso al insertar
         nodosDelArbol.remove(mitad);
-
+       // qDebug()<<"mitad arbol de 3 nodos "<<mitad;
+        largo = nodosDelArbol.length();
         //insertar los otros 2
         for (int i=0;i<largo;i++){
             NodoParaArbol* borrado = nodosDelArbol[i];
@@ -106,6 +111,50 @@ void arbolMundo::inOrder(Nodo* nodo){
 }
 
 
+NodoLd* arbolMundo::recorrerArbol(int id, Nodo* nodo){
+
+    if (nodo->hijoderecho == NULL && nodo->hijoderecho == NULL){
+        return  nodo->punteroALista;
+    }
+    else if (nodo->ID < id){
+        return  recorrerArbol(id, nodo->hijoderecho);
+    }
+    else {
+        return recorrerArbol(id, nodo->hijoizquierdo);
+    }
+
+}
+
+
+NodoLd* arbolMundo::recorrerListaMundo(int id){
+
+    NodoLd *temporal = recorrerArbol(id, raiz);
+    while(temporal != NULL){
+        if (temporal->persona->getId() < id){
+            qDebug()<<"Se fue a la derecha";
+            temporal = temporal->siguiente;
+        }
+        else if (temporal->persona->getId() > id){
+            qDebug()<<"Se fue a la izquierda";
+            temporal = temporal->anterior;
+        }
+        else{
+            qDebug()<<"ID encontrado: "<<temporal->persona->getId();
+            return temporal;
+            break;
+            }
+    }
+
+
+    return NULL;
+}
+
+
+
+
+
+
+
 //LISTA DEL MUNDO
 
 
@@ -140,7 +189,7 @@ void listaDoble::imprimir(){
         while(temporal->siguiente != NULL){
             qDebug()<<temporal->persona->getId()<<" -> ";
             temporal = temporal->siguiente;
-    }
+        }
         qDebug()<<temporal->persona->getId();
     }
 
@@ -237,13 +286,13 @@ QVector<int> listaDoble::devolverRandom(){
 
     int valor;
     int porcentajeL = porcentaje();
-    //qDebug()<<"porcentaje"<<porcentaje();
+    qDebug()<<"porcentaje"<<porcentaje();
     QVector<int> indicesParaArbol;
 
     for(int i=0;i<=porcentajeL-1;i++){  //hagalo la cantidad 10%
-        valor = indiceRandom(largoLista());
+        valor = indiceRandom(largoLista()-1);
         while(inLista(valor,indicesParaArbol)){
-            valor = indiceRandom(largoLista());
+            valor = indiceRandom(largoLista()-1);
         }
         indicesParaArbol.append(valor);
     }
@@ -263,8 +312,10 @@ QVector<NodoParaArbol*> listaDoble::listaParaArbol(){
     int j=0;
     int i=0;
     NodoLd *temporal= primerNodo;  //lista del mundo
-    while(temporal != NULL && i<=indicesParaArbol.length()-1){
+
+    while(temporal != NULL && i<indicesParaArbol.size()){
         if (j == indicesParaArbol[i]){
+           // qDebug()<<"indice i"<<indicesParaArbol[i];
             NodoParaArbol *nodo = new NodoParaArbol(temporal->persona,temporal);
             nodosDelArbol.append(nodo);
             i++;
@@ -273,7 +324,7 @@ QVector<NodoParaArbol*> listaDoble::listaParaArbol(){
         temporal = temporal->siguiente;
     }
 
-    //qDebug()<<"indices"<<nodosDelArbol;
+    //qDebug()<<"indices nodo arbol"<<nodosDelArbol;
     //Ya está ordenada
     return nodosDelArbol;
 }

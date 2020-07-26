@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setCentralWidget(ui->tabWidget);
     controlador->__init__();
+    controlador->cargarDatos();
 }
 
 MainWindow::~MainWindow(){
@@ -18,7 +19,6 @@ MainWindow::~MainWindow(){
 void MainWindow::on_btnGenerar_clicked(){
 
 
-    controlador->cargarDatos();
     int cantidadHumanos = (ui->txtCant->text()).toUInt();
     controlador->crearHumanos(cantidadHumanos);
 
@@ -43,4 +43,10 @@ void MainWindow::on_btnCieloSalvacion_clicked()
 {
     controlador->salvacion();
     qDebug()<<QString::number(controlador->cielo->getAlturaArbol());
+}
+
+void MainWindow::on_btnBuscar_clicked(){
+
+    int id = (ui->txtBuscar->text()).toUInt();
+    controlador->buscarPersona(id);
 }
