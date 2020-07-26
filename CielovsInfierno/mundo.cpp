@@ -110,7 +110,12 @@ void arbolMundo::inOrder(Nodo* nodo){
     }
 }
 
-
+/// Recorre el arbol buscando en el mejor camino para recorrer la lista
+/// \brief arbolMundo::recorrerArbol
+/// \param id
+/// \param nodo
+/// \return el nodo que tiene el puntero a lista
+///
 NodoLd* arbolMundo::recorrerArbol(int id, Nodo* nodo){
 
     if (nodo->hijoderecho == NULL && nodo->hijoderecho == NULL){
@@ -125,26 +130,29 @@ NodoLd* arbolMundo::recorrerArbol(int id, Nodo* nodo){
 
 }
 
-
+/// Dado un nodo de la lista recorre hacia la derecha o izquierda en busqueda de otro nodo
+/// \brief arbolMundo::recorrerListaMundo
+/// \param id
+/// \return temporal, nodo con puntero a una persona.
+///
 NodoLd* arbolMundo::recorrerListaMundo(int id){
 
     NodoLd *temporal = recorrerArbol(id, raiz);
     while(temporal != NULL){
         if (temporal->persona->getId() < id){
-            qDebug()<<"Se fue a la derecha";
+          //  qDebug()<<"Se fue a la derecha";
             temporal = temporal->siguiente;
         }
         else if (temporal->persona->getId() > id){
-            qDebug()<<"Se fue a la izquierda";
+         //   qDebug()<<"Se fue a la izquierda";
             temporal = temporal->anterior;
         }
         else{
             qDebug()<<"ID encontrado: "<<temporal->persona->getId();
             return temporal;
             break;
-            }
+       }
     }
-
 
     return NULL;
 }

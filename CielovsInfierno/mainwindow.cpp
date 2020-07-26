@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include <QString>
 #include "controlador.h"
+#include <QMessageBox>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -46,7 +48,11 @@ void MainWindow::on_btnCieloSalvacion_clicked()
 }
 
 void MainWindow::on_btnBuscar_clicked(){
-
     int id = (ui->txtBuscar->text()).toUInt();
-    controlador->buscarPersona(id);
+    if (controlador->buscarPersona(id)== NULL){
+         QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+    }
+
+
+
 }
