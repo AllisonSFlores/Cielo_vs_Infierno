@@ -15,8 +15,9 @@ struct NodoArbolAngeles{
     void imprimirNodo();
 };
 
-struct ArbolAngeles
-{   NodoArbolAngeles * raiz;
+struct ArbolAngeles{
+
+    NodoArbolAngeles * raiz;
     ArbolAngeles();
     void insertar(Angel * pangel);
     NodoArbolAngeles * buscarCampo(NodoArbolAngeles * raiz, int altura);

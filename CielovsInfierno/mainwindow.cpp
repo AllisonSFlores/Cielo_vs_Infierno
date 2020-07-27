@@ -49,10 +49,26 @@ void MainWindow::on_btnCieloSalvacion_clicked()
 
 void MainWindow::on_btnBuscar_clicked(){
     int id = (ui->txtBuscar->text()).toUInt();
-    if (controlador->buscarPersona(id)== NULL){
-         QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+    if (controlador->getArbolMundo()->raiz != NULL){
+        if (controlador->buscarPersona(id)== NULL){
+             QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+        }
+    }
+    else{
+        QMessageBox::information(this,"Error","El mundo no tiene personas",QMessageBox::Ok);
     }
 
 
+}
+
+void MainWindow::on_btnSumarPecados_clicked(){
+    listaDoble * mundo = controlador->getListaMundo();
+    if (mundo->largoLista() > 0 ){
+         mundo->sumarPecados();
+         mundo->imprimirPecados();
+    }
+    else{
+        QMessageBox::information(this,"Error","El mundo aún no tienen personas",QMessageBox::Ok);
+    }
 
 }

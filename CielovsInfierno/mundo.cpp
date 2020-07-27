@@ -140,11 +140,11 @@ NodoLd* arbolMundo::recorrerListaMundo(int id){
     NodoLd *temporal = recorrerArbol(id, raiz);
     while(temporal != NULL){
         if (temporal->persona->getId() < id){
-          //  qDebug()<<"Se fue a la derecha";
+            qDebug()<<"Se fue a la derecha";
             temporal = temporal->siguiente;
         }
         else if (temporal->persona->getId() > id){
-         //   qDebug()<<"Se fue a la izquierda";
+            qDebug()<<"Se fue a la izquierda";
             temporal = temporal->anterior;
         }
         else{
@@ -196,6 +196,7 @@ void listaDoble::imprimir(){
         NodoLd *temporal= primerNodo;
         while(temporal->siguiente != NULL){
             qDebug()<<temporal->persona->getId()<<" -> ";
+
             temporal = temporal->siguiente;
         }
         qDebug()<<temporal->persona->getId();
@@ -298,9 +299,9 @@ QVector<int> listaDoble::devolverRandom(){
     QVector<int> indicesParaArbol;
 
     for(int i=0;i<=porcentajeL-1;i++){  //hagalo la cantidad 10%
-        valor = indiceRandom(largoLista()-1);
+        valor = random(largoLista()-1);
         while(inLista(valor,indicesParaArbol)){
-            valor = indiceRandom(largoLista()-1);
+            valor = random(largoLista()-1);
         }
         indicesParaArbol.append(valor);
     }
@@ -323,7 +324,6 @@ QVector<NodoParaArbol*> listaDoble::listaParaArbol(){
 
     while(temporal != NULL && i<indicesParaArbol.size()){
         if (j == indicesParaArbol[i]){
-           // qDebug()<<"indice i"<<indicesParaArbol[i];
             NodoParaArbol *nodo = new NodoParaArbol(temporal->persona,temporal);
             nodosDelArbol.append(nodo);
             i++;
@@ -348,7 +348,7 @@ bool listaDoble::inLista(int i,QVector<int> indicesParaArbol){
 }
 
 
-int listaDoble::indiceRandom(int seed){
+int listaDoble::random(int seed){
     std::uniform_int_distribution<int> distrib(0, seed);
     return distrib(*QRandomGenerator::global());
 }
@@ -374,8 +374,45 @@ QVector<int> listaDoble::ordenarIndices(QVector<int> indicesParaArbol){
     return indicesParaArbol;
 }
 
+void  listaDoble::sumarPecados(){
 
+    if (primerNodo == NULL){
+        qDebug()<<"La lista esta vacia";
+    }
+    else{
 
+        NodoLd *temporal= primerNodo;
+        while(temporal->siguiente != NULL){
 
+            for (int i=0;i<7;i++){
+               temporal->persona->pecados[i] += random(99);
+            }
+            temporal = temporal->siguiente;
+        }
 
+    }
+}
+
+//Prueba
+void listaDoble::imprimirPecados(){
+    /*
+    Funcion: Imprimir toda la lista.
+    Entradas: Ninguna.
+    Salidas: Ninguna.
+    */
+    if (primerNodo == NULL){
+        qDebug()<<"La lista esta vacia";
+    }
+    else{
+        NodoLd *temporal= primerNodo;
+        while(temporal->siguiente != NULL){
+            qDebug()<<temporal->persona->getNombre()+" "+temporal->persona->getApellido();
+            for (int j=0;j<7;j++){
+                qDebug()<<"Tipo de pecado: "<<j<<":"<<temporal->persona->pecados[j];
+            }
+            temporal = temporal->siguiente;
+        }
+    }
+
+}
 

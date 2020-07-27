@@ -12,7 +12,9 @@ void Cielo::reino(){
     Angel * Serafines =new Angel("Serafines",0,2);
     Angel * Querubines =new Angel("Querubines",0,2);
     Angel * Tronos =new Angel("Tronos",0,2);
-    arbol->insertar(dios);arbol->insertar(Serafines);arbol->insertar(Querubines);arbol->insertar(Tronos);
+    arbol->insertar(dios);
+    arbol->insertar(Serafines);arbol->insertar(Querubines);
+    arbol->insertar(Tronos);
 
 }
 int Cielo::getAlturaArbol(){
@@ -42,6 +44,7 @@ void Cielo::nombresmatriz(){
         nombres[1][i]="0";
     }
 }
+
 int Cielo::ramdom(){
     std::uniform_int_distribution<int> distrib(0, 10-1);
     return  distrib(*QRandomGenerator::global());

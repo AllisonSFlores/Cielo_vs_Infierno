@@ -27,6 +27,8 @@ private slots:
 
     void on_btnBuscar_clicked();
 
+    void on_btnSumarPecados_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

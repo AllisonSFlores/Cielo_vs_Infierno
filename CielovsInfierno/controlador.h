@@ -20,11 +20,12 @@ struct Controlador{
        void __init__();
        TablaHashID *getTabla();
        Datos *getDatos();
+       listaDoble* getListaMundo();
+       arbolMundo *getArbolMundo();
        void crearHumanos(int);
        void cargarDatos();
        void salvacion();
        NodoLd* buscarPersona(int);  //tal vez mejor que retorne la persona
-       int RandomX(int seed); //QUITAR
 };
 
 #endif // CONTROLADOR_H

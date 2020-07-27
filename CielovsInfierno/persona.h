@@ -10,8 +10,8 @@ struct Persona{
     QString creencia;
     QString profesion;
     QString correo;
-    QVector<int> pecados;
-    QVector<int> buenasAcciones;
+    int pecados[7]={0,0,0,0,0,0,0};
+    int buenasAcciones[7]={0,0,0,0,0,0,0};
     Persona * padre;
     //NO SE SI LA LISTA DE HIJOS ESTA BIEN ASI
     QVector<Persona *> hijos;
@@ -43,9 +43,9 @@ struct Persona{
     QString getApellido();
     QString getPais();
     QString getCreencia ();
-    QVector<int> getPecados();
+   // int getPecados();
+   // int getBuenasAcciones();
     QVector<Persona *> getHijos();
-    QVector<int> getBuenasAcciones();
     Estado getEstado();
     QString getHoraNacimiento();
 

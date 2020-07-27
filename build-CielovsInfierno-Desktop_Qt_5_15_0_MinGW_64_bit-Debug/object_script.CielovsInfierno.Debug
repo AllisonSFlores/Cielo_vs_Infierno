@@ -1,9 +1,11 @@
 debug/ArbolHeapFamilia.o
 debug/angel.o
 debug/arbolangeles.o
+debug/arbolheapdemonio.o
 debug/cielo.o
 debug/controlador.o
 debug/datos.o
+debug/infierno.o
 debug/lscielo.o
 debug/lsint.o
 debug/main.o

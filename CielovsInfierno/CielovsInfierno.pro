@@ -23,6 +23,7 @@ SOURCES += \
     cielo.cpp \
     controlador.cpp \
     datos.cpp \
+    infierno.cpp \
     lscielo.cpp \
     lsint.cpp \
     main.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     controlador.h \
     datos.h \
     estado.h \
+    infierno.h \
     lscielo.h \
     lsint.h \
     mainwindow.h \

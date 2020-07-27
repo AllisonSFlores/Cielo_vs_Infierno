@@ -1,9 +1,11 @@
 release/ArbolHeapFamilia.o
 release/angel.o
 release/arbolangeles.o
+release/arbolheapdemonio.o
 release/cielo.o
 release/controlador.o
 release/datos.o
+release/infierno.o
 release/lscielo.o
 release/lsint.o
 release/main.o

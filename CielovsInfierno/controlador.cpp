@@ -20,6 +20,16 @@ TablaHashID *Controlador::getTabla(){
 Datos *Controlador::getDatos(){
     return datos;
 }
+
+arbolMundo *Controlador::getArbolMundo(){
+    return _arbolMundo;
+
+}
+
+
+listaDoble* Controlador::getListaMundo(){
+    return listaMundo;
+}
 void Controlador::cargarDatos(){
     getDatos()->cargarNombres();
     getDatos()->cargarApellidos();
@@ -54,28 +64,18 @@ void Controlador::crearHumanos(int cantidadHumanos){
      QVector<NodoParaArbol*> datosArbol= listaMundo->listaParaArbol();
      _arbolMundo->pasarDatoAinsertar(datosArbol);
      _arbolMundo->inOrder(_arbolMundo->raiz);
+     //COMPRUEBO QUE INSERTA Y ORDENA HUMANOS
+     for (int i=datosArbol.length()-1; i>=0;i--){
+         heap->insertar(datosArbol[i]->persona);
+     }
+     heap->ordenar();
+     heap->imprimir();
+
 
 }
 
 NodoLd* Controlador::buscarPersona(int id){
     return _arbolMundo->recorrerListaMundo(id);
-
-
-    /*
-    //Para ver si funca
-    for (int i=0;i<id;i++){
-        heap->insertar(RandomX(8000));
-    }
-    heap->imprimir();
-    qDebug()<<"ordenada";
-    heap->ordenar();
-    heap->imprimir();*/
-}
-
-//ES PARA HEAP MIENTRAS TANTO ver si el heap funca el quicksort
-int Controlador::RandomX(int seed){
-    std::uniform_int_distribution<int> distrib(0, seed);
-    return distrib(*QRandomGenerator::global());
 }
 
 void Controlador::salvacion(){

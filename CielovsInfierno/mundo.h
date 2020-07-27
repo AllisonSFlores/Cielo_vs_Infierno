@@ -73,11 +73,11 @@ struct listaDoble{
     QVector<NodoParaArbol*> listaParaArbol();
     QVector<int> ordenarIndices(QVector<int>);
     bool inLista(int,QVector<int>);
-    int indiceRandom(int);
+    int random(int);
     int cercanoAux(int);
     int cercanoAlaPotencia(int,int,int);
-
- //   NodoLd* find(int);
+    void  sumarPecados();
+    void imprimirPecados();
 
 
 };

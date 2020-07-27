@@ -45,7 +45,7 @@
       <x>0</x>
       <y>0</y>
       <width>1500</width>
-      <height>900</height>
+      <height>921</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -164,6 +164,19 @@
       </property>
       <property name="text">
        <string>Buscar persona por id</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSumarPecados">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>280</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sumar pecados</string>
       </property>
      </widget>
     </widget>

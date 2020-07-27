@@ -11,12 +11,12 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
     this->correo= nombre+QString::number(id)+"@gmail.com";   //FUNCION??
 
     //No estoy segura si esto se hace asi jaja
-    this->pecados=QVector<int>(7);
-    this->buenasAcciones = QVector<int>(7);
+   // this->pecados=QVector<int>(7);
+    //this->buenasAcciones = QVector<int>(7);
     this->padre = NULL;
 
     //No se si inicializar la vara con 5 personas con un contructor por defecto
-    this->hijos = QVector<Persona *>(5);
+    //this->hijos = QVector<Persona *>(5);
 
     //o con la lista de hijos nula
     //hijos = NULL;
@@ -55,16 +55,17 @@ QString Persona::getPais(){
 QString Persona::getCreencia (){
     return creencia;
 }
-QVector<int> Persona::getPecados(){
-    return pecados;
+/*
+int[7] Persona::getPecados(){
+   // return pecados;
 }
 QVector<Persona *> Persona::getHijos(){
     return hijos;
 }
-QVector<int> Persona::getBuenasAcciones(){
-    return buenasAcciones;
+int Persona::getBuenasAcciones(){
+   // return buenasAcciones;
 }
-
+*/
 Estado Persona::getEstado(){
     return estado;
 }

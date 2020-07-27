@@ -42,6 +42,7 @@ public:
     QLineEdit *txtBuscar;
     QPushButton *btnBuscar;
     QLabel *label_25;
+    QPushButton *btnSumarPecados;
     QWidget *Cielo;
     QLabel *label;
     QLabel *label_3;
@@ -98,7 +99,7 @@ public:
         centralwidget->setMaximumSize(QSize(1900, 900));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 1500, 900));
+        tabWidget->setGeometry(QRect(0, 0, 1500, 921));
         tabWidget->setMinimumSize(QSize(1400, 900));
         tabWidget->setMaximumSize(QSize(1900, 1000));
         tabWidget->setCursor(QCursor(Qt::ArrowCursor));
@@ -146,6 +147,9 @@ public:
         label_25 = new QLabel(tab);
         label_25->setObjectName(QString::fromUtf8("label_25"));
         label_25->setGeometry(QRect(240, 40, 179, 21));
+        btnSumarPecados = new QPushButton(tab);
+        btnSumarPecados->setObjectName(QString::fromUtf8("btnSumarPecados"));
+        btnSumarPecados->setGeometry(QRect(30, 280, 181, 31));
         tabWidget->addTab(tab, QString());
         Cielo = new QWidget();
         Cielo->setObjectName(QString::fromUtf8("Cielo"));
@@ -402,6 +406,7 @@ public:
         txtBuscar->setText(QCoreApplication::translate("MainWindow", "365214", nullptr));
         btnBuscar->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
         label_25->setText(QCoreApplication::translate("MainWindow", "Buscar persona por id", nullptr));
+        btnSumarPecados->setText(QCoreApplication::translate("MainWindow", "Sumar pecados", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Mundo", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/cieloo.jpg\"/></p></body></html>", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Cielo", nullptr));

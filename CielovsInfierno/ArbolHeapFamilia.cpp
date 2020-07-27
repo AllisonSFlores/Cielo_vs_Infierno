@@ -1,7 +1,7 @@
 #include "ArbolHeapFamilia.h"
 
-void ArbolHeap::insertar(int dato){
-    arbol.append(dato);
+void ArbolHeap::insertar(Persona *persona){
+    arbol.append(persona);
 };
 
 void ArbolHeap::ordenar(){
@@ -17,14 +17,14 @@ void ArbolHeap::ordenarAux(int _izq,int _der){
 
     int izq = _izq;
     int der =_der;
-    int piv = arbol[(izq+der)/2];
-    int tmp = 0;
+    int piv = arbol[(izq+der)/2]->getId();
+    Persona *tmp;
 
     do{
-        while( (arbol[izq] < piv) && (der <= _der) ){
+        while( (arbol[izq]->getId() < piv) && (der <= _der) ){
             izq++;
         }
-        while( (piv < arbol[der]) && (der > _izq) ){
+        while( (piv < arbol[der]->getId()) && (der > _izq) ){
             der--;
         }
         if( izq <= der ){
@@ -45,7 +45,7 @@ void ArbolHeap::ordenarAux(int _izq,int _der){
 
 void ArbolHeap::imprimir(){
 
-    for (int i=0;i<arbol.length()-1;i++){
-        qDebug()<<arbol[i];
+    for (int i=0;i<=arbol.length()-1;i++){
+        qDebug()<<arbol[i]->getId();
     }
 }

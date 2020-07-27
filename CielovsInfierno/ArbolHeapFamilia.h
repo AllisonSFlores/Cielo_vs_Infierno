@@ -9,10 +9,10 @@ struct ArbolHeap{
     QString nombreFamilia;
     QString apellidoFamilia;
     int cantPecadosFamilia;
-    QVector<int> arbol;
+    QVector<Persona*> arbol;
     ArbolHeap(){}
 
-    void insertar(int);
+    void insertar(Persona*);
     void ordenar();
     void ordenarAux(int,int);
     void imprimir();
