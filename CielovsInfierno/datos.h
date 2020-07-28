@@ -12,7 +12,7 @@ struct Datos{
     QString nombres[1000];
     QString apellidos[200];
     TablaHashID * tabla;
-    QString paises[2][25];
+    QString paises[50];
     QString creencias[10];
     QString profesiones[50];
 
@@ -24,7 +24,7 @@ struct Datos{
     void cargarProfesiones();
     QString obtenerNombre();
     QString obtenerApellido();
-    QString * obtenerpaises();
+    QVector<QString> obtenerpaises();
     QString obtenerCreencias();
     QString obtenerProfesiones();
     QString abrirArchivo(QString file);

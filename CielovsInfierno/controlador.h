@@ -14,7 +14,7 @@ struct Controlador{
        listaDoble *listaMundo;
        arbolMundo *_arbolMundo; //ver esto
        Cielo * cielo;
-       ArbolHeap *heap;
+       ArbolHeapFamilia *heap;
 
        Controlador(){}
        void __init__();
@@ -25,7 +25,7 @@ struct Controlador{
        void crearHumanos(int);
        void cargarDatos();
        void salvacion();
-       NodoLd* buscarPersona(int);  //tal vez mejor que retorne la persona
+       NodoLd* buscarPersona(int);  //tal vez mejor que retorne la persona      efectivamente
 };
 
 #endif // CONTROLADOR_H

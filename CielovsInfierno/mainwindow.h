@@ -29,6 +29,8 @@ private slots:
 
     void on_btnSumarPecados_clicked();
 
+    void on_pruebas_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

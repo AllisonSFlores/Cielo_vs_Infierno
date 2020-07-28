@@ -3,6 +3,7 @@
 #include <QString>
 #include "controlador.h"
 #include <QMessageBox>
+#include "tablafamilia.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -70,5 +71,12 @@ void MainWindow::on_btnSumarPecados_clicked(){
     else{
         QMessageBox::information(this,"Error","El mundo aún no tienen personas",QMessageBox::Ok);
     }
+
+}
+
+void MainWindow::on_pruebas_clicked()
+{
+
+    qDebug()<<"DEJELO AQUI PARA USARLO c:";
 
 }

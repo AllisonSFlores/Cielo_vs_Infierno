@@ -16,38 +16,42 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    ArbolHeapFamilia.cpp \
     angel.cpp \
     arbolangeles.cpp \
     arbolheapdemonio.cpp \
+    arbolheapfamilia.cpp \
     cielo.cpp \
     controlador.cpp \
     datos.cpp \
     infierno.cpp \
     lscielo.cpp \
+    lsfamilia.cpp \
     lsint.cpp \
     main.cpp \
     mainwindow.cpp \
     mundo.cpp \
     persona.cpp \
+    tablafamilia.cpp \
     tablahashID.cpp \
     tablahashcielo.cpp
 
 HEADERS += \
-    ArbolHeapFamilia.h \
     angel.h \
     arbolangeles.h \
     arbolheapdemonio.h \
+    arbolheapfamilia.h \
     cielo.h \
     controlador.h \
     datos.h \
     estado.h \
     infierno.h \
     lscielo.h \
+    lsfamilia.h \
     lsint.h \
     mainwindow.h \
     mundo.h \
     persona.h \
+    tablafamilia.h \
     tablahashID.h \
     tablahashcielo.h
 

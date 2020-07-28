@@ -4,14 +4,14 @@
 #include <QVector>
 #include "persona.h"
 
-struct ArbolHeap{
+struct ArbolHeapFamilia{
 
     QString nombreFamilia;
     QString apellidoFamilia;
     int cantPecadosFamilia;
     QVector<Persona*> arbol;
-    ArbolHeap(){}
 
+    ArbolHeapFamilia(){}
     void insertar(Persona*);
     void ordenar();
     void ordenarAux(int,int);
@@ -19,3 +19,4 @@ struct ArbolHeap{
 };
 
 #endif // ARBOLHEAP_H
+

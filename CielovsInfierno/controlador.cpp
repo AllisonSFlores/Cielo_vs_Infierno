@@ -7,7 +7,7 @@ void Controlador::__init__(){
     this->listaMundo = new listaDoble();
     this->cielo = new Cielo();
     this->_arbolMundo = new arbolMundo();
-    this->heap = new ArbolHeap();
+    this->heap = new ArbolHeapFamilia();
 
 
 }
@@ -35,7 +35,7 @@ void Controlador::cargarDatos(){
     getDatos()->cargarApellidos();
     getDatos()->cargarCreencias();
     getDatos()->cargarProfesiones();
-    //getDatos()->cargarPaises();
+    getDatos()->cargarPaises();
 }
 void Controlador::crearHumanos(int cantidadHumanos){
     //Not sure about it
@@ -46,6 +46,8 @@ void Controlador::crearHumanos(int cantidadHumanos){
     int ID=0;
     QString nombre;
     QString apellido;
+    QVector<QString> pais;
+    QString continente;
     QString creencia;
     QString profesion;
 
@@ -54,9 +56,11 @@ void Controlador::crearHumanos(int cantidadHumanos){
         ID = getTabla()->obtenerIDValido();
         nombre = getDatos()->obtenerNombre();
         apellido= getDatos()->obtenerApellido();
+        pais=getDatos()->obtenerpaises();
         creencia= getDatos()->obtenerCreencias();
         profesion= getDatos()->obtenerProfesiones();
         Persona *persona = new Persona(ID,nombre,apellido,creencia,profesion);
+
         listaMundo->insertarAlFinal(persona);
     }
     listaMundo->metodoOrdenamiento();

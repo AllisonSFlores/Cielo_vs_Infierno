@@ -73,7 +73,6 @@ void Datos::cargarNombres(){
    // qDebug()<<listaNombres;
   //  qDebug()<<listaNombres.size();
     for (int i =0 ; i<listaNombres.size();i++){
-        //qDebug()<<i;
         nombres[i]=listaNombres[i];
     }
     /*
@@ -86,7 +85,7 @@ void Datos::cargarApellidos(){
    // qDebug()<<listaApellidos;
    // qDebug()<<listaApellidos.size();
     for (int i =0 ; i<listaApellidos.size();i++){
-        //qDebug()<<i;
+
         apellidos[i]=listaApellidos[i];
     }
     /*
@@ -100,13 +99,13 @@ void Datos::cargarPaises(){
     //qDebug()<<listaPaises.size();
     for (int i =0 ; i<listaPaises.size();i++){
        // qDebug()<<i;
-        paises[0][i]=listaPaises[i].split("\t")[0];
-        paises[1][i]=listaPaises[i].split("\t")[1];
+        paises[i]=listaPaises[i].split("\t")[0];
+        paises[i+25]=listaPaises[i].split("\t")[1];
     }
-    /*
+/*
     for(int i = 0 ; i<25; i++){
-        qDebug()<<paises[0][i];
-        qDebug()<<paises[1][i];
+        qDebug()<<paises[i]+" en "+ paises[i+25];
+
     }*/
 }
 void Datos::cargarCreencias(){
@@ -114,7 +113,7 @@ void Datos::cargarCreencias(){
     //qDebug()<<listaCreencias;
     //qDebug()<<listaCreencias.size();
     for (int i =0 ; i<listaCreencias.size();i++){
-       // qDebug()<<i;
+
         creencias[i]=listaCreencias[i];
     }
     /*
@@ -127,7 +126,7 @@ void Datos::cargarProfesiones(){
    // qDebug()<<listaProfesiones;
    // qDebug()<<listaProfesiones.size();
     for (int i =0 ; i<listaProfesiones.size();i++){
-       // qDebug()<<i;
+
         profesiones[i]=listaProfesiones[i];
     }
 }
@@ -137,13 +136,12 @@ QString Datos::obtenerNombre(){
 QString Datos::obtenerApellido(){
     return apellidos[random(200)];
 }
-/*
-QString * Datos::obtenerpaises(){
+
+QVector<QString>  Datos::obtenerpaises(){
 
     int i=random(25);
-    QString dato[2]={paises[0][i],paises[1][i]};
-    return dato;
-}*/
+    return {paises[i],paises[i+25]};
+}
 QString Datos::obtenerCreencias(){
     return creencias[random(10)];
 }

@@ -6,7 +6,7 @@
 //Heap de heaps
 struct ArbolHeapDemonio{
 
-    QVector<ArbolHeap*> arbol;
+    QVector<ArbolHeapFamilia*> arbol;
     ArbolHeapDemonio(){}
 
    /* void insertar(ArbolHeap*);

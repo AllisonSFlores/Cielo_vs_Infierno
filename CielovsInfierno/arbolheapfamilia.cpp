@@ -1,10 +1,11 @@
+
 #include "ArbolHeapFamilia.h"
 
-void ArbolHeap::insertar(Persona *persona){
+void ArbolHeapFamilia::insertar(Persona *persona){
     arbol.append(persona);
 };
 
-void ArbolHeap::ordenar(){
+void ArbolHeapFamilia::ordenar(){
    ordenarAux(0,arbol.size()-1);
 }
 
@@ -13,7 +14,7 @@ void ArbolHeap::ordenar(){
 /// \param _izq
 /// \param _der
 ///
-void ArbolHeap::ordenarAux(int _izq,int _der){
+void ArbolHeapFamilia::ordenarAux(int _izq,int _der){
 
     int izq = _izq;
     int der =_der;
@@ -43,7 +44,7 @@ void ArbolHeap::ordenarAux(int _izq,int _der){
        ordenarAux(izq,_der );
 }
 
-void ArbolHeap::imprimir(){
+void ArbolHeapFamilia::imprimir(){
 
     for (int i=0;i<=arbol.length()-1;i++){
         qDebug()<<arbol[i]->getId();

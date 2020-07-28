@@ -5,7 +5,7 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
     this->id=pid;
     this->nombre = pnombre;
     this->apellido = papellido;
-    //pais=ppais;
+
     this->creencia=pcreencia;
     this->profesion=pprofesion;
     this->correo= nombre+QString::number(id)+"@gmail.com";   //FUNCION??
@@ -22,6 +22,28 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
     //hijos = NULL;
     this->nacimiento = getHoraNacimiento();
 }
+ Persona::Persona(int pid, QString pnombre, QString papellido, QVector<QString> ppais, QString pcreencia, QString pprofesion)
+ {
+     this->id=pid;
+     this->nombre = pnombre;
+     this->apellido = papellido;
+     this->pais=ppais;
+     this->creencia=pcreencia;
+     this->profesion=pprofesion;
+     this->correo= nombre+QString::number(id)+"@gmail.com";   //FUNCION??
+
+     //No estoy segura si esto se hace asi jaja
+    // this->pecados=QVector<int>(7);
+     //this->buenasAcciones = QVector<int>(7);
+     this->padre = NULL;
+
+     //No se si inicializar la vara con 5 personas con un contructor por defecto
+     //this->hijos = QVector<Persona *>(5);
+
+     //o con la lista de hijos nula
+     //hijos = NULL;
+     this->nacimiento = getHoraNacimiento();
+ }
 
 void Persona::setId(int pid){
     id=pid;
@@ -34,7 +56,7 @@ void Persona::setApellido(QString papellido){
     apellido=papellido;
 }
 void Persona::setPais(QString ppais){
-    pais=ppais;
+    pais[0]=ppais;
 }
 void Persona::setCreencia(QString pcredo){
     creencia=pcredo;
@@ -50,7 +72,7 @@ QString Persona::getApellido(){
     return apellido;
 }
 QString Persona::getPais(){
-    return pais;
+    return pais[0];
 }
 QString Persona::getCreencia (){
     return creencia;

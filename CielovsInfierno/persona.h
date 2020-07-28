@@ -6,7 +6,8 @@ struct Persona{
     int id;
     QString nombre;
     QString apellido;
-    QString pais;
+    QVector<QString> pais;
+    QString continente;
     QString creencia;
     QString profesion;
     QString correo;
@@ -22,7 +23,8 @@ struct Persona{
         id=-1;
         nombre="";
         apellido="";
-        pais="";
+        pais={"",""};
+        continente ="";
         creencia="";
         profesion="";
         correo="";
@@ -30,7 +32,7 @@ struct Persona{
     }
 
     Persona(int pid, QString pnombre, QString papellido, QString pcreencia, QString pprofesion);
-
+    Persona(int pid, QString pnombre, QString papellido, QVector<QString> ppais, QString pcreencia, QString pprofesion);
     void setId(int pid);
     void setNombre(QString);
     void setApellido(QString);

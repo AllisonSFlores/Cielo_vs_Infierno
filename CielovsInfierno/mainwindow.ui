@@ -179,6 +179,19 @@
        <string>Sumar pecados</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pruebas">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>100</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Cielo">
      <attribute name="title">
@@ -582,23 +595,6 @@ mensajeros de Dios.</string>
      <attribute name="title">
       <string>Infierno</string>
      </attribute>
-     <widget class="QLabel" name="label_15">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>-10</y>
-        <width>1361</width>
-        <height>881</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(199, 132, 105);
-background-color: rgb(99, 175, 255);</string>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/87b1f6ab429fb46c70d4588f3f792cd4.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_16">
       <property name="geometry">
        <rect>
@@ -813,6 +809,25 @@ background-color: rgb(181, 0, 0);</string>
        <string>Reporte</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1391</width>
+        <height>881</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/infierno.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <zorder>label_15</zorder>
+     <zorder>label_16</zorder>
+     <zorder>label_17</zorder>
+     <zorder>horizontalLayoutWidget</zorder>
+     <zorder>pushButton</zorder>
+     <zorder>pushButton_2</zorder>
     </widget>
    </widget>
   </widget>
@@ -822,7 +837,7 @@ background-color: rgb(181, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1400</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
