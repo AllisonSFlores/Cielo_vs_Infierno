@@ -63,10 +63,11 @@ void MainWindow::on_btnBuscar_clicked(){
 }
 
 void MainWindow::on_btnSumarPecados_clicked(){
+
     listaDoble * mundo = controlador->getListaMundo();
     if (mundo->largoLista() > 0 ){
-         mundo->sumarPecados();
-         mundo->imprimirPecados();
+         mundo->sumarPecadosYbuenasAcciones();
+         mundo->imprimirPecadosYbuenasAcciones();
     }
     else{
         QMessageBox::information(this,"Error","El mundo aún no tienen personas",QMessageBox::Ok);
@@ -79,4 +80,12 @@ void MainWindow::on_pruebas_clicked()
 
     qDebug()<<"DEJELO AQUI PARA USARLO c:";
 
+}
+
+
+// ver condenados por x pecado
+void MainWindow::on_pushButton_3_clicked(){
+    //EJ condenados por lucifer-orgullo
+    QVector<Persona*> condenados = controlador->getListaMundo()->condenados(0);
+    qDebug()<<condenados;
 }

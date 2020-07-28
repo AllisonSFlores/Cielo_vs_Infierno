@@ -176,7 +176,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Sumar pecados</string>
+       <string>Pecar y hacer buenas acciones</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pruebas">
@@ -190,6 +190,19 @@
       </property>
       <property name="text">
        <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>300</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>probar Condenados</string>
       </property>
      </widget>
     </widget>
@@ -837,7 +850,7 @@ background-color: rgb(181, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1400</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

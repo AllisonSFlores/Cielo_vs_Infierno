@@ -195,8 +195,8 @@ void listaDoble::imprimir(){
     else{
         NodoLd *temporal= primerNodo;
         while(temporal->siguiente != NULL){
-            qDebug()<<temporal->persona->getId()<<" -> ";
-
+            //qDebug()<<temporal->persona->getId()<<" -> ";
+            qDebug()<<temporal->persona->nivelMaldad<<" -> ";
             temporal = temporal->siguiente;
         }
         qDebug()<<temporal->persona->getId();
@@ -257,7 +257,7 @@ void listaDoble::metodoOrdenamiento(){
     Salidas: Ninguna
     */
 
-    int temp;
+    Persona* temp;
 
     NodoLd *actual = primerNodo;
     NodoLd *siguiente = primerNodo;
@@ -271,9 +271,9 @@ void listaDoble::metodoOrdenamiento(){
             while(siguiente!= NULL){
 
                 if(actual->persona->getId() > siguiente->persona->getId()){
-                    temp = siguiente->persona->getId();
-                    siguiente->persona->id = actual->persona->getId();
-                    actual->persona->id = temp;
+                    temp = siguiente->persona;
+                    siguiente->persona= actual->persona;
+                    actual->persona= temp;
                 }
 
                 siguiente = siguiente->siguiente;
@@ -287,6 +287,8 @@ void listaDoble::metodoOrdenamiento(){
     }
 
 }
+
+
 /// Devuelve un vector de posiciones ordenadas para luego tomar a las personas
 /// \brief listaDoble::devolverRandom
 /// \return
@@ -374,7 +376,7 @@ QVector<int> listaDoble::ordenarIndices(QVector<int> indicesParaArbol){
     return indicesParaArbol;
 }
 
-void  listaDoble::sumarPecados(){
+void  listaDoble::sumarPecadosYbuenasAcciones(){
 
     if (primerNodo == NULL){
         qDebug()<<"La lista esta vacia";
@@ -390,11 +392,22 @@ void  listaDoble::sumarPecados(){
             temporal = temporal->siguiente;
         }
 
+        //Porque primero se crean los pecados, pero no sé.
+        //Yo lo hubiera hecho en el mismo
+        NodoLd *tmp= primerNodo;
+        while(tmp->siguiente != NULL){
+
+            for (int i=0;i<7;i++){
+               tmp->persona->buenasAcciones[i] += random(99);
+            }
+            tmp = tmp->siguiente;
+        }
+
     }
 }
 
 //Prueba
-void listaDoble::imprimirPecados(){
+void listaDoble::imprimirPecadosYbuenasAcciones(){
     /*
     Funcion: Imprimir toda la lista.
     Entradas: Ninguna.
@@ -409,10 +422,94 @@ void listaDoble::imprimirPecados(){
             qDebug()<<temporal->persona->getNombre()+" "+temporal->persona->getApellido();
             for (int j=0;j<7;j++){
                 qDebug()<<"Tipo de pecado: "<<j<<":"<<temporal->persona->pecados[j];
+                qDebug()<<"Tipo de buena accion: "<<j<<":"<<temporal->persona->buenasAcciones[j];
             }
             temporal = temporal->siguiente;
         }
     }
 
 }
+listaDoble *listaDoble::determinarNivelPecador(int i){
+    // i es el indice, o sea el pecado
+    listaDoble *copia = generarCopia();
+
+    NodoLd *temporal= copia->primerNodo;
+    while(temporal!= NULL){
+        int cantPecados = temporal->persona->pecados[i];
+        int cantBuenasAcciones = temporal->persona->buenasAcciones[i];
+        temporal->persona->nivelMaldad = cantPecados-cantBuenasAcciones;
+        temporal = temporal->siguiente;
+    }
+    copia->ordenarPorPecado();
+    copia->imprimir();
+    return copia;
+}
+
+QVector<Persona*> listaDoble::condenados(int i){
+
+    listaDoble *copia = determinarNivelPecador(i);
+    QVector<Persona*> masPecadores;
+    //saco el 5%
+    int porcentaje = (copia->largoLista())*0.05;
+    int n=0;
+    NodoLd *temporal= copia->primerNodo;
+    while(n < porcentaje && temporal!= NULL){
+        masPecadores.append(temporal->persona);
+        temporal = temporal->siguiente;
+        n++;
+    }
+
+    //PARA VEEEERLOSSSS
+     qDebug()<<"CONDENADOS";
+    for (int g=0;g<masPecadores.length();g++){
+        qDebug()<<masPecadores[g]->nivelMaldad;
+    }
+
+    return masPecadores;
+}
+
+
+listaDoble *listaDoble::generarCopia(){
+
+    listaDoble *copia = new listaDoble();
+    NodoLd *temporal= primerNodo;
+    while(temporal!= NULL){
+        copia->insertarAlFinal(temporal->persona);
+        temporal = temporal->siguiente;
+    }
+    return copia;
+}
+
+
+
+void listaDoble::ordenarPorPecado(){
+    Persona *temp;
+
+    NodoLd *actual = primerNodo;
+    NodoLd *siguiente = primerNodo;
+
+    if (primerNodo != NULL){
+
+        while(actual != NULL){
+
+            siguiente = actual->siguiente;
+
+            while(siguiente!= NULL){
+
+                if(actual->persona->nivelMaldad < siguiente->persona->nivelMaldad){
+                    temp = siguiente->persona;
+                    siguiente->persona = actual->persona;
+                    actual->persona = temp;
+                }
+                siguiente = siguiente->siguiente;
+            }
+            actual = actual->siguiente;
+        }
+    }
+
+}
+
+
+
+
 

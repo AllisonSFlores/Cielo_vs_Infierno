@@ -11,8 +11,6 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
     this->correo= nombre+QString::number(id)+"@gmail.com";   //FUNCION??
 
     //No estoy segura si esto se hace asi jaja
-   // this->pecados=QVector<int>(7);
-    //this->buenasAcciones = QVector<int>(7);
     this->padre = NULL;
 
     //No se si inicializar la vara con 5 personas con un contructor por defecto
@@ -21,6 +19,7 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
     //o con la lista de hijos nula
     //hijos = NULL;
     this->nacimiento = getHoraNacimiento();
+    this->nivelMaldad = 0;
 }
  Persona::Persona(int pid, QString pnombre, QString papellido, QVector<QString> ppais, QString pcreencia, QString pprofesion)
  {
@@ -43,6 +42,7 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
      //o con la lista de hijos nula
      //hijos = NULL;
      this->nacimiento = getHoraNacimiento();
+     this->nivelMaldad = 0;
  }
 
 void Persona::setId(int pid){
@@ -77,17 +77,6 @@ QString Persona::getPais(){
 QString Persona::getCreencia (){
     return creencia;
 }
-/*
-int[7] Persona::getPecados(){
-   // return pecados;
-}
-QVector<Persona *> Persona::getHijos(){
-    return hijos;
-}
-int Persona::getBuenasAcciones(){
-   // return buenasAcciones;
-}
-*/
 Estado Persona::getEstado(){
     return estado;
 }

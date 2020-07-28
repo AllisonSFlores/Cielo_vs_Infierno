@@ -76,8 +76,14 @@ struct listaDoble{
     int random(int);
     int cercanoAux(int);
     int cercanoAlaPotencia(int,int,int);
-    void  sumarPecados();
-    void imprimirPecados();
+    void  sumarPecadosYbuenasAcciones();
+    void imprimirPecadosYbuenasAcciones();
+    //Ordenar segun pecados
+    listaDoble *generarCopia();
+    listaDoble *determinarNivelPecador(int);
+    QVector<Persona*> condenados(int);
+    void ordenarPorPecado();
+
 
 
 };

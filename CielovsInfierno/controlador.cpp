@@ -38,10 +38,7 @@ void Controlador::cargarDatos(){
     getDatos()->cargarPaises();
 }
 void Controlador::crearHumanos(int cantidadHumanos){
-    //Not sure about it
 
-//    arbolMundo *_arbolMundo;
-//    _arbolMundo = new arbolMundo();
     _arbolMundo->raiz=NULL;  //feo
     int ID=0;
     QString nombre;
@@ -68,13 +65,16 @@ void Controlador::crearHumanos(int cantidadHumanos){
      QVector<NodoParaArbol*> datosArbol= listaMundo->listaParaArbol();
      _arbolMundo->pasarDatoAinsertar(datosArbol);
      _arbolMundo->inOrder(_arbolMundo->raiz);
+
+     /*
      //COMPRUEBO QUE INSERTA Y ORDENA HUMANOS
+
      for (int i=datosArbol.length()-1; i>=0;i--){
          heap->insertar(datosArbol[i]->persona);
      }
      heap->ordenar();
      heap->imprimir();
-
+    */
 
 }
 

@@ -13,6 +13,7 @@ struct Persona{
     QString correo;
     int pecados[7]={0,0,0,0,0,0,0};
     int buenasAcciones[7]={0,0,0,0,0,0,0};
+    int nivelMaldad;
     Persona * padre;
     //NO SE SI LA LISTA DE HIJOS ESTA BIEN ASI
     QVector<Persona *> hijos;
@@ -29,6 +30,7 @@ struct Persona{
         profesion="";
         correo="";
         estado=mundo;
+        nivelMaldad=0;
     }
 
     Persona(int pid, QString pnombre, QString papellido, QString pcreencia, QString pprofesion);
@@ -45,8 +47,6 @@ struct Persona{
     QString getApellido();
     QString getPais();
     QString getCreencia ();
-   // int getPecados();
-   // int getBuenasAcciones();
     QVector<Persona *> getHijos();
     Estado getEstado();
     QString getHoraNacimiento();
