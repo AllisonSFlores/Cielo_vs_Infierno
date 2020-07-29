@@ -23,10 +23,9 @@ void TablaFamilia::insert(Persona * ppersona){
     Ouput: None
     */
     qDebug()<<"insert tabla";
-    qDebug()<<ppersona->getApellido()+"HOLA";
+    qDebug()<<ppersona->getApellido();
 ;     if (lookFor(ppersona->getApellido()) != NULL){
               qDebug()<<"diferente de nulo";
-         // they both point to the new one in memory
          NodoTabla * nodo = lookFor(ppersona->getApellido());
          nodo->lista->insert(ppersona);
 
@@ -47,7 +46,6 @@ void TablaFamilia::insertAux(NodoTabla * nodo){
     */
 
      if (firstNode == NULL){
-         // they both point to the new one in memory
          lastNode = firstNode = nodo;
      }
      else
@@ -66,7 +64,7 @@ void TablaFamilia::printAll(){
       NodoTabla *tmp = firstNode;
 
      while (tmp != NULL){
-           qDebug()<<tmp->apellido;
+           qDebug()<<"-------------------------"+tmp->apellido;
            tmp->lista->printAll();
            tmp = tmp->next;
      }

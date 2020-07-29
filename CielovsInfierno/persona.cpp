@@ -9,15 +9,9 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
     this->creencia=pcreencia;
     this->profesion=pprofesion;
     this->correo= nombre+QString::number(id)+"@gmail.com";   //FUNCION??
-
-    //No estoy segura si esto se hace asi jaja
     this->padre = NULL;
 
-    //No se si inicializar la vara con 5 personas con un contructor por defecto
-    //this->hijos = QVector<Persona *>(5);
 
-    //o con la lista de hijos nula
-    //hijos = NULL;
     this->nacimiento = getHoraNacimiento();
     this->nivelMaldad = 0;
 }
@@ -35,9 +29,6 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
     // this->pecados=QVector<int>(7);
      //this->buenasAcciones = QVector<int>(7);
      this->padre = NULL;
-
-     //No se si inicializar la vara con 5 personas con un contructor por defecto
-     //this->hijos = QVector<Persona *>(5);
 
      //o con la lista de hijos nula
      //hijos = NULL;
@@ -97,4 +88,23 @@ QString Persona::getHoraNacimiento(){
     QDateTime local(UTC.toLocalTime());
     QString nac ="\t"+local.toString(Qt::SystemLocaleLongDate);
     return nac;
+}
+void Persona::imprimir(){
+    qDebug()<<"id: "+QString::number(id)+" apellido y pais "+apellido+ "  "+pais[0];
+    if(padre != NULL){
+        qDebug()<<"Mi padre es: "+QString::number(padre->id);
+    }
+    int i = 0;
+    if(hijos[i]==NULL){
+        qDebug()<<"No tiene familia";
+
+    }
+    else{
+        qDebug()<<"Los ids de sus hijos son: ";
+         while(i<5 && hijos[i]!=NULL){
+
+            qDebug()<<"                       "+QString::number(hijos[i]->id);
+            i++;
+        }
+    }
 }

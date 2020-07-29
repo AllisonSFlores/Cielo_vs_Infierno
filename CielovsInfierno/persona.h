@@ -16,7 +16,7 @@ struct Persona{
     int nivelMaldad;
     Persona * padre;
     //NO SE SI LA LISTA DE HIJOS ESTA BIEN ASI
-    QVector<Persona *> hijos;
+    Persona * hijos[5]={0,0,0,0,0};
     Estado estado;
     QString nacimiento;
 
@@ -47,9 +47,10 @@ struct Persona{
     QString getApellido();
     QString getPais();
     QString getCreencia ();
-    QVector<Persona *> getHijos();
     Estado getEstado();
     QString getHoraNacimiento();
+    void imprimir();
+
 
 };
 

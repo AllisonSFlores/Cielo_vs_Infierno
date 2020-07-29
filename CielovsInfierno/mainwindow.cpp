@@ -78,7 +78,7 @@ void MainWindow::on_btnSumarPecados_clicked(){
 void MainWindow::on_pruebas_clicked()
 {
 
-    qDebug()<<"DEJELO AQUI PARA USARLO c:";
+    controlador->imprimirArbolHeapFamilia();
 
 }
 

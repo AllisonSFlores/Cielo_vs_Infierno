@@ -8,6 +8,7 @@ void Controlador::__init__(){
     this->cielo = new Cielo();
     this->_arbolMundo = new arbolMundo();
     this->heap = new ArbolHeapFamilia();
+    this->tablaFamilia = new TablaFamilia();
 
 
 }
@@ -56,8 +57,8 @@ void Controlador::crearHumanos(int cantidadHumanos){
         pais=getDatos()->obtenerpaises();
         creencia= getDatos()->obtenerCreencias();
         profesion= getDatos()->obtenerProfesiones();
-        Persona *persona = new Persona(ID,nombre,apellido,creencia,profesion);
-
+        Persona *persona = new Persona(ID,nombre,apellido,pais,creencia,profesion);
+        tablaFamilia->insert(persona);
         listaMundo->insertarAlFinal(persona);
     }
     listaMundo->metodoOrdenamiento();
@@ -85,4 +86,7 @@ NodoLd* Controlador::buscarPersona(int id){
 void Controlador::salvacion(){
     //FALTA HACER QUE LOS ANGELES CONOZCAN EL INFIERNO O NO SE, DESPUES VEO
     cielo->salvacion();
+}
+void Controlador::imprimirArbolHeapFamilia(){
+    tablaFamilia->printAll();
 }

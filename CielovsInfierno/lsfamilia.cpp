@@ -28,8 +28,8 @@ void LSFamilia::insert(Persona * ppersona){
     Ouput: None
     */
     qDebug()<<"insert";
-    qDebug()<<ppersona->pais;
-;     if (lookFor(ppersona->getPais()) != NULL){
+    qDebug()<<ppersona->pais[0];
+;     if (lookFor(ppersona->pais[0]) != NULL){
               qDebug()<<"diferente de nulo";
          // they both point to the new one in memory
          NodoFamilia * nodo = lookFor(ppersona->getPais());
@@ -71,6 +71,7 @@ void LSFamilia::printAll(){
       NodoFamilia *tmp = firstNode;
 
      while (tmp != NULL){
+            qDebug()<<".";
            qDebug()<<tmp->pais;
            tmp->arbol->imprimir();
            tmp = tmp->next;
@@ -115,3 +116,4 @@ NodoFamilia * LSFamilia::lookFor(QString pp){
         return NULL;
     }
 }
+

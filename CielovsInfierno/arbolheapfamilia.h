@@ -11,11 +11,16 @@ struct ArbolHeapFamilia{
     int cantPecadosFamilia;
     QVector<Persona*> arbol;
 
-    ArbolHeapFamilia(){}
+    ArbolHeapFamilia(){
+    }
     void insertar(Persona*);
     void ordenar();
     void ordenarAux(int,int);
+    Persona * buscarDisponible();
+    void buscarFamilia(Persona * persona);
+    int random();
     void imprimir();
+
 };
 
 #endif // ARBOLHEAP_H
