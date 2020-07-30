@@ -229,7 +229,7 @@ int listaDoble::porcentaje(){
 
     int largo = largoLista();
     //cantidad nodos del arbol
-    int porcentaje = largo*0.1; //cambiar por 0.01
+    int porcentaje = largo*0.01;
     //Devuelve el porcentaje en cantidad con la suma de potencias de 2 mayor al 10%
     return cercanoAux(porcentaje);
 }
@@ -376,6 +376,10 @@ QVector<int> listaDoble::ordenarIndices(QVector<int> indicesParaArbol){
     return indicesParaArbol;
 }
 
+
+/// Pecar y heredar pecados a los hijos y nietos
+/// \brief listaDoble::sumarPecadosYbuenasAcciones
+///
 void  listaDoble::sumarPecadosYbuenasAcciones(){
 
     if (primerNodo == NULL){
@@ -387,13 +391,29 @@ void  listaDoble::sumarPecadosYbuenasAcciones(){
         while(temporal->siguiente != NULL){
 
             for (int i=0;i<7;i++){
-               temporal->persona->pecados[i] += random(99);
+               int cantPecados = random(99);
+               temporal->persona->pecados[i] += cantPecados;
+               int cincuentaPorciento = cantPecados*0.5;
+               qDebug()<<"Le asigno pecado a persona";
+               for (int j=0;j<5;j++){  //los 5 hijos
+                    int veintiCincoPorciento = cantPecados*0.25;
+                   if (temporal->persona->hijos[j] != NULL){
+                       temporal->persona->hijos[j]->pecados[i]+=cincuentaPorciento;
+                       qDebug()<<"Le asigno pecado a los hijos";
+                       for (int k=0;k<5;k++){
+                           if (temporal->persona->hijos[j]->hijos[k]!= NULL){
+                               temporal->persona->hijos[j]->hijos[k]->pecados[i] = veintiCincoPorciento;
+                               qDebug()<<"Le asigno pecado a los nietos";
+                           }
+                       }
+                   }
+               }
+
             }
             temporal = temporal->siguiente;
         }
 
-        //Porque primero se crean los pecados, pero no sé.
-        //Yo lo hubiera hecho en el mismo
+        //Porque primero se crean los pecados.
         NodoLd *tmp= primerNodo;
         while(tmp->siguiente != NULL){
 
@@ -406,7 +426,7 @@ void  listaDoble::sumarPecadosYbuenasAcciones(){
     }
 }
 
-//Prueba
+
 void listaDoble::imprimirPecadosYbuenasAcciones(){
     /*
     Funcion: Imprimir toda la lista.
@@ -429,6 +449,12 @@ void listaDoble::imprimirPecadosYbuenasAcciones(){
     }
 
 }
+
+/// Restar el pecado con antagonico
+/// \brief listaDoble::determinarNivelPecador
+/// \param i
+/// \return copia de la lista del mundo
+///
 listaDoble *listaDoble::determinarNivelPecador(int i){
     // i es el indice, o sea el pecado
     listaDoble *copia = generarCopia();
@@ -441,10 +467,16 @@ listaDoble *listaDoble::determinarNivelPecador(int i){
         temporal = temporal->siguiente;
     }
     copia->ordenarPorPecado();
-    copia->imprimir();
+  //  copia->imprimir();
     return copia;
 }
 
+
+///  Toma el 5% de los más pecadores de cierto pecado solo si están vivos
+/// \brief listaDoble::condenados
+/// \param i
+/// \return Qvector de los más pecadores
+///
 QVector<Persona*> listaDoble::condenados(int i){
 
     listaDoble *copia = determinarNivelPecador(i);
@@ -454,15 +486,19 @@ QVector<Persona*> listaDoble::condenados(int i){
     int n=0;
     NodoLd *temporal= copia->primerNodo;
     while(n < porcentaje && temporal!= NULL){
-        masPecadores.append(temporal->persona);
+        if (temporal->persona->estado == mundo){
+            temporal->persona->estado = infierno;
+            masPecadores.append(temporal->persona);
+            n++;
+        }
         temporal = temporal->siguiente;
-        n++;
+
     }
 
     //PARA VEEEERLOSSSS
-     qDebug()<<"CONDENADOS";
+     qDebug()<<"LOS CONDENADOS";
     for (int g=0;g<masPecadores.length();g++){
-        qDebug()<<masPecadores[g]->nivelMaldad;
+        qDebug()<<masPecadores[g]->getNombre()<<masPecadores[g]->nivelMaldad;
     }
 
     return masPecadores;
@@ -483,6 +519,7 @@ listaDoble *listaDoble::generarCopia(){
 
 
 void listaDoble::ordenarPorPecado(){
+
     Persona *temp;
 
     NodoLd *actual = primerNodo;

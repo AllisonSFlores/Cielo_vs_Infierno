@@ -62,20 +62,10 @@ void Controlador::crearHumanos(int cantidadHumanos){
         listaMundo->insertarAlFinal(persona);
     }
     listaMundo->metodoOrdenamiento();
-    listaMundo->imprimir();
+    //listaMundo->imprimir();
      QVector<NodoParaArbol*> datosArbol= listaMundo->listaParaArbol();
      _arbolMundo->pasarDatoAinsertar(datosArbol);
      _arbolMundo->inOrder(_arbolMundo->raiz);
-
-     /*
-     //COMPRUEBO QUE INSERTA Y ORDENA HUMANOS
-
-     for (int i=datosArbol.length()-1; i>=0;i--){
-         heap->insertar(datosArbol[i]->persona);
-     }
-     heap->ordenar();
-     heap->imprimir();
-    */
 
 }
 

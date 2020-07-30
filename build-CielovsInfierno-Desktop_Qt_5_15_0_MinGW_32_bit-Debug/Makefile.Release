@@ -169,15 +169,22 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_Recursos.cpp
 release/qrc_Recursos.cpp: ../CielovsInfierno/Recursos.qrc \
 		C:/Qt/5.15.0/mingw81_32/bin/rcc.exe \
+		../CielovsInfierno/imagenes/africa.png \
 		../CielovsInfierno/imagenes/infierno.jpg \
 		../CielovsInfierno/imagenes/angelviolin.png \
+		../CielovsInfierno/imagenes/mapa.jpg \
 		../CielovsInfierno/imagenes/cieloo.jpg \
+		../CielovsInfierno/imagenes/america.png \
 		../CielovsInfierno/imagenes/alaaa.png \
+		../CielovsInfierno/imagenes/europa.png \
+		../CielovsInfierno/imagenes/oceania.png \
 		../CielovsInfierno/imagenes/ala.png \
 		../CielovsInfierno/imagenes/cachos.webp \
+		../CielovsInfierno/imagenes/america\ (1).png \
 		../CielovsInfierno/imagenes/devil.png \
 		../CielovsInfierno/imagenes/alas.png \
-		../CielovsInfierno/imagenes/87b1f6ab429fb46c70d4588f3f792cd4.jpg
+		../CielovsInfierno/imagenes/87b1f6ab429fb46c70d4588f3f792cd4.jpg \
+		../CielovsInfierno/imagenes/asia.png
 	C:\Qt\5.15.0\mingw81_32\bin\rcc.exe -name Recursos ..\CielovsInfierno\Recursos.qrc -o release\qrc_Recursos.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -442,6 +449,8 @@ release/moc_mainwindow.cpp: ../CielovsInfierno/mainwindow.h \
 		../CielovsInfierno/lscielo.h \
 		../CielovsInfierno/ArbolHeapFamilia.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QString \
+		../CielovsInfierno/tablafamilia.h \
+		../CielovsInfierno/lsfamilia.h \
 		release/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "D:/1 SEMESTRE 2020/ED/QT/Proyecto_2/Cielo_vs_Infierno/build-CielovsInfierno-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/release/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"D:/1 SEMESTRE 2020/ED/QT/Proyecto_2/Cielo_vs_Infierno/CielovsInfierno" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\CielovsInfierno\mainwindow.h -o release\moc_mainwindow.cpp
@@ -1724,6 +1733,8 @@ release/controlador.o: ../CielovsInfierno/controlador.cpp ../CielovsInfierno/con
 		../CielovsInfierno/lscielo.h \
 		../CielovsInfierno/ArbolHeapFamilia.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QString \
+		../CielovsInfierno/tablafamilia.h \
+		../CielovsInfierno/lsfamilia.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QMessageBox \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qmessagebox.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qtwidgetsglobal.h \
@@ -3046,6 +3057,8 @@ release/main.o: ../CielovsInfierno/main.cpp ../CielovsInfierno/mainwindow.h \
 		../CielovsInfierno/lscielo.h \
 		../CielovsInfierno/ArbolHeapFamilia.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QString \
+		../CielovsInfierno/tablafamilia.h \
+		../CielovsInfierno/lsfamilia.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QApplication \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qdesktopwidget.h \
@@ -3306,46 +3319,12 @@ release/mainwindow.o: ../CielovsInfierno/mainwindow.cpp ../CielovsInfierno/mainw
 		../CielovsInfierno/lscielo.h \
 		../CielovsInfierno/ArbolHeapFamilia.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QString \
+		../CielovsInfierno/tablafamilia.h \
+		../CielovsInfierno/lsfamilia.h \
 		ui_mainwindow.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtCore/QVariant \
-		C:/Qt/5.15.0/mingw81_32/include/QtGui/QIcon \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QApplication \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QFrame \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QLabel \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qlabel.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QLineEdit \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qlineedit.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextcursor.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextformat.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpen.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextoption.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QPushButton \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QStatusBar \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QTabWidget \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QVBoxLayout \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qboxlayout.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qlayout.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgridlayout.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QWidget \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QMessageBox \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qmessagebox.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qdialog.h \
-		../CielovsInfierno/tablafamilia.h \
-		../CielovsInfierno/lsfamilia.h
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\CielovsInfierno\mainwindow.cpp
 
 release/mundo.o: ../CielovsInfierno/mundo.cpp ../CielovsInfierno/mundo.h \

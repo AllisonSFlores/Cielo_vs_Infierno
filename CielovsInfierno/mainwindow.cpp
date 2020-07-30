@@ -24,6 +24,7 @@ void MainWindow::on_btnGenerar_clicked(){
 
     int cantidadHumanos = (ui->txtCant->text()).toUInt();
     controlador->crearHumanos(cantidadHumanos);
+    controlador->imprimirArbolHeapFamilia();
 
 }
 
@@ -73,19 +74,37 @@ void MainWindow::on_btnSumarPecados_clicked(){
         QMessageBox::information(this,"Error","El mundo aún no tienen personas",QMessageBox::Ok);
     }
 
+    qDebug()<<"Lucifer:Orgullo";
+    QVector<Persona*> orgullo = controlador->getListaMundo()->condenados(0);
+    qDebug()<<orgullo;
+    qDebug()<<"Belcebú:Envidia";
+    QVector<Persona*> envidia = controlador->getListaMundo()->condenados(1);
+    qDebug()<<envidia;
+    qDebug()<<"Satán:ira";
+    QVector<Persona*> ira = controlador->getListaMundo()->condenados(2);
+    qDebug()<<ira;
+    qDebug()<<"Abadón:Pereza";
+    QVector<Persona*> pereza = controlador->getListaMundo()->condenados(3);
+    qDebug()<<pereza;
+    qDebug()<<"Mammón:Codicia";
+    QVector<Persona*> codicia = controlador->getListaMundo()->condenados(4);
+    qDebug()<<codicia;
+    qDebug()<<"Belfegor:Glotonería";
+    QVector<Persona*> glotoneria = controlador->getListaMundo()->condenados(5);
+    qDebug()<<glotoneria;
+    qDebug()<<"Asmodeo:Lujuria";
+    QVector<Persona*> lujuria = controlador->getListaMundo()->condenados(6);
+    qDebug()<<lujuria;
 }
 
-void MainWindow::on_pruebas_clicked()
+
+void MainWindow::on_btnReporte_clicked()
 {
-
-    controlador->imprimirArbolHeapFamilia();
-
+    qDebug()<<"REPORTE";
 }
 
-
-// ver condenados por x pecado
-void MainWindow::on_pushButton_3_clicked(){
-    //EJ condenados por lucifer-orgullo
-    QVector<Persona*> condenados = controlador->getListaMundo()->condenados(0);
-    qDebug()<<condenados;
+void MainWindow::on_btnCondenar_clicked()
+{
+    qDebug()<<"MADITO BOTON";
 }
+

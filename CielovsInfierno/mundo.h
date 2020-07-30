@@ -1,6 +1,7 @@
 #ifndef MUNDO_H
 #define MUNDO_H
 #include "persona.h"
+#include "estado.h"
 #include<QVector>
 
 struct Nodo;

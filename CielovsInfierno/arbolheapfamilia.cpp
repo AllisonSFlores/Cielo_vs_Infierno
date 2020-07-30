@@ -44,7 +44,9 @@ void ArbolHeapFamilia::ordenarAux(int _izq,int _der){
     if( izq < _der )
        ordenarAux(izq,_der );
 }
+
 void ArbolHeapFamilia::buscarFamilia(Persona * persona){
+
     qDebug()<<"buscar familia";
     if(!arbol.isEmpty()){
         qDebug()<<"el heap familia no esta vacio";
@@ -62,6 +64,8 @@ void ArbolHeapFamilia::buscarFamilia(Persona * persona){
         }
     }
 }
+
+
 Persona * ArbolHeapFamilia::buscarDisponible(){
     qDebug()<<"buscar disponible";
     if (arbol.first()->padre == NULL){

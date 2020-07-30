@@ -14,6 +14,7 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
 
     this->nacimiento = getHoraNacimiento();
     this->nivelMaldad = 0;
+    this->estado=mundo;
 }
  Persona::Persona(int pid, QString pnombre, QString papellido, QVector<QString> ppais, QString pcreencia, QString pprofesion)
  {
@@ -26,14 +27,13 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
      this->correo= nombre+QString::number(id)+"@gmail.com";   //FUNCION??
 
      //No estoy segura si esto se hace asi jaja
-    // this->pecados=QVector<int>(7);
-     //this->buenasAcciones = QVector<int>(7);
      this->padre = NULL;
 
      //o con la lista de hijos nula
      //hijos = NULL;
      this->nacimiento = getHoraNacimiento();
      this->nivelMaldad = 0;
+     this->estado=mundo;
  }
 
 void Persona::setId(int pid){
