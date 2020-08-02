@@ -3,7 +3,8 @@
 #include "arbolheapdemonio.h"
 
 struct Infierno {
-    QVector<ArbolHeapDemonio*> arbol;
+    ArbolHeapDemonio * demonios[7]; //ArbolHeapDemonio es un demonio?
+
     Infierno(){}
 };
 

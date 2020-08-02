@@ -59,6 +59,7 @@ void Controlador::crearHumanos(int cantidadHumanos){
         profesion= getDatos()->obtenerProfesiones();
         Persona *persona = new Persona(ID,nombre,apellido,pais,creencia,profesion);
         tablaFamilia->insert(persona);
+        arbol->insertar(persona);
         listaMundo->insertarAlFinal(persona);
     }
     listaMundo->metodoOrdenamiento();
@@ -79,4 +80,7 @@ void Controlador::salvacion(){
 }
 void Controlador::imprimirArbolHeapFamilia(){
     tablaFamilia->printAll();
+}
+void Controlador::pruebasAllison(){
+    arbol->imprimir();
 }

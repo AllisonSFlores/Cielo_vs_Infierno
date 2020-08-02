@@ -80,25 +80,22 @@ Persona * ArbolHeapFamilia::buscarDisponible(){
         }
     }
     return NULL;
-}/*
-Persona * ArbolHeapFamilia::buscarDisponible(){
-    qDebug()<<"buscar disponible";
-    if (arbol.first()->padre == NULL){
-        qDebug()<<"raiz padre nulo";
-        return arbol.first();
+}
+int ArbolHeapFamilia::sumarPecado(){
+    int cant =0;
+    for (int i=0 ; i<arbol.length()-1;i++){
+        cant+=arbol[i]->getCantPecados();
     }
-    qDebug()<<"largo del arbol"+ QString::number(arbol.size());
-    int largo = arbol.size();
-    for (int i=1 ; i<=(largo/2) ; i++){
-        if(i*2<arbol.size() && arbol[i*2] != NULL && arbol[i*2]->padre==NULL){
-            return arbol[i*2];
-        }
-        else if((i*2)+1<arbol.size() && arbol[(i*2)+1] != NULL && arbol[(i*2)+1]->padre==NULL){
-                return arbol[(i*2)+1];
-        }
+    return cant;
+}
+int ArbolHeapFamilia::sumarPecado(int d){
+    int cant =0;
+    for (int i=0 ; i<arbol.length()-1;i++){
+        cant+=arbol[i]->pecados[d];
     }
-    return NULL;
-}*/
+    return cant;
+}
+
 int ArbolHeapFamilia::random(){
     std::uniform_int_distribution<int> distrib(0, 4);
     return distrib(*QRandomGenerator::global());

@@ -7,6 +7,7 @@
 #include "cielo.h"
 #include "ArbolHeapFamilia.h"
 #include "tablafamilia.h"
+#include "arbolheapdemonio.h"
 
 struct Controlador{
        TablaHashID * tabla;
@@ -16,6 +17,7 @@ struct Controlador{
        Cielo * cielo;
        ArbolHeapFamilia *heap;
        TablaFamilia * tablaFamilia;
+       ArbolHeapDemonio * arbol = new ArbolHeapDemonio();
 
        Controlador(){}
        void __init__();
@@ -28,6 +30,7 @@ struct Controlador{
        void salvacion();
        NodoLd* buscarPersona(int);  //tal vez mejor que retorne la persona      efectivamente
        void imprimirArbolHeapFamilia();
+       void pruebasAllison();
 };
 
 #endif // CONTROLADOR_H

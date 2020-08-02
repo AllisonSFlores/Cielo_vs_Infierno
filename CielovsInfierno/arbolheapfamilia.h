@@ -6,9 +6,8 @@
 
 struct ArbolHeapFamilia{
 
-    QString nombreFamilia;
+    QString paisFamilia;
     QString apellidoFamilia;
-    int cantPecadosFamilia;
     QVector<Persona*> arbol;
 
     ArbolHeapFamilia(){
@@ -18,6 +17,8 @@ struct ArbolHeapFamilia{
     void ordenarAux(int,int);
     Persona * buscarDisponible();
     void buscarFamilia(Persona * persona);
+    int sumarPecado();
+    int sumarPecado(int d);
     int random();
     void imprimir();
 

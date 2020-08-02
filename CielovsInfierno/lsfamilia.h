@@ -6,6 +6,7 @@ struct NodoFamilia{
     QString pais;
     ArbolHeapFamilia * arbol;
     NodoFamilia * next;
+    int cantPecados;
     NodoFamilia();
     NodoFamilia(QString ppais,ArbolHeapFamilia * parbol);
     NodoFamilia(QString ppais);
@@ -20,6 +21,7 @@ struct LSFamilia{
     int len();
     bool isEmpty();
     NodoFamilia *  lookFor(QString ID);
+    void sumarPecados();
 };
 
 #endif // LSFAMILIA_H

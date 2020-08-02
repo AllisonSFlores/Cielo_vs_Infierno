@@ -5,15 +5,20 @@
 
 //Heap de heaps
 struct ArbolHeapDemonio{
-
+    QString demonio;
+    int idDemonio;          //el indice que le corresponde en el arreglo de pecados de las personas
 
     QVector<ArbolHeapFamilia*> arbol;
-    ArbolHeapDemonio(){}
 
-   /* void insertar(ArbolHeap*);
+    ArbolHeapDemonio(){}
+    ArbolHeapDemonio(QString nombreDemonio,int pidDemonio);
+    void insertar(Persona*);
     void ordenar();
-    void ordenarAux(int,int);  //por cantidad de pecados de la familia
-    void imprimir();*/
+    void ordenarAux(int,int);
+    Persona * buscarDisponible();
+    ArbolHeapFamilia * buscarFamilia(Persona * persona);
+    int random();
+    void imprimir();
 };
 
 #endif // ARBOLHEAPDEMONIO_H

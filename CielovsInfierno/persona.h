@@ -49,6 +49,7 @@ struct Persona{
     QString getCreencia ();
     Estado getEstado();
     QString getHoraNacimiento();
+    int getCantPecados();
     void imprimir();
 
 

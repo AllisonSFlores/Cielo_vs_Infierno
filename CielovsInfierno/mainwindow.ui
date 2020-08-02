@@ -64,7 +64,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <property name="minimumSize">
@@ -184,7 +184,7 @@
        <rect>
         <x>30</x>
         <y>20</y>
-        <width>311</width>
+        <width>401</width>
         <height>141</height>
        </rect>
       </property>
@@ -899,8 +899,8 @@ mensajeros de Dios.</string>
      <widget class="QPushButton" name="btnCondenacion_2">
       <property name="geometry">
        <rect>
-        <x>1230</x>
-        <y>830</y>
+        <x>1010</x>
+        <y>650</y>
         <width>171</width>
         <height>41</height>
        </rect>
@@ -926,8 +926,8 @@ background-color: rgb(181, 0, 0);</string>
      <widget class="QPushButton" name="btnCondenacion_3">
       <property name="geometry">
        <rect>
-        <x>1240</x>
-        <y>820</y>
+        <x>1120</x>
+        <y>650</y>
         <width>171</width>
         <height>41</height>
        </rect>
@@ -953,8 +953,8 @@ background-color: rgb(181, 0, 0);</string>
      <widget class="QPushButton" name="btnCondenacion_4">
       <property name="geometry">
        <rect>
-        <x>1240</x>
-        <y>830</y>
+        <x>900</x>
+        <y>600</y>
         <width>171</width>
         <height>41</height>
        </rect>
@@ -980,8 +980,8 @@ background-color: rgb(181, 0, 0);</string>
      <widget class="QPushButton" name="btnCondenacion_5">
       <property name="geometry">
        <rect>
-        <x>1060</x>
-        <y>850</y>
+        <x>1050</x>
+        <y>620</y>
         <width>171</width>
         <height>41</height>
        </rect>
@@ -1036,7 +1036,7 @@ background-color: rgb(181, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1400</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

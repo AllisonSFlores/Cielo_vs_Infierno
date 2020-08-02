@@ -4,16 +4,19 @@ NodoFamilia::NodoFamilia(){
     pais="";
     arbol=NULL;
     next = NULL;
+    cantPecados=0;
 }
 NodoFamilia::NodoFamilia(QString ppais,ArbolHeapFamilia * parbol){
     pais=ppais;
     arbol=parbol;
     next = NULL;
+    cantPecados=0;
 }
 NodoFamilia::NodoFamilia(QString ppais){
     pais=ppais;
     arbol=new ArbolHeapFamilia();
     next = NULL;
+    cantPecados=0;
 }
 
 
@@ -114,6 +117,15 @@ NodoFamilia * LSFamilia::lookFor(QString pp){
     else{
         qDebug()<<"vacia";
         return NULL;
+    }
+}
+void LSFamilia::sumarPecados(){
+    if (!isEmpty()){
+        NodoFamilia *tmp = firstNode;
+
+        while (tmp!=NULL){
+            tmp->cantPecados = tmp->arbol->sumarPecado();
+        }
     }
 }
 

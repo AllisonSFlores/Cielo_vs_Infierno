@@ -108,3 +108,10 @@ void Persona::imprimir(){
         }
     }
 }
+int Persona::getCantPecados(){
+    int c=0;
+    for(int i=0 ; i<7 ; i++){
+        c+=pecados[i];
+    }
+    return c;
+}

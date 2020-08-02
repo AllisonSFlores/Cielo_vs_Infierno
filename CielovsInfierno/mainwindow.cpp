@@ -3,7 +3,6 @@
 #include <QString>
 #include "controlador.h"
 #include <QMessageBox>
-#include "tablafamilia.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
