@@ -194,12 +194,11 @@ void listaDoble::imprimir(){
     }
     else{
         NodoLd *temporal= primerNodo;
-        while(temporal->siguiente != NULL){
-            //qDebug()<<temporal->persona->getId()<<" -> ";
+        while(temporal != NULL){
+           // qDebug()<<temporal->persona->getId()<<" -> ";
             qDebug()<<temporal->persona->nivelMaldad<<" -> ";
             temporal = temporal->siguiente;
         }
-        qDebug()<<temporal->persona->getId();
     }
 
 }
@@ -467,7 +466,6 @@ listaDoble *listaDoble::determinarNivelPecador(int i){
         temporal = temporal->siguiente;
     }
     copia->ordenarPorPecado();
-  //  copia->imprimir();
     return copia;
 }
 
@@ -480,11 +478,14 @@ listaDoble *listaDoble::determinarNivelPecador(int i){
 QVector<Persona*> listaDoble::condenados(int i){
 
     listaDoble *copia = determinarNivelPecador(i);
+    copia->imprimir();
+
     QVector<Persona*> masPecadores;
     //saco el 5%
     int porcentaje = (copia->largoLista())*0.05;
     int n=0;
     NodoLd *temporal= copia->primerNodo;
+
     while(n < porcentaje && temporal!= NULL){
         if (temporal->persona->estado == mundo){
             temporal->persona->estado = infierno;
@@ -496,11 +497,10 @@ QVector<Persona*> listaDoble::condenados(int i){
     }
 
     //PARA VEEEERLOSSSS
-     qDebug()<<"LOS CONDENADOS";
+    qDebug()<<"LOS CONDENADOS";
     for (int g=0;g<masPecadores.length();g++){
         qDebug()<<masPecadores[g]->getNombre()<<masPecadores[g]->nivelMaldad;
     }
-
     return masPecadores;
 }
 
@@ -514,6 +514,7 @@ listaDoble *listaDoble::generarCopia(){
         temporal = temporal->siguiente;
     }
     return copia;
+
 }
 
 
@@ -521,7 +522,6 @@ listaDoble *listaDoble::generarCopia(){
 void listaDoble::ordenarPorPecado(){
 
     Persona *temp;
-
     NodoLd *actual = primerNodo;
     NodoLd *siguiente = primerNodo;
 
@@ -544,6 +544,62 @@ void listaDoble::ordenarPorPecado(){
         }
     }
 
+}
+
+QVector<int> listaDoble::ordenarContinentesPecado(){
+
+    QVector<int>  continentes = {0,0,0,0,0};
+
+    NodoLd *temporal= primerNodo;
+    while(temporal!= NULL){
+        if(temporal->persona->getContinente()=="Asia"){
+            continentes[0]+=temporal->persona->getCantPecados();
+        }
+        else if(temporal->persona->getContinente()=="Oceania"){
+            continentes[1]+=temporal->persona->getCantPecados();
+        }
+        else if(temporal->persona->getContinente()=="Africa"){
+            continentes[2]+=temporal->persona->getCantPecados();
+        }
+        else if(temporal->persona->getContinente()=="America"){
+            continentes[3]+=temporal->persona->getCantPecados();
+        }
+        else if(temporal->persona->getContinente()=="Europa"){
+            continentes[4]+=temporal->persona->getCantPecados();
+        }
+        temporal = temporal->siguiente;
+    }
+
+    return continentes;
+}
+
+
+
+QVector<int> listaDoble::ordenarContinentesBuenasAcciones(){
+
+    QVector<int>  continentes = {0,0,0,0,0};
+
+    NodoLd *temporal= primerNodo;
+    while(temporal!= NULL){
+        if(temporal->persona->getContinente()=="Asia"){
+            continentes[0]+=temporal->persona->getCantBuenasAcciones();
+        }
+        else if(temporal->persona->getContinente()=="Oceania"){
+            continentes[1]+=temporal->persona->getCantBuenasAcciones();
+        }
+        else if(temporal->persona->getContinente()=="Africa"){
+            continentes[2]+=temporal->persona->getCantBuenasAcciones();
+        }
+        else if(temporal->persona->getContinente()=="America"){
+            continentes[3]+=temporal->persona->getCantBuenasAcciones();
+        }
+        else if(temporal->persona->getContinente()=="Europa"){
+            continentes[4]+=temporal->persona->getCantBuenasAcciones();
+        }
+        temporal = temporal->siguiente;
+    }
+
+    return continentes;
 }
 
 

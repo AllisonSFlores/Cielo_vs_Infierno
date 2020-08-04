@@ -2,8 +2,7 @@
 #define ESTADO_H
 
 
-enum Estado
-{
+enum Estado{
     mundo,infierno,cielo
 };
 

@@ -13,6 +13,7 @@
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -43,6 +44,17 @@ public:
     QPushButton *btnBuscar;
     QLabel *label_25;
     QPushButton *btnSumarPecados;
+    QLabel *label_26;
+    QPushButton *btnPecados;
+    QPushButton *btnBuenasAcciones;
+    QLabel *label_27;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QLabel *lblEuropa;
+    QLabel *lblAsia;
+    QLabel *lblAfrica;
+    QLabel *lblOceania;
+    QLabel *lblAmerica;
     QWidget *Cielo;
     QLabel *label;
     QLabel *label_3;
@@ -66,7 +78,6 @@ public:
     QLabel *label_14;
     QFrame *line;
     QWidget *tab_2;
-    QLabel *label_15;
     QLabel *label_16;
     QLabel *label_17;
     QWidget *horizontalLayoutWidget;
@@ -78,8 +89,9 @@ public:
     QLabel *label_21;
     QLabel *label_18;
     QLabel *label_22;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *btnReporte;
+    QLabel *label_15;
+    QPushButton *btnCondenar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -88,7 +100,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->setWindowModality(Qt::NonModal);
-        MainWindow->resize(1400, 950);
+        MainWindow->resize(1430, 941);
         MainWindow->setMinimumSize(QSize(1400, 900));
         MainWindow->setMaximumSize(QSize(1900, 1000));
         QIcon icon;
@@ -99,7 +111,7 @@ public:
         centralwidget->setMaximumSize(QSize(1900, 900));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 1500, 921));
+        tabWidget->setGeometry(QRect(0, 0, 1500, 941));
         tabWidget->setMinimumSize(QSize(1400, 900));
         tabWidget->setMaximumSize(QSize(1900, 1000));
         tabWidget->setCursor(QCursor(Qt::ArrowCursor));
@@ -109,7 +121,7 @@ public:
         tab->setMaximumSize(QSize(1900, 990));
         verticalLayoutWidget_3 = new QWidget(tab);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(30, 70, 181, 111));
+        verticalLayoutWidget_3->setGeometry(QRect(40, 240, 181, 111));
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -126,10 +138,10 @@ public:
 
         label_2 = new QLabel(tab);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(40, 43, 179, 21));
+        label_2->setGeometry(QRect(40, 210, 179, 21));
         verticalLayoutWidget_4 = new QWidget(tab);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(240, 70, 181, 111));
+        verticalLayoutWidget_4->setGeometry(QRect(250, 240, 181, 111));
         VL2 = new QVBoxLayout(verticalLayoutWidget_4);
         VL2->setObjectName(QString::fromUtf8("VL2"));
         VL2->setContentsMargins(0, 0, 0, 0);
@@ -146,10 +158,61 @@ public:
 
         label_25 = new QLabel(tab);
         label_25->setObjectName(QString::fromUtf8("label_25"));
-        label_25->setGeometry(QRect(240, 40, 179, 21));
+        label_25->setGeometry(QRect(250, 210, 179, 21));
         btnSumarPecados = new QPushButton(tab);
         btnSumarPecados->setObjectName(QString::fromUtf8("btnSumarPecados"));
-        btnSumarPecados->setGeometry(QRect(30, 280, 181, 31));
+        btnSumarPecados->setGeometry(QRect(40, 380, 181, 31));
+        label_26 = new QLabel(tab);
+        label_26->setObjectName(QString::fromUtf8("label_26"));
+        label_26->setGeometry(QRect(30, 20, 401, 141));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Constantia"));
+        font.setPointSize(72);
+        font.setItalic(true);
+        label_26->setFont(font);
+        label_26->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        btnPecados = new QPushButton(tab);
+        btnPecados->setObjectName(QString::fromUtf8("btnPecados"));
+        btnPecados->setGeometry(QRect(950, 130, 151, 41));
+        btnBuenasAcciones = new QPushButton(tab);
+        btnBuenasAcciones->setObjectName(QString::fromUtf8("btnBuenasAcciones"));
+        btnBuenasAcciones->setGeometry(QRect(1140, 130, 151, 41));
+        label_27 = new QLabel(tab);
+        label_27->setObjectName(QString::fromUtf8("label_27"));
+        label_27->setGeometry(QRect(1000, 20, 271, 51));
+        label_27->setFont(font);
+        label_27->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        gridLayoutWidget = new QWidget(tab);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(860, 240, 526, 462));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        lblEuropa = new QLabel(gridLayoutWidget);
+        lblEuropa->setObjectName(QString::fromUtf8("lblEuropa"));
+
+        gridLayout->addWidget(lblEuropa, 0, 1, 1, 1);
+
+        lblAsia = new QLabel(gridLayoutWidget);
+        lblAsia->setObjectName(QString::fromUtf8("lblAsia"));
+
+        gridLayout->addWidget(lblAsia, 0, 2, 1, 1);
+
+        lblAfrica = new QLabel(gridLayoutWidget);
+        lblAfrica->setObjectName(QString::fromUtf8("lblAfrica"));
+
+        gridLayout->addWidget(lblAfrica, 1, 1, 1, 1);
+
+        lblOceania = new QLabel(gridLayoutWidget);
+        lblOceania->setObjectName(QString::fromUtf8("lblOceania"));
+
+        gridLayout->addWidget(lblOceania, 1, 2, 1, 1);
+
+        lblAmerica = new QLabel(gridLayoutWidget);
+        lblAmerica->setObjectName(QString::fromUtf8("lblAmerica"));
+
+        gridLayout->addWidget(lblAmerica, 0, 0, 2, 1);
+
         tabWidget->addTab(tab, QString());
         Cielo = new QWidget();
         Cielo->setObjectName(QString::fromUtf8("Cielo"));
@@ -164,11 +227,7 @@ public:
         label->setOpenExternalLinks(false);
         label_3 = new QLabel(Cielo);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(20, 110, 311, 181));
-        QFont font;
-        font.setFamily(QString::fromUtf8("Constantia"));
-        font.setPointSize(72);
-        font.setItalic(true);
+        label_3->setGeometry(QRect(20, 120, 221, 141));
         label_3->setFont(font);
         label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         verticalLayoutWidget = new QWidget(Cielo);
@@ -281,11 +340,6 @@ public:
         tabWidget->addTab(Cielo, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
-        label_15 = new QLabel(tab_2);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setGeometry(QRect(0, -10, 1361, 881));
-        label_15->setStyleSheet(QString::fromUtf8("color: rgb(199, 132, 105);\n"
-"background-color: rgb(99, 175, 255);"));
         label_16 = new QLabel(tab_2);
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setGeometry(QRect(390, 160, 621, 501));
@@ -362,28 +416,34 @@ public:
 
         horizontalLayout->addWidget(label_22);
 
-        pushButton = new QPushButton(tab_2);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(630, 320, 171, 41));
+        btnReporte = new QPushButton(tab_2);
+        btnReporte->setObjectName(QString::fromUtf8("btnReporte"));
+        btnReporte->setGeometry(QRect(630, 420, 171, 41));
         QFont font7;
         font7.setFamily(QString::fromUtf8("Microsoft Himalaya"));
         font7.setPointSize(22);
         font7.setStrikeOut(false);
-        pushButton->setFont(font7);
-        pushButton->setCursor(QCursor(Qt::ForbiddenCursor));
-        pushButton->setStyleSheet(QString::fromUtf8("\n"
-"background-color: rgb(181, 0, 0);"));
-        pushButton_2 = new QPushButton(tab_2);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(630, 420, 171, 41));
-        pushButton_2->setFont(font7);
-        pushButton_2->setCursor(QCursor(Qt::ForbiddenCursor));
-        pushButton_2->setStyleSheet(QString::fromUtf8("background-color: rgb(181, 0, 0);"));
+        btnReporte->setFont(font7);
+        btnReporte->setCursor(QCursor(Qt::ForbiddenCursor));
+        btnReporte->setStyleSheet(QString::fromUtf8("background-color: rgb(181, 0, 0);"));
+        label_15 = new QLabel(tab_2);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setGeometry(QRect(0, 0, 1391, 881));
+        btnCondenar = new QPushButton(tab_2);
+        btnCondenar->setObjectName(QString::fromUtf8("btnCondenar"));
+        btnCondenar->setGeometry(QRect(630, 370, 171, 41));
+        btnCondenar->setStyleSheet(QString::fromUtf8("background-color: rgb(181, 0, 0);"));
         tabWidget->addTab(tab_2, QString());
+        label_15->raise();
+        label_16->raise();
+        label_17->raise();
+        horizontalLayoutWidget->raise();
+        btnReporte->raise();
+        btnCondenar->raise();
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1400, 21));
+        menubar->setGeometry(QRect(0, 0, 1430, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -400,13 +460,22 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        txtCant->setText(QCoreApplication::translate("MainWindow", "100", nullptr));
+        txtCant->setText(QCoreApplication::translate("MainWindow", "70", nullptr));
         btnGenerar->setText(QCoreApplication::translate("MainWindow", "Generar humanos", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "   Cantidad de humanos a generar", nullptr));
-        txtBuscar->setText(QCoreApplication::translate("MainWindow", "365214", nullptr));
+        txtBuscar->setText(QCoreApplication::translate("MainWindow", "124", nullptr));
         btnBuscar->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
         label_25->setText(QCoreApplication::translate("MainWindow", "Buscar persona por id", nullptr));
-        btnSumarPecados->setText(QCoreApplication::translate("MainWindow", "Sumar pecados", nullptr));
+        btnSumarPecados->setText(QCoreApplication::translate("MainWindow", "Pecar y hacer buenas acciones", nullptr));
+        label_26->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#001b47;\">Mundo</span></p></body></html>", nullptr));
+        btnPecados->setText(QCoreApplication::translate("MainWindow", "Pecados", nullptr));
+        btnBuenasAcciones->setText(QCoreApplication::translate("MainWindow", "Buenas acciones", nullptr));
+        label_27->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt; color:#001b47;\">Mapa de degraci\303\263n </span></p></body></html>", nullptr));
+        lblEuropa->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/europa.png\"/></p><p align=\"center\"><span style=\" font-size:14pt;\">Europa</span></p><p><br/></p></body></html>", nullptr));
+        lblAsia->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/asia.png\"/></p><p align=\"center\"><span style=\" font-size:14pt;\">Asia</span></p></body></html>", nullptr));
+        lblAfrica->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/africa.png\"/></p><p align=\"center\"><span style=\" font-size:14pt;\">\303\201frica</span></p></body></html>", nullptr));
+        lblOceania->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/oceania.png\"/></p><p align=\"center\"><span style=\" font-size:14pt;\">Ocean\303\255a</span></p></body></html>", nullptr));
+        lblAmerica->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/america (1).png\"/></p><p align=\"center\"><span style=\" font-size:14pt;\">Am\303\251rica</span></p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Mundo", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/cieloo.jpg\"/></p></body></html>", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Cielo", nullptr));
@@ -439,7 +508,6 @@ public:
 "\342\200\242 UrielAzrael\n"
 "\342\200\242 Sariel", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Cielo), QCoreApplication::translate("MainWindow", "Cielo", nullptr));
-        label_15->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/87b1f6ab429fb46c70d4588f3f792cd4.jpg\"/></p></body></html>", nullptr));
         label_16->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/alaaa.png\"/></p></body></html>", nullptr));
         label_17->setText(QCoreApplication::translate("MainWindow", "INFIERNO", nullptr));
         label_24->setText(QCoreApplication::translate("MainWindow", " Asmodeo", nullptr));
@@ -449,8 +517,9 @@ public:
         label_21->setText(QCoreApplication::translate("MainWindow", " Abad\303\263n", nullptr));
         label_18->setText(QCoreApplication::translate("MainWindow", " Lucifer", nullptr));
         label_22->setText(QCoreApplication::translate("MainWindow", "Mamm\303\263n", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Condenaci\303\263n", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Reporte", nullptr));
+        btnReporte->setText(QCoreApplication::translate("MainWindow", "Reporte", nullptr));
+        label_15->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/infierno.jpg\"/></p></body></html>", nullptr));
+        btnCondenar->setText(QCoreApplication::translate("MainWindow", "Condenaci\303\263n", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Infierno", nullptr));
     } // retranslateUi
 

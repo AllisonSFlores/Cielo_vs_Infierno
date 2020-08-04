@@ -21,25 +21,19 @@ private slots:
 
     void on_btnGenerar_clicked();
 
-    void on_btnInicioCieloPrueba_clicked();
-
     void on_btnCieloSalvacion_clicked();
 
     void on_btnBuscar_clicked();
 
     void on_btnSumarPecados_clicked();
 
-    void on_pruebas_clicked();
+    void on_btnPecados_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_btnBuenasAcciones_clicked();
 
-    void on_btnCondecion_clicked();
+    void on_btnCieloGeneracion_clicked();
 
-    void on_btnCondenacion_clicked();
-
-    void on_pushButton_2_clicked();
-
-    void on_btnReporte_clicked();
+    void on_btnCieloReporte_clicked();
 
     void on_btnCondenar_clicked();
 

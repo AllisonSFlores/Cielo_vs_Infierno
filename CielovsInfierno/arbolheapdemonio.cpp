@@ -68,9 +68,11 @@ ArbolHeapFamilia *  ArbolHeapDemonio::buscarFamilia(Persona * persona){
                 return arbol[i];
             }
         }
-        return NULL;
+
     }
+    return NULL;
 }
+
 int ArbolHeapDemonio::random(){
     std::uniform_int_distribution<int> distrib(0, 4);
     return distrib(*QRandomGenerator::global());

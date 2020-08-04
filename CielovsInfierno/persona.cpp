@@ -8,7 +8,7 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
 
     this->creencia=pcreencia;
     this->profesion=pprofesion;
-    this->correo= nombre+QString::number(id)+"@gmail.com";   //FUNCION??
+    this->correo= nombre+QString::number(id)+"@gmail.com";
     this->padre = NULL;
 
 
@@ -24,13 +24,12 @@ Persona::Persona(int pid, QString pnombre, QString papellido,QString pcreencia, 
      this->pais=ppais;
      this->creencia=pcreencia;
      this->profesion=pprofesion;
-     this->correo= nombre+QString::number(id)+"@gmail.com";   //FUNCION??
+     this->correo= nombre+QString::number(id)+"@gmail.com";
 
      //No estoy segura si esto se hace asi jaja
      this->padre = NULL;
 
      //o con la lista de hijos nula
-     //hijos = NULL;
      this->nacimiento = getHoraNacimiento();
      this->nivelMaldad = 0;
      this->estado=mundo;
@@ -65,6 +64,9 @@ QString Persona::getApellido(){
 QString Persona::getPais(){
     return pais[0];
 }
+QString Persona::getContinente(){
+    return pais[1];
+}
 QString Persona::getCreencia (){
     return creencia;
 }
@@ -89,6 +91,7 @@ QString Persona::getHoraNacimiento(){
     QString nac ="\t"+local.toString(Qt::SystemLocaleLongDate);
     return nac;
 }
+
 void Persona::imprimir(){
     qDebug()<<"id: "+QString::number(id)+" apellido y pais "+apellido+ "  "+pais[0];
     if(padre != NULL){
@@ -97,7 +100,6 @@ void Persona::imprimir(){
     int i = 0;
     if(hijos[i]==NULL){
         qDebug()<<"No tiene familia";
-
     }
     else{
         qDebug()<<"Los ids de sus hijos son: ";
@@ -112,6 +114,14 @@ int Persona::getCantPecados(){
     int c=0;
     for(int i=0 ; i<7 ; i++){
         c+=pecados[i];
+    }
+    return c;
+}
+
+int Persona::getCantBuenasAcciones(){
+    int c=0;
+    for(int i=0 ; i<7 ; i++){
+        c+=buenasAcciones[i];
     }
     return c;
 }

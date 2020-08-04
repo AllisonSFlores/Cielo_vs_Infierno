@@ -1,7 +1,6 @@
 #ifndef MUNDO_H
 #define MUNDO_H
 #include "persona.h"
-#include "estado.h"
 #include<QVector>
 
 struct Nodo;
@@ -84,6 +83,10 @@ struct listaDoble{
     listaDoble *determinarNivelPecador(int);
     QVector<Persona*> condenados(int);
     void ordenarPorPecado();
+    QVector<int> ordenarContinentesPecado();
+    QVector<int> ordenarContinentesBuenasAcciones();
+   // QVector<QString> ordenarContinentes(int[5],QString[5]);
+
 
 
 

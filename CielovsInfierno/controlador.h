@@ -17,7 +17,7 @@ struct Controlador{
        Cielo * cielo;
        ArbolHeapFamilia *heap;
        TablaFamilia * tablaFamilia;
-       ArbolHeapDemonio * arbol = new ArbolHeapDemonio();
+     //  ArbolHeapDemonio * arbol = new ArbolHeapDemonio();
 
        Controlador(){}
        void __init__();
@@ -31,6 +31,9 @@ struct Controlador{
        NodoLd* buscarPersona(int);  //tal vez mejor que retorne la persona      efectivamente
        void imprimirArbolHeapFamilia();
        void pruebasAllison();
+       QVector<int> ContinentesPecadores();
+       QVector<int> ContinentesBuenos();
+
 };
 
 #endif // CONTROLADOR_H

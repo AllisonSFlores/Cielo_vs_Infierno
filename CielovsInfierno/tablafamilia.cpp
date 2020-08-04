@@ -73,11 +73,6 @@ void TablaFamilia::printAll(){
 }
 
 int TablaFamilia::len(){
-    /*
-    Function: len of the list
-    Input:None
-    Ouput:None
-    */
 
     int i = 0;
      NodoTabla *tmp = firstNode;

@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1400</width>
-    <height>950</height>
+    <width>1430</width>
+    <height>941</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -43,9 +43,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>10</y>
+      <y>0</y>
       <width>1500</width>
-      <height>931</height>
+      <height>941</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -95,7 +95,7 @@
        <item>
         <widget class="QLineEdit" name="txtCant">
          <property name="text">
-          <string>1000</string>
+          <string>70</string>
          </property>
         </widget>
        </item>
@@ -137,7 +137,7 @@
        <item>
         <widget class="QLineEdit" name="txtBuscar">
          <property name="text">
-          <string>365214</string>
+          <string>124</string>
          </property>
         </widget>
        </item>
@@ -202,96 +202,101 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#001b47;&quot;&gt;Mundo&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="btnPecados">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>130</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pecados</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnBuenasAcciones">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>130</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Buenas acciones</string>
+      </property>
+     </widget>
      <widget class="QLabel" name="label_27">
       <property name="geometry">
        <rect>
-        <x>750</x>
-        <y>260</y>
-        <width>241</width>
-        <height>361</height>
+        <x>1000</x>
+        <y>20</y>
+        <width>271</width>
+        <height>51</height>
        </rect>
       </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/america (1).png&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;América&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <property name="font">
+       <font>
+        <family>Constantia</family>
+        <pointsize>72</pointsize>
+        <italic>true</italic>
+       </font>
       </property>
-     </widget>
-     <widget class="QLabel" name="label_28">
-      <property name="geometry">
-       <rect>
-        <x>1040</x>
-        <y>240</y>
-        <width>141</width>
-        <height>181</height>
-       </rect>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/europa.png&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;      Europa&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; color:#001b47;&quot;&gt;Mapa de degración &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_29">
-      <property name="geometry">
-       <rect>
-        <x>1210</x>
-        <y>230</y>
-        <width>141</width>
-        <height>171</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/asia.png&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Asia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_30">
-      <property name="geometry">
-       <rect>
-        <x>1220</x>
-        <y>440</y>
-        <width>141</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/oceania.png&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Oceanía&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_31">
-      <property name="geometry">
-       <rect>
-        <x>1050</x>
-        <y>440</y>
-        <width>141</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/africa.png&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;África&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
         <x>860</x>
-        <y>80</y>
-        <width>75</width>
-        <height>23</height>
+        <y>240</y>
+        <width>526</width>
+        <height>462</height>
        </rect>
       </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>1050</x>
-        <y>80</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="1">
+        <widget class="QLabel" name="lblEuropa">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/europa.png&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Europa&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="lblAsia">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/asia.png&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Asia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="lblAfrica">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/africa.png&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;África&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="lblOceania">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/oceania.png&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Oceanía&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="2">
+        <widget class="QLabel" name="lblAmerica">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/america (1).png&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;América&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="Cielo">
@@ -896,114 +901,6 @@ mensajeros de Dios.</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/imagenes/infierno.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="btnCondenacion_2">
-      <property name="geometry">
-       <rect>
-        <x>1010</x>
-        <y>650</y>
-        <width>171</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft Himalaya</family>
-        <pointsize>22</pointsize>
-        <strikeout>false</strikeout>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>ForbiddenCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-background-color: rgb(181, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Condenación</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btnCondenacion_3">
-      <property name="geometry">
-       <rect>
-        <x>1120</x>
-        <y>650</y>
-        <width>171</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft Himalaya</family>
-        <pointsize>22</pointsize>
-        <strikeout>false</strikeout>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>ForbiddenCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-background-color: rgb(181, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Condenación</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btnCondenacion_4">
-      <property name="geometry">
-       <rect>
-        <x>900</x>
-        <y>600</y>
-        <width>171</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft Himalaya</family>
-        <pointsize>22</pointsize>
-        <strikeout>false</strikeout>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>ForbiddenCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-background-color: rgb(181, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Condenación</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btnCondenacion_5">
-      <property name="geometry">
-       <rect>
-        <x>1050</x>
-        <y>620</y>
-        <width>171</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft Himalaya</family>
-        <pointsize>22</pointsize>
-        <strikeout>false</strikeout>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>ForbiddenCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-background-color: rgb(181, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Condenación</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btnCondenar">
       <property name="geometry">
        <rect>
@@ -1012,6 +909,9 @@ background-color: rgb(181, 0, 0);</string>
         <width>171</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(181, 0, 0);</string>
       </property>
       <property name="text">
        <string>Condenación</string>
@@ -1022,10 +922,6 @@ background-color: rgb(181, 0, 0);</string>
      <zorder>label_17</zorder>
      <zorder>horizontalLayoutWidget</zorder>
      <zorder>btnReporte</zorder>
-     <zorder>btnCondenacion_2</zorder>
-     <zorder>btnCondenacion_3</zorder>
-     <zorder>btnCondenacion_4</zorder>
-     <zorder>btnCondenacion_5</zorder>
      <zorder>btnCondenar</zorder>
     </widget>
    </widget>
@@ -1035,8 +931,8 @@ background-color: rgb(181, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1400</width>
-     <height>26</height>
+     <width>1430</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
