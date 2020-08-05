@@ -33,8 +33,8 @@ struct Controlador{
        void salvacion();
        void condenacion();
 
-       QVector<int> ContinentesPecadores();
-       QVector<int> ContinentesBuenos();
+       QVector<QString> ContinentesPecadores();
+       QVector<QString> ContinentesBuenos();
 
        NodoLd* buscarPersona(int);  //tal vez mejor que retorne la persona      efectivamente
        void imprimirArbolHeapFamilia();

@@ -74,37 +74,8 @@ void MainWindow::on_btnSumarPecados_clicked(){
 
 void MainWindow::on_btnPecados_clicked(){
     QString coloresPecadores[5] = {"#6A0888","#A901DB","#CC2EFA","#DA81F5","#ECCEF5"};
-    QString continentes[5] = {"Asia","Oceania","Africa","America","Europa"};
-    QVector<int> lista = controlador->ContinentesPecadores();
-    qDebug()<<lista[0];
-    qDebug()<<lista[1];
-    qDebug()<<lista[2];
-    qDebug()<<lista[3];
-    qDebug()<<lista[4];
-    //-----------------------Ordenar-------------------------------------//
-    int temp=0;
-    QString temp2="";
-      for (int i=1; i<lista.length(); i++){
-        for(int j=0 ; j<lista.length() - 1; j++){
-            if (lista[j] < lista[j+1]){
-                //Lista con cantidad de pecados
-                temp = lista[j];
-                lista[j] = lista[j+1];
-                lista[j+1] = temp;
-                //Lista con paises
-                temp2 = continentes[j];
-                continentes[j] = continentes[j+1];
-                continentes[j+1] = temp2;
-            }
-        }
-    }
-      qDebug()<<"ordenaditos";
-      qDebug()<<lista[0];
-      qDebug()<<lista[1];
-      qDebug()<<lista[2];
-      qDebug()<<lista[3];
-      qDebug()<<lista[4];
-   //--------------------------------------------------------------------//
+    QVector<QString> continentes = controlador->ContinentesPecadores();
+
     for (int i=0; i<5;i++){
         if(continentes[i]=="Asia"){
             ui->lblAsia->setStyleSheet("QLabel { background-color :"+coloresPecadores[i]+";}");
@@ -128,37 +99,8 @@ void MainWindow::on_btnPecados_clicked(){
 void MainWindow::on_btnBuenasAcciones_clicked(){
 
     QString coloresPecadores[5] = {"#0B173B","#08298A","#013ADF","#2E64FE","#819FF7"};
-    QString continentes[5] = {"Asia","Oceania","Africa","America","Europa"};
-    QVector<int> lista = controlador->ContinentesBuenos();
-    qDebug()<<lista[0];
-    qDebug()<<lista[1];
-    qDebug()<<lista[2];
-    qDebug()<<lista[3];
-    qDebug()<<lista[4];
-    //-----------------------Ordenar-------------------------------------//
-    int temp=0;
-    QString temp2="";
-      for (int i=1; i<lista.length(); i++){
-        for(int j=0 ; j<lista.length() - 1; j++){
-            if (lista[j] < lista[j+1]){
-                //Lista con cantidad de pecados
-                temp = lista[j];
-                lista[j] = lista[j+1];
-                lista[j+1] = temp;
-                //Lista con paises
-                temp2 = continentes[j];
-                continentes[j] = continentes[j+1];
-                continentes[j+1] = temp2;
-            }
-        }
-    }
-      qDebug()<<"ordenaditos";
-      qDebug()<<lista[0];
-      qDebug()<<lista[1];
-      qDebug()<<lista[2];
-      qDebug()<<lista[3];
-      qDebug()<<lista[4];
-   //--------------------------------------------------------------------//
+    QVector<QString> continentes= controlador->ContinentesBuenos();
+
     for (int i=0; i<5;i++){
         if(continentes[i]=="Asia"){
             ui->lblAsia->setStyleSheet("QLabel { background-color :"+coloresPecadores[i]+";}");
@@ -197,4 +139,24 @@ void MainWindow::on_btnCondenar_clicked(){
 void MainWindow::on_btnReporte_clicked()
 {
     controlador->infierno->imprimir();
+}
+
+void MainWindow::on_txtMasPecadores_clicked()
+{
+
+}
+
+void MainWindow::on_btnMasBuenos_clicked()
+{
+
+}
+
+void MainWindow::on_btnMenosPecadores_clicked()
+{
+
+}
+
+void MainWindow::on_btnMenosBuenos_clicked()
+{
+
 }

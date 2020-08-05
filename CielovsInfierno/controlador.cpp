@@ -95,12 +95,51 @@ void Controlador::pruebasAllison(){
   //  arbol->imprimir();
 }
 
-QVector<int> Controlador::ContinentesPecadores(){
+QVector<QString> Controlador::ContinentesPecadores(){
 
-    return listaMundo->ordenarContinentesPecado();
+    QVector<QString> continentes = {"Asia","Oceania","Africa","America","Europa"};
+    QVector<int> lista = listaMundo->ordenarContinentesPecado();
 
+    int temp=0;
+    QString temp2="";
+      for (int i=1; i<lista.length(); i++){
+        for(int j=0 ; j<lista.length() - 1; j++){
+            if (lista[j] < lista[j+1]){
+                //Lista con cantidad de pecados
+                temp = lista[j];
+                lista[j] = lista[j+1];
+                lista[j+1] = temp;
+                //Lista con paises
+                temp2 = continentes[j];
+                continentes[j] = continentes[j+1];
+                continentes[j+1] = temp2;
+            }
+        }
+    }
+
+    return continentes;
 }
 
-QVector<int> Controlador::ContinentesBuenos(){
-    return listaMundo->ordenarContinentesBuenasAcciones();
+QVector<QString> Controlador::ContinentesBuenos(){
+
+    QVector<QString> continentes = {"Asia","Oceania","Africa","America","Europa"};
+    QVector<int> lista = listaMundo->ordenarContinentesBuenasAcciones();
+    //-----------------------Ordenar-------------------------------------//
+    int temp=0;
+    QString temp2="";
+      for (int i=1; i<lista.length(); i++){
+        for(int j=0 ; j<lista.length() - 1; j++){
+            if (lista[j] < lista[j+1]){
+                //Lista con cantidad de pecados
+                temp = lista[j];
+                lista[j] = lista[j+1];
+                lista[j+1] = temp;
+                //Lista con paises
+                temp2 = continentes[j];
+                continentes[j] = continentes[j+1];
+                continentes[j+1] = temp2;
+            }
+        }
+    }
+      return continentes;
 }

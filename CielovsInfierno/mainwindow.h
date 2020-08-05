@@ -39,6 +39,14 @@ private slots:
 
     void on_btnReporte_clicked();
 
+    void on_txtMasPecadores_clicked();
+
+    void on_btnMasBuenos_clicked();
+
+    void on_btnMenosPecadores_clicked();
+
+    void on_btnMenosBuenos_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
