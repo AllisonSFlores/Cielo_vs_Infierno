@@ -98,36 +98,34 @@ void MainWindow::on_btnPecados_clicked(){
 
 void MainWindow::on_btnBuenasAcciones_clicked(){
 
-    QString coloresPecadores[5] = {"#0B173B","#08298A","#013ADF","#2E64FE","#819FF7"};
+    QString coloresBuenos[5] = {"#0B173B","#08298A","#013ADF","#2E64FE","#819FF7"};
     QVector<QString> continentes= controlador->ContinentesBuenos();
 
     for (int i=0; i<5;i++){
         if(continentes[i]=="Asia"){
-            ui->lblAsia->setStyleSheet("QLabel { background-color :"+coloresPecadores[i]+";}");
+            ui->lblAsia->setStyleSheet("QLabel { background-color :"+coloresBuenos[i]+";}");
         }
         else if(continentes[i]=="Oceania"){
-            ui->lblOceania->setStyleSheet("QLabel { background-color :"+coloresPecadores[i]+";}");
+            ui->lblOceania->setStyleSheet("QLabel { background-color :"+coloresBuenos[i]+";}");
         }
         else if(continentes[i]=="Africa"){
-            ui->lblAfrica->setStyleSheet("QLabel { background-color :"+coloresPecadores[i]+";}");
+            ui->lblAfrica->setStyleSheet("QLabel { background-color :"+coloresBuenos[i]+";}");
         }
         else if(continentes[i]=="America"){
-            ui->lblAmerica->setStyleSheet("QLabel { background-color :" + coloresPecadores[i]+";}");
+            ui->lblAmerica->setStyleSheet("QLabel { background-color :" + coloresBuenos[i]+";}");
         }
         else if(continentes[i]=="Europa"){
-            ui->lblEuropa->setStyleSheet("QLabel { background-color :"+coloresPecadores[i]+";}");
+            ui->lblEuropa->setStyleSheet("QLabel { background-color :"+coloresBuenos[i]+";}");
         }
     }
 
 }
 
-void MainWindow::on_btnCieloGeneracion_clicked()
-{
+void MainWindow::on_btnCieloGeneracion_clicked(){
 
 }
 
-void MainWindow::on_btnCieloReporte_clicked()
-{
+void MainWindow::on_btnCieloReporte_clicked(){
 
 }
 
@@ -136,27 +134,24 @@ void MainWindow::on_btnCondenar_clicked(){
 
 }
 
-void MainWindow::on_btnReporte_clicked()
-{
+void MainWindow::on_btnReporte_clicked(){
     controlador->infierno->imprimir();
 }
 
-void MainWindow::on_txtMasPecadores_clicked()
-{
+//consultas
+void MainWindow::on_btnMasBuenos_clicked(){
 
 }
 
-void MainWindow::on_btnMasBuenos_clicked()
-{
-
-}
-
-void MainWindow::on_btnMenosPecadores_clicked()
-{
+void MainWindow::on_btnMenosPecadores_clicked(){
 
 }
 
 void MainWindow::on_btnMenosBuenos_clicked()
 {
 
+}
+
+void MainWindow::on_btnMasPecadores_clicked(){
+    
 }

@@ -68,6 +68,14 @@ void Controlador::crearHumanos(int cantidadHumanos){
      _arbolMundo->pasarDatoAinsertar(datosArbol);
      _arbolMundo->inOrder(_arbolMundo->raiz);
 
+
+     qDebug()<<"hehehe";
+     datos->cargarPaises();
+     QString *paises=datos->getPaises();
+     qDebug()<<"cuanto "<<paises->length();
+     for(int i=0;i<25;i++){
+         qDebug()<<paises[i];
+     }
 }
 
 NodoLd* Controlador::buscarPersona(int id){
