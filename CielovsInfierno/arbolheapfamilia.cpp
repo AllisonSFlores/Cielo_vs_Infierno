@@ -90,10 +90,21 @@ int ArbolHeapFamilia::sumarPecado(){
 }
 int ArbolHeapFamilia::sumarPecado(int d){
     int cant =0;
-    for (int i=0 ; i<arbol.length()-1;i++){
+    for (int i=0 ; i<arbol.length();i++){
         cant+=arbol[i]->pecados[d];
     }
     return cant;
+}
+Persona * ArbolHeapFamilia::menosPecador(){
+    Persona * menosPecadorv = new Persona();
+
+    for(int i = 0 ; i < arbol.size() ; i++){
+
+        if(arbol[i]->pureza() > 0 && arbol[i]->pureza() > menosPecadorv->pureza()){
+            menosPecadorv = arbol[i];
+        }
+    }
+    return menosPecadorv;
 }
 
 int ArbolHeapFamilia::random(){
@@ -103,7 +114,7 @@ int ArbolHeapFamilia::random(){
 }
 void ArbolHeapFamilia::imprimir(){
 
-    for (int i=0;i<=arbol.length()-1;i++){
+    for (int i = 0 ; i < arbol.size() ; i++){
         arbol[i]->imprimir();
     }
 }

@@ -5,7 +5,8 @@ ArbolHeapDemonio::ArbolHeapDemonio(QString nombreDemonio, int pidDemonio){
     idDemonio=pidDemonio;
 }
 void ArbolHeapDemonio::insertar(Persona *persona){
-    persona->estado=infierno;
+    qDebug()<<"Insertando a";
+    persona->imprimir();
     ArbolHeapFamilia * familia = buscarFamilia(persona);
     if(familia != NULL){
         familia->insertar(persona);
@@ -62,9 +63,9 @@ ArbolHeapFamilia *  ArbolHeapDemonio::buscarFamilia(Persona * persona){
     qDebug()<<"buscar familia";
     if(!arbol.isEmpty()){
         qDebug()<<"el heap demonio no esta vacio";
-        int largo = arbol.length()-1;
+        int largo = arbol.length();
         for(int i = 0;i<largo ; i++){
-            if (arbol[i]->apellidoFamilia == persona->getApellido() && arbol[i]->paisFamilia==persona->pais[0]){
+            if (arbol[i]->apellidoFamilia == persona->getApellido() && arbol[i]->paisFamilia == persona->getPais()){
                 return arbol[i];
             }
         }
@@ -73,15 +74,30 @@ ArbolHeapFamilia *  ArbolHeapDemonio::buscarFamilia(Persona * persona){
     return NULL;
 }
 
-int ArbolHeapDemonio::random(){
-    std::uniform_int_distribution<int> distrib(0, 4);
-    return distrib(*QRandomGenerator::global());
+Persona * ArbolHeapDemonio::menosPecador(){
+    Persona * menosPecadorv = new Persona();
+    int cant;
 
+    for(int i = 0 ; i < arbol.size() ; i++){
+        cant = arbol[i]->menosPecador()->pureza() ;
+
+        if(cant > 0 && cant > menosPecadorv->getCantBuenasAcciones() - menosPecadorv->getCantPecados()){
+            menosPecadorv = arbol[i]->menosPecador();
+        }
+    }
+    return menosPecadorv;
 }
-void ArbolHeapDemonio::imprimir(){
 
-    for (int i=0;i<=arbol.length()-1;i++){
-        arbol[i]->imprimir();
+void ArbolHeapDemonio::imprimir(){
+    qDebug()<<"--------------------------------------------"+demonio;
+    if(!arbol.isEmpty()){
+        for (int i = 0 ; i < arbol.size() ; i++){
+            arbol[i]->imprimir();
+        }
+        menosPecador()->imprimir();
+        }
+    else{
+        qDebug()<<"vacia";
     }
 }
 

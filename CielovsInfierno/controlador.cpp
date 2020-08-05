@@ -9,6 +9,7 @@ void Controlador::__init__(){
     this->_arbolMundo = new arbolMundo();
     this->heap = new ArbolHeapFamilia();
     this->tablaFamilia = new TablaFamilia();
+    this->infierno = new Infierno();
 
 
 }
@@ -72,6 +73,15 @@ void Controlador::crearHumanos(int cantidadHumanos){
 NodoLd* Controlador::buscarPersona(int id){
     return _arbolMundo->recorrerListaMundo(id);
 
+}
+
+void Controlador::condenacion(){
+    for(int i=0 ; i<7 ; i++){
+        QVector<Persona*> condenados = listaMundo->condenados(i);
+        qDebug()<<"Demonio "+QString::number(i);
+        qDebug()<<condenados;
+        infierno->condenar(condenados, i);
+    }
 }
 
 void Controlador::salvacion(){

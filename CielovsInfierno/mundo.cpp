@@ -478,7 +478,7 @@ listaDoble *listaDoble::determinarNivelPecador(int i){
 QVector<Persona*> listaDoble::condenados(int i){
 
     listaDoble *copia = determinarNivelPecador(i);
-    copia->imprimir();
+    //copia->imprimir();
 
     QVector<Persona*> masPecadores;
     //saco el 5%

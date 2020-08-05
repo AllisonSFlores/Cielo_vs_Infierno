@@ -109,6 +109,9 @@ void Persona::imprimir(){
             i++;
         }
     }
+    qDebug()<<"Mis pecados:";
+    qDebug()<<pecados[0];
+    qDebug()<<"Mi pureza:"+QString::number(pureza());
 }
 int Persona::getCantPecados(){
     int c=0;
@@ -118,10 +121,14 @@ int Persona::getCantPecados(){
     return c;
 }
 
+
 int Persona::getCantBuenasAcciones(){
     int c=0;
     for(int i=0 ; i<7 ; i++){
         c+=buenasAcciones[i];
     }
     return c;
+}
+int Persona::pureza(){
+    return getCantBuenasAcciones() - getCantPecados();
 }

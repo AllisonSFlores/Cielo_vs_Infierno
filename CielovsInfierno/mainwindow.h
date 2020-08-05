@@ -37,6 +37,8 @@ private slots:
 
     void on_btnCondenar_clicked();
 
+    void on_btnReporte_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

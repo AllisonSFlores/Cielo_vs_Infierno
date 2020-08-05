@@ -19,6 +19,7 @@ struct ArbolHeapFamilia{
     void buscarFamilia(Persona * persona);
     int sumarPecado();
     int sumarPecado(int d);
+    Persona * menosPecador();
     int random();
     void imprimir();
 

@@ -8,6 +8,7 @@
 #include "ArbolHeapFamilia.h"
 #include "tablafamilia.h"
 #include "arbolheapdemonio.h"
+#include "infierno.h"
 
 struct Controlador{
        TablaHashID * tabla;
@@ -17,7 +18,7 @@ struct Controlador{
        Cielo * cielo;
        ArbolHeapFamilia *heap;
        TablaFamilia * tablaFamilia;
-     //  ArbolHeapDemonio * arbol = new ArbolHeapDemonio();
+       Infierno * infierno;
 
        Controlador(){}
        void __init__();
@@ -25,14 +26,19 @@ struct Controlador{
        Datos *getDatos();
        listaDoble* getListaMundo();
        arbolMundo *getArbolMundo();
+
        void crearHumanos(int);
        void cargarDatos();
+
        void salvacion();
+       void condenacion();
+
+       QVector<int> ContinentesPecadores();
+       QVector<int> ContinentesBuenos();
+
        NodoLd* buscarPersona(int);  //tal vez mejor que retorne la persona      efectivamente
        void imprimirArbolHeapFamilia();
        void pruebasAllison();
-       QVector<int> ContinentesPecadores();
-       QVector<int> ContinentesBuenos();
 
 };
 

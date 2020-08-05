@@ -8,7 +8,7 @@ struct ArbolHeapDemonio{
     QString demonio;
     int idDemonio;          //el indice que le corresponde en el arreglo de pecados de las personas
 
-    QVector<ArbolHeapFamilia*> arbol;
+    QVector<ArbolHeapFamilia*>  arbol;
 
     ArbolHeapDemonio(){}
     ArbolHeapDemonio(QString nombreDemonio,int pidDemonio);
@@ -17,6 +17,7 @@ struct ArbolHeapDemonio{
     void ordenarAux(int,int);
     Persona * buscarDisponible();
     ArbolHeapFamilia * buscarFamilia(Persona * persona);
+    Persona * menosPecador();
     int random();
     void imprimir();
 };

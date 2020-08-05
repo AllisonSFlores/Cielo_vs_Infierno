@@ -190,28 +190,11 @@ void MainWindow::on_btnCieloReporte_clicked()
 }
 
 void MainWindow::on_btnCondenar_clicked(){
+    controlador->condenacion();
 
-    controlador->getListaMundo()->imprimir();
-    qDebug()<<"Lucifer:Orgullo";
-    QVector<Persona*> orgullo = controlador->getListaMundo()->condenados(0);
-    qDebug()<<orgullo;
-    qDebug()<<"Belcebú:Envidia";
-    QVector<Persona*> envidia = controlador->getListaMundo()->condenados(1);
-    qDebug()<<envidia;
-    qDebug()<<"Satán:ira";
-    QVector<Persona*> ira = controlador->getListaMundo()->condenados(2);
-    qDebug()<<ira;
-    qDebug()<<"Abadón:Pereza";
-    QVector<Persona*> pereza = controlador->getListaMundo()->condenados(3);
-    qDebug()<<pereza;
-    qDebug()<<"Mammón:Codicia";
-    QVector<Persona*> codicia = controlador->getListaMundo()->condenados(4);
-    qDebug()<<codicia;
-    qDebug()<<"Belfegor:Glotonería";
-    QVector<Persona*> glotoneria = controlador->getListaMundo()->condenados(5);
-    qDebug()<<glotoneria;
-    qDebug()<<"Asmodeo:Lujuria";
-    QVector<Persona*> lujuria = controlador->getListaMundo()->condenados(6);
-    qDebug()<<lujuria;
+}
 
+void MainWindow::on_btnReporte_clicked()
+{
+    controlador->infierno->imprimir();
 }
