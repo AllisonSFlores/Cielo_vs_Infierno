@@ -60,9 +60,8 @@ void ArbolHeapDemonio::ordenarAux(int _izq,int _der){
 
 ArbolHeapFamilia *  ArbolHeapDemonio::buscarFamilia(Persona * persona){
 
-    qDebug()<<"buscar familia";
+    qDebug()<<"buscar heap de mi familia";
     if(!arbol.isEmpty()){
-        qDebug()<<"el heap demonio no esta vacio";
         int largo = arbol.length();
         for(int i = 0;i<largo ; i++){
             if (arbol[i]->apellidoFamilia == persona->getApellido() && arbol[i]->paisFamilia == persona->getPais()){
@@ -75,26 +74,34 @@ ArbolHeapFamilia *  ArbolHeapDemonio::buscarFamilia(Persona * persona){
 }
 
 Persona * ArbolHeapDemonio::menosPecador(){
-    Persona * menosPecadorv = new Persona();
-    int cant;
-
-    for(int i = 0 ; i < arbol.size() ; i++){
-        cant = arbol[i]->menosPecador()->pureza() ;
-
-        if(cant > 0 && cant > menosPecadorv->getCantBuenasAcciones() - menosPecadorv->getCantPecados()){
+    Persona * menosPecadorv = arbol[0]->menosPecador();
+    for(int i = 1 ; i < arbol.size() ; i++){
+        if( arbol[i]->menosPecador()->pureza() > menosPecadorv->pureza()){
             menosPecadorv = arbol[i]->menosPecador();
         }
     }
     return menosPecadorv;
 }
+bool ArbolHeapDemonio::eliminarHumano(Persona *humano){
+    for(int i = 0 ; i < arbol.size() ; i++){
+        if(arbol[i]->eliminarHumano(humano)){
+            qDebug()<<"true de eliminar heap demonio";
+            return true;
+        }
+    }
+    qDebug()<<"false de eliminar heap demonio";
+    return false;
+}
 
 void ArbolHeapDemonio::imprimir(){
     qDebug()<<"--------------------------------------------"+demonio;
     if(!arbol.isEmpty()){
-        for (int i = 0 ; i < arbol.size() ; i++){
+
+        int i =0;
+        while(i<arbol.size() && arbol[i]!=NULL){
             arbol[i]->imprimir();
+            i++;
         }
-        menosPecador()->imprimir();
         }
     else{
         qDebug()<<"vacia";

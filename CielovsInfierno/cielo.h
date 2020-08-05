@@ -9,12 +9,12 @@
 struct Cielo{
     ArbolAngeles * arbol;
     TablaHashCielo * tabla;
-    QString nombres[2][10]= {"Miguel","Nuriel","Aniel","Rafael","Gabriel","Shamsiel","Raguel","Uriel","Azrael","Sariel"};
-
+    QString nombres[2][10];
     Cielo();
     void reino();
     int getAlturaArbol();
-    void salvacion();
+    int generacion();
+    void salvacion(QVector<Persona *>);
 
 
     int version(int p);

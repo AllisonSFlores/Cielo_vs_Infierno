@@ -20,6 +20,7 @@ struct ArbolHeapFamilia{
     int sumarPecado();
     int sumarPecado(int d);
     Persona * menosPecador();
+    bool eliminarHumano(Persona * humano);      //si esta lo borra  y retorna true sino retorna false
     int random();
     void imprimir();
 

@@ -1,7 +1,10 @@
 #ifndef PERSONA_H
 #define PERSONA_H
 #include "estado.h"
+
 #include <QtCore>
+#include "angel.h"
+
 struct Persona{
     int id;
     QString nombre;
@@ -15,20 +18,23 @@ struct Persona{
     int buenasAcciones[7]={0,0,0,0,0,0,0};
     int nivelMaldad;
     Persona * padre;
-    //NO SE SI LA LISTA DE HIJOS ESTA BIEN ASI
     Persona * hijos[5]={0,0,0,0,0};
     Estado estado;
+    Angel * angel;
     QString nacimiento;
 
     Persona(){
         id=-1;
         nombre="";
-        apellido="";
+        apellido="Humano por defcto";
         pais={"",""};
         continente ="";
         creencia="";
         profesion="";
         correo="";
+        padre= NULL;
+        hijos[0]=NULL;
+        angel = NULL;
         estado=mundo;
         nivelMaldad=0;
     }

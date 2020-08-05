@@ -12,22 +12,24 @@ void Cielo::reino(){
     Angel * Serafines =new Angel("Serafines",0,2);
     Angel * Querubines =new Angel("Querubines",0,2);
     Angel * Tronos =new Angel("Tronos",0,2);
-    arbol->insertar(dios);
-    arbol->insertar(Serafines);arbol->insertar(Querubines);
-    arbol->insertar(Tronos);
+    arbol->insertar(dios,NULL);arbol->insertar(Serafines,NULL);arbol->insertar(Querubines,NULL);arbol->insertar(Tronos,NULL);
 
 }
 int Cielo::getAlturaArbol(){
     return arbol->getAltura(arbol->raiz);
 }
-void Cielo::salvacion(){
-    int n = pow(3, getAlturaArbol());
+int Cielo::generacion(){
+    return pow(3, getAlturaArbol());
+}
+void Cielo::salvacion(QVector<Persona * > salvados){
+    int n = generacion();
     qDebug()<<"Angeles nuevos: "+QString::number(n);
     for(int i = 0 ; i < n ; i++){
         int j = ramdom();
         Angel * angel = new Angel(nombres[0][j],version(j),0);
-        //AQUI SE LES DIRIA QUE VAYAN A SALVAR AL HUMANO
-        arbol->insertar(angel);
+        salvados[i]->angel = angel;
+        tabla->insertar(salvados[i]);
+        arbol->insertar(angel,salvados[i]);
     }
 }
 

@@ -3,13 +3,14 @@
 #include "arbolheapdemonio.h"
 
 struct Infierno {
-    ArbolHeapDemonio * demonios[7]; //ArbolHeapDemonio es un demonio?
+    ArbolHeapDemonio * demonios[7];
 
     Infierno();
     void condenar(QVector<Persona*> condenados,int demonio);
     Persona * menosPecador();
     QStringList logcondenacion();
     Persona * menosPecadorDemonio(int demonio);
+    void eliminarHumano(Persona *);
     void imprimir();
 };
 

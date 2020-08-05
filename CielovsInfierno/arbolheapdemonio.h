@@ -18,6 +18,7 @@ struct ArbolHeapDemonio{
     Persona * buscarDisponible();
     ArbolHeapFamilia * buscarFamilia(Persona * persona);
     Persona * menosPecador();
+    bool eliminarHumano(Persona * humano);
     int random();
     void imprimir();
 };

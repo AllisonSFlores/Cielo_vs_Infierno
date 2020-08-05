@@ -85,8 +85,15 @@ void Controlador::condenacion(){
 }
 
 void Controlador::salvacion(){
-    //FALTA HACER QUE LOS ANGELES CONOZCAN EL INFIERNO O NO SE, DESPUES VEO
-    cielo->salvacion();
+    QVector<Persona*> salvados;
+    int generacion = cielo->generacion();
+    qDebug()<<"cantidad de humano a salvar : "+QString::number(generacion);
+    for (int i =0 ; i < generacion ; i++){
+        qDebug()<<"-------------------------------------"+QString::number(i);
+        salvados.append(infierno->menosPecador());
+        infierno->menosPecador()->imprimir();
+    }
+    cielo->salvacion(salvados);
 }
 void Controlador::imprimirArbolHeapFamilia(){
     tablaFamilia->printAll();

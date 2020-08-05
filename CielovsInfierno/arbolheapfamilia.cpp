@@ -49,7 +49,6 @@ void ArbolHeapFamilia::buscarFamilia(Persona * persona){
 
     qDebug()<<"buscar familia";
     if(!arbol.isEmpty()){
-        qDebug()<<"el heap familia no esta vacio";
         int hijos = random();
         qDebug()<<"buscandole a "+QString::number(persona->id)+"  "+QString::number(hijos)+" hijos";
         for (int i=1 ; i<=hijos ; i++){
@@ -96,16 +95,21 @@ int ArbolHeapFamilia::sumarPecado(int d){
     return cant;
 }
 Persona * ArbolHeapFamilia::menosPecador(){
-    Persona * menosPecadorv = new Persona();
+    Persona * menosPecadorv=arbol[0];
 
-    for(int i = 0 ; i < arbol.size() ; i++){
+    for(int i = 1 ; i < arbol.size() ; i++){
 
-        if(arbol[i]->pureza() > 0 && arbol[i]->pureza() > menosPecadorv->pureza()){
+        if( arbol[i]->pureza() > menosPecadorv->pureza()){
             menosPecadorv = arbol[i];
         }
     }
     return menosPecadorv;
 }
+bool ArbolHeapFamilia::eliminarHumano(Persona * humano){
+    qDebug()<<"eliminar de heap familia";
+    return arbol.removeOne(humano);
+}
+
 
 int ArbolHeapFamilia::random(){
     std::uniform_int_distribution<int> distrib(0, 4);

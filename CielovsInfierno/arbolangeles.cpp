@@ -27,7 +27,7 @@ NodoArbolAngeles * ArbolAngeles::buscarCampo(NodoArbolAngeles * raiz, int nivela
     return NULL;
 
 }
-void ArbolAngeles::insertar(Angel * pangel){
+void ArbolAngeles::insertar(Angel * pangel, Persona * humano){
     if(raiz != NULL){
         NodoArbolAngeles * campo= buscarCampo(raiz,getAltura(raiz));
         if(campo==NULL){
@@ -35,17 +35,17 @@ void ArbolAngeles::insertar(Angel * pangel){
         }
 
         if(campo->izq == NULL){
-            campo->izq = new NodoArbolAngeles(pangel,campo->nivel+1);
+            campo->izq = new NodoArbolAngeles(pangel,campo->nivel+1,  humano);
         }
         else if(campo->cen == NULL){
-            campo->cen = new NodoArbolAngeles(pangel,campo->nivel+1);
+            campo->cen = new NodoArbolAngeles(pangel,campo->nivel+1,  humano);
         }
         else if(campo->der == NULL){
-            campo->der = new NodoArbolAngeles(pangel,campo->nivel+1);
+            campo->der = new NodoArbolAngeles(pangel,campo->nivel+1, humano);
         }
     }
     else{
-        raiz=new NodoArbolAngeles(pangel,getAltura(raiz)+1);
+        raiz=new NodoArbolAngeles(pangel,getAltura(raiz)+1, humano);
     }
 
 
@@ -81,10 +81,11 @@ NodoArbolAngeles::NodoArbolAngeles(int a, int pcont)
     cen=NULL;
     der=NULL;
 }
-NodoArbolAngeles::NodoArbolAngeles(Angel * pangel,int a){
+NodoArbolAngeles::NodoArbolAngeles(Angel * pangel,int a, Persona * phumano){
     nivel =a;
     angel = pangel;
     angel->generacion=a;
+    humano= phumano;
     izq =NULL;
     cen=NULL;
     der=NULL;

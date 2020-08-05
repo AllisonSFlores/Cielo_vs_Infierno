@@ -32,7 +32,7 @@ void LSFamilia::insert(Persona * ppersona){
     */
     qDebug()<<"insert";
     qDebug()<<ppersona->pais[0];
-;     if (lookFor(ppersona->pais[0]) != NULL){
+     if (lookFor(ppersona->pais[0]) != NULL){
               qDebug()<<"diferente de nulo";
          // they both point to the new one in memory
          NodoFamilia * nodo = lookFor(ppersona->getPais());
