@@ -119,6 +119,7 @@ int ArbolHeapFamilia::random(){
 void ArbolHeapFamilia::imprimir(){
 
     for (int i = 0 ; i < arbol.size() ; i++){
+        qDebug()<<"Imprimir desde el heapFamilia size: "<<arbol.size();
         arbol[i]->imprimir();
     }
 }

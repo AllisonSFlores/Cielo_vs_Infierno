@@ -47,8 +47,11 @@ void MainWindow::on_btnBuscar_clicked(){
 
     int id = (ui->txtBuscar->text()).toUInt();
     if (controlador->getArbolMundo()->raiz != NULL){
-        if (controlador->buscarPersona(id)== NULL){
+        if (!controlador->buscarPersona(id)){
              QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+        }
+        else{
+            QMessageBox::information(this,"Información","Persona encontrada",QMessageBox::Ok);
         }
     }
     else{

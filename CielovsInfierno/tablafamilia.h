@@ -19,7 +19,8 @@ struct TablaFamilia{
     void insertAux(NodoTabla * nodo);
     int len();
     bool isEmpty();
-    NodoTabla *  lookFor(QString ID);
+    NodoTabla *  lookFor(QString pp);
+
 };
 
 

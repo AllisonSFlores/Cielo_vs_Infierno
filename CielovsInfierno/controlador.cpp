@@ -73,11 +73,28 @@ void Controlador::crearHumanos(int cantidadHumanos){
 ///  Buscar persona por ID y mostrar su familia
 /// \brief Controlador::buscarPersona
 /// \param id
-/// \return
+/// \return bool
 ///
-NodoLd* Controlador::buscarPersona(int id){
+bool Controlador::buscarPersona(int id){
 
-    return _arbolMundo->recorrerListaMundo(id);
+
+    NodoLd* nodoPersona = _arbolMundo->recorrerListaMundo(id);
+    if(nodoPersona!=NULL){
+        qDebug()<<"IF 1";
+        NodoTabla * nodotable = tablaFamilia->lookFor(nodoPersona->persona->getApellido());
+        if (nodotable != NULL){
+            qDebug()<<"IF 2";
+            NodoFamilia *nodoFamily = nodotable->lista->lookFor(nodoPersona->persona->getPais());
+            qDebug()<<"nodofamilia"<<nodoFamily;
+            if (nodoFamily != NULL){
+                qDebug()<<"IF 3";
+                nodoFamily->arbol->imprimir();
+                return true;
+            }
+        }
+    }
+
+    return false;
 
 }
 

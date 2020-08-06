@@ -119,6 +119,7 @@ NodoFamilia * LSFamilia::lookFor(QString pp){
         return NULL;
     }
 }
+
 void LSFamilia::sumarPecados(){
     if (!isEmpty()){
         NodoFamilia *tmp = firstNode;

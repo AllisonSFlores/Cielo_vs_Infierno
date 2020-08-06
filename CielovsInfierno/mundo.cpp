@@ -9,11 +9,9 @@ void arbolMundo::pasarDatoAinsertar(QVector<NodoParaArbol*> nodosDelArbol){
 
 
     int largo = nodosDelArbol.length();
-   // qDebug()<<"Largo"<<largo;
     if (largo>3){
         while (largo>4){
             int mitad=largo/2;
-            //qDebug()<<"mitad"<<mitad;
             //solo es impar una vez
             if(largo%2 == 1){
                 NodoParaArbol* borrado = nodosDelArbol[mitad];
@@ -44,7 +42,6 @@ void arbolMundo::pasarDatoAinsertar(QVector<NodoParaArbol*> nodosDelArbol){
         insertar(borrado->persona->getId(),borrado->puntero);
     }
     else{
-        //qDebug()<<"arbol de 3 nodos "<<largo;
         //si es un arbol de 3, el del medio es la raiz
         int mitad=largo/2;
        // qDebug()<<"mitad arbol de 3 nodos "<<mitad;
