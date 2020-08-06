@@ -3,6 +3,7 @@ debug/arbolangeles.o
 debug/arbolheapdemonio.o
 debug/arbolheapfamilia.o
 debug/cielo.o
+debug/consultas.o
 debug/controlador.o
 debug/datos.o
 debug/infierno.o

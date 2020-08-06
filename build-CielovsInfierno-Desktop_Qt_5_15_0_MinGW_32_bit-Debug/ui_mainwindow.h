@@ -72,7 +72,7 @@ public:
     QLabel *label_28;
     QWidget *verticalLayoutWidget_7;
     QVBoxLayout *verticalLayout_4;
-    QPushButton *txtMasPecadores;
+    QPushButton *btnMasPecadores;
     QPushButton *btnMasBuenos;
     QPushButton *btnMenosPecadores;
     QPushButton *btnMenosBuenos;
@@ -133,7 +133,7 @@ public:
         centralwidget->setMaximumSize(QSize(1900, 900));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 1500, 941));
+        tabWidget->setGeometry(QRect(20, -20, 1500, 941));
         tabWidget->setMinimumSize(QSize(1400, 900));
         tabWidget->setMaximumSize(QSize(1900, 1000));
         tabWidget->setCursor(QCursor(Qt::ArrowCursor));
@@ -160,7 +160,7 @@ public:
 
         label_2 = new QLabel(tab);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(40, 130, 179, 21));
+        label_2->setGeometry(QRect(40, 130, 211, 21));
         verticalLayoutWidget_4 = new QWidget(tab);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
         verticalLayoutWidget_4->setGeometry(QRect(50, 340, 211, 111));
@@ -180,13 +180,13 @@ public:
 
         label_25 = new QLabel(tab);
         label_25->setObjectName(QString::fromUtf8("label_25"));
-        label_25->setGeometry(QRect(50, 300, 179, 21));
+        label_25->setGeometry(QRect(50, 300, 221, 21));
         btnSumarPecados = new QPushButton(tab);
         btnSumarPecados->setObjectName(QString::fromUtf8("btnSumarPecados"));
         btnSumarPecados->setGeometry(QRect(320, 160, 211, 31));
         label_26 = new QLabel(tab);
         label_26->setObjectName(QString::fromUtf8("label_26"));
-        label_26->setGeometry(QRect(50, 10, 301, 101));
+        label_26->setGeometry(QRect(50, 10, 381, 121));
         QFont font;
         font.setFamily(QString::fromUtf8("Constantia"));
         font.setPointSize(72);
@@ -201,7 +201,7 @@ public:
         btnBuenasAcciones->setGeometry(QRect(1140, 130, 151, 41));
         label_27 = new QLabel(tab);
         label_27->setObjectName(QString::fromUtf8("label_27"));
-        label_27->setGeometry(QRect(1000, 20, 271, 51));
+        label_27->setGeometry(QRect(960, 20, 341, 51));
         label_27->setFont(font);
         label_27->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         gridLayoutWidget = new QWidget(tab);
@@ -254,13 +254,13 @@ public:
 
         lblEstadoBuenas = new QLabel(tab);
         lblEstadoBuenas->setObjectName(QString::fromUtf8("lblEstadoBuenas"));
-        lblEstadoBuenas->setGeometry(QRect(320, 300, 211, 21));
+        lblEstadoBuenas->setGeometry(QRect(320, 300, 271, 21));
         txtEdit = new QTextEdit(tab);
         txtEdit->setObjectName(QString::fromUtf8("txtEdit"));
         txtEdit->setGeometry(QRect(660, 370, 171, 331));
         verticalLayoutWidget_6 = new QWidget(tab);
         verticalLayoutWidget_6->setObjectName(QString::fromUtf8("verticalLayoutWidget_6"));
-        verticalLayoutWidget_6->setGeometry(QRect(50, 520, 211, 115));
+        verticalLayoutWidget_6->setGeometry(QRect(50, 520, 211, 134));
         VL2_3 = new QVBoxLayout(verticalLayoutWidget_6);
         VL2_3->setObjectName(QString::fromUtf8("VL2_3"));
         VL2_3->setContentsMargins(0, 0, 0, 0);
@@ -299,10 +299,10 @@ public:
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_7);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        txtMasPecadores = new QPushButton(verticalLayoutWidget_7);
-        txtMasPecadores->setObjectName(QString::fromUtf8("txtMasPecadores"));
+        btnMasPecadores = new QPushButton(verticalLayoutWidget_7);
+        btnMasPecadores->setObjectName(QString::fromUtf8("btnMasPecadores"));
 
-        verticalLayout_4->addWidget(txtMasPecadores);
+        verticalLayout_4->addWidget(btnMasPecadores);
 
         btnMasBuenos = new QPushButton(verticalLayoutWidget_7);
         btnMasBuenos->setObjectName(QString::fromUtf8("btnMasBuenos"));
@@ -321,7 +321,7 @@ public:
 
         label_31 = new QLabel(tab);
         label_31->setObjectName(QString::fromUtf8("label_31"));
-        label_31->setGeometry(QRect(710, 90, 61, 21));
+        label_31->setGeometry(QRect(710, 90, 81, 21));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -598,7 +598,7 @@ public:
         label_30->setText(QCoreApplication::translate("MainWindow", "Pa\303\255s:", nullptr));
         btnBuscar_3->setText(QCoreApplication::translate("MainWindow", "Generar archivo de informaci\303\263n", nullptr));
         label_28->setText(QCoreApplication::translate("MainWindow", "Buscar familia", nullptr));
-        txtMasPecadores->setText(QCoreApplication::translate("MainWindow", "10 pa\303\255ses m\303\241s pecadores", nullptr));
+        btnMasPecadores->setText(QCoreApplication::translate("MainWindow", "10 pa\303\255ses m\303\241s pecadores", nullptr));
         btnMasBuenos->setText(QCoreApplication::translate("MainWindow", "10 pa\303\255ses m\303\241s buenos", nullptr));
         btnMenosPecadores->setText(QCoreApplication::translate("MainWindow", "5 pa\303\255ses menos pecadores", nullptr));
         btnMenosBuenos->setText(QCoreApplication::translate("MainWindow", "5 pa\303\255ses menos buenos", nullptr));

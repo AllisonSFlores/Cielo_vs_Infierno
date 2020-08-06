@@ -10,7 +10,7 @@ void Controlador::__init__(){
     this->heap = new ArbolHeapFamilia();
     this->tablaFamilia = new TablaFamilia();
     this->infierno = new Infierno();
-
+    this->consultas = new Consultas();
 
 }
 
@@ -70,10 +70,52 @@ void Controlador::crearHumanos(int cantidadHumanos){
 
 }
 
+///  Buscar persona por ID y mostrar su familia
+/// \brief Controlador::buscarPersona
+/// \param id
+/// \return
+///
 NodoLd* Controlador::buscarPersona(int id){
+
     return _arbolMundo->recorrerListaMundo(id);
 
 }
+
+
+QVector<QString> Controlador::masPecadores(){
+
+
+    QVector<QString> losPaises;
+    QString *countries = datos->getPaises();
+    //Esto porque consulta maneja qvector
+    for (int i=0;i<25;i++){
+        losPaises.append(countries[i]);
+    }
+
+    consultas->setPaises(losPaises);
+    consultas->setListaDoble(listaMundo->generarCopia());
+    QVector<QString> paises = consultas->masPecadores();
+
+    return paises;
+}
+
+QVector<QString> Controlador::masBuenos(){
+
+    QVector<QString> losPaises;
+    QString *countries = datos->getPaises();
+    //Esto porque consulta maneja qvector
+    for (int i=0;i<25;i++){
+        losPaises.append(countries[i]);
+    }
+
+    consultas->setPaises(losPaises);
+    consultas->setListaDoble(listaMundo->generarCopia());
+    QVector<QString> paises = consultas->masBuenos();
+
+    return paises;
+
+}
+
 
 void Controlador::condenacion(){
     for(int i=0 ; i<7 ; i++){

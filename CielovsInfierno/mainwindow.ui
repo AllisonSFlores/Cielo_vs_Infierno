@@ -420,7 +420,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <widget class="QPushButton" name="txtMasPecadores">
+        <widget class="QPushButton" name="btnMasPecadores">
          <property name="text">
           <string>10 países más pecadores</string>
          </property>
@@ -1105,7 +1105,7 @@ mensajeros de Dios.</string>
      <x>0</x>
      <y>0</y>
      <width>1430</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

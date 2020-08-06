@@ -140,15 +140,41 @@ void MainWindow::on_btnReporte_clicked(){
 
 //consultas
 void MainWindow::on_btnMasBuenos_clicked(){
-
+    QString cadena = "Más buenos \n\n";
+    QVector<QString> losPaises = controlador->masBuenos();
+    for (int t=0;t<10;t++){
+        cadena = cadena + losPaises[t]+"\n\n";
+    }
+    ui->txtEdit->setText(cadena);
 }
 
 void MainWindow::on_btnMenosPecadores_clicked(){
 
+    QString cadena = "Menos pecadores \n\n";
+    QVector<QString> losPaises = controlador->masPecadores();
+    for (int t=losPaises.length()-1;t>losPaises.length()-6;t--){
+        cadena = cadena + losPaises[t]+"\n\n";
+    }
+    ui->txtEdit->setText(cadena);
+
 }
 
-void MainWindow::on_btnMenosBuenos_clicked()
-{
+void MainWindow::on_btnMenosBuenos_clicked(){
 
+    QString cadena = "Menos buenos \n\n";
+    QVector<QString> losPaises = controlador->masBuenos();
+    for (int t=losPaises.length()-1;t>losPaises.length()-6;t--){
+        cadena = cadena + losPaises[t]+"\n\n";
+    }
+    ui->txtEdit->setText(cadena);
 }
 
+void MainWindow::on_btnMasPecadores_clicked(){
+
+    QString cadena = "Más pecadores \n\n";
+    QVector<QString> losPaises = controlador->masPecadores();
+    for (int t=0;t<10;t++){
+        cadena = cadena + losPaises[t]+"\n\n";
+    }
+    ui->txtEdit->setText(cadena);
+}

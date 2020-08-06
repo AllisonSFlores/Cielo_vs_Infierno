@@ -21,6 +21,7 @@ SOURCES += \
     arbolheapdemonio.cpp \
     arbolheapfamilia.cpp \
     cielo.cpp \
+    consultas.cpp \
     controlador.cpp \
     datos.cpp \
     infierno.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     arbolheapdemonio.h \
     arbolheapfamilia.h \
     cielo.h \
+    consultas.h \
     controlador.h \
     datos.h \
     estado.h \

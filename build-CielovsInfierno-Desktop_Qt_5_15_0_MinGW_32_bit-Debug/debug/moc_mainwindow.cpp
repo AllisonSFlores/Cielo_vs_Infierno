@@ -44,10 +44,10 @@ QT_MOC_LITERAL(8, 162, 29), // "on_btnCieloGeneracion_clicked"
 QT_MOC_LITERAL(9, 192, 26), // "on_btnCieloReporte_clicked"
 QT_MOC_LITERAL(10, 219, 22), // "on_btnCondenar_clicked"
 QT_MOC_LITERAL(11, 242, 21), // "on_btnReporte_clicked"
-QT_MOC_LITERAL(12, 264, 26), // "on_txtMasPecadores_clicked"
-QT_MOC_LITERAL(13, 291, 23), // "on_btnMasBuenos_clicked"
-QT_MOC_LITERAL(14, 315, 28), // "on_btnMenosPecadores_clicked"
-QT_MOC_LITERAL(15, 344, 25) // "on_btnMenosBuenos_clicked"
+QT_MOC_LITERAL(12, 264, 23), // "on_btnMasBuenos_clicked"
+QT_MOC_LITERAL(13, 288, 28), // "on_btnMenosPecadores_clicked"
+QT_MOC_LITERAL(14, 317, 25), // "on_btnMenosBuenos_clicked"
+QT_MOC_LITERAL(15, 343, 26) // "on_btnMasPecadores_clicked"
 
     },
     "MainWindow\0on_btnGenerar_clicked\0\0"
@@ -58,10 +58,10 @@ QT_MOC_LITERAL(15, 344, 25) // "on_btnMenosBuenos_clicked"
     "on_btnCieloGeneracion_clicked\0"
     "on_btnCieloReporte_clicked\0"
     "on_btnCondenar_clicked\0on_btnReporte_clicked\0"
-    "on_txtMasPecadores_clicked\0"
     "on_btnMasBuenos_clicked\0"
     "on_btnMenosPecadores_clicked\0"
-    "on_btnMenosBuenos_clicked"
+    "on_btnMenosBuenos_clicked\0"
+    "on_btnMasPecadores_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -129,10 +129,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->on_btnCieloReporte_clicked(); break;
         case 8: _t->on_btnCondenar_clicked(); break;
         case 9: _t->on_btnReporte_clicked(); break;
-        case 10: _t->on_txtMasPecadores_clicked(); break;
-        case 11: _t->on_btnMasBuenos_clicked(); break;
-        case 12: _t->on_btnMenosPecadores_clicked(); break;
-        case 13: _t->on_btnMenosBuenos_clicked(); break;
+        case 10: _t->on_btnMasBuenos_clicked(); break;
+        case 11: _t->on_btnMenosPecadores_clicked(); break;
+        case 12: _t->on_btnMenosBuenos_clicked(); break;
+        case 13: _t->on_btnMasPecadores_clicked(); break;
         default: ;
         }
     }

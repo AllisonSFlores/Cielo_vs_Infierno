@@ -32,6 +32,7 @@ struct Datos{
     bool validarId();
     int random(int seed);
     void imprimirArreglo(QString arreglo[]);
+    QString *getPaises();
 };
 
 #endif // DATOS_H

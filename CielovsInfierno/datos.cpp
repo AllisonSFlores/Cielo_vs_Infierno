@@ -163,7 +163,9 @@ void imprimirArreglo(QString arreglo[]){
 
 
 
-
+QString *Datos::getPaises(){
+    return paises;
+}
 
 
 

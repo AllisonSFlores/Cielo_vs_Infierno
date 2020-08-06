@@ -9,6 +9,7 @@
 #include "tablafamilia.h"
 #include "arbolheapdemonio.h"
 #include "infierno.h"
+#include "consultas.h"
 
 struct Controlador{
        TablaHashID * tabla;
@@ -19,6 +20,7 @@ struct Controlador{
        ArbolHeapFamilia *heap;
        TablaFamilia * tablaFamilia;
        Infierno * infierno;
+       Consultas *consultas;
 
        Controlador(){}
        void __init__();
@@ -39,6 +41,8 @@ struct Controlador{
        NodoLd* buscarPersona(int);  //tal vez mejor que retorne la persona      efectivamente
        void imprimirArbolHeapFamilia();
        void pruebasAllison();
+       QVector<QString> masPecadores(); //Me sirve para los 10 mas y los 5 menos
+       QVector<QString> masBuenos();
 
 };
 
