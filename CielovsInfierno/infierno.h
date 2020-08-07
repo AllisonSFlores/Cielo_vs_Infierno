@@ -6,11 +6,12 @@ struct Infierno {
     ArbolHeapDemonio * demonios[7];
 
     Infierno();
-    void condenar(QVector<Persona*> condenados,int demonio);
+    QString condenar(QVector<Persona*> condenados,int demonio);
     Persona * menosPecador();
-    QStringList logcondenacion();
+    QString condenacionLog(QVector<Persona *>salvados);
     Persona * menosPecadorDemonio(int demonio);
     void eliminarHumano(Persona *);
+    QString time();
     void imprimir();
 };
 

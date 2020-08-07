@@ -103,17 +103,16 @@ int ArbolHeapFamilia::sumarPecado(int d){
  * @return El humano menos pecador del arbol
  */
 Persona * ArbolHeapFamilia::menosPecador(){
-
     Persona * menosPecadorv=arbol[0];
 
-    for(int i = 1 ; i < arbol.size()-1 ; i++){
+    for(int i = 1 ; i < arbol.size() ; i++){
 
-        if( arbol[i]->pureza() > menosPecadorv->pureza()){
+        if(arbol[i]->pureza() > menosPecadorv->pureza()){
             menosPecadorv = arbol[i];
         }
     }
-    return menosPecadorv;
-}
+    return menosPecadorv;}
+
 /**
  * Elimina de arbol humano
  * @brief ArbolHeapFamilia::eliminarHumano

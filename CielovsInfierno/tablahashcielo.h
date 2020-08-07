@@ -12,5 +12,6 @@ struct TablaHashCielo
     void imprimirTabla();
     int obtenerIDValido();
     int randomID(int seed);
+    QString informacion(QVector<Persona * >);
 };
 #endif // TABLAHASHCIELO_H

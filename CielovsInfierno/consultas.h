@@ -3,13 +3,12 @@
 #include<QString>
 #include "mundo.h"
 
-class Consultas{
+struct Consultas{
 
     QVector<QString> paises;
     listaDoble *personas;
 
 
-public:
 
     Consultas(QVector<QString> paises){
         this->paises = paises;

@@ -14,9 +14,10 @@ struct Cielo{
     void reino();
     int getAlturaArbol();
     int generacion();
-    void salvacion(QVector<Persona *>);
+    QString salvacion(QVector<Persona *>);
 
-
+    QString salvacionLog(QVector<Persona *>);
+    QString time();
     int version(int p);
     void nombresmatriz();
     int ramdom();

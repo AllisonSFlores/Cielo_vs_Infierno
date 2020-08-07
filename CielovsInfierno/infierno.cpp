@@ -12,11 +12,12 @@ Infierno::Infierno(){
  * @param condenados
  * @param demonio
  */
-void Infierno::condenar(QVector<Persona *> condenados, int demonio){
+QString Infierno::condenar(QVector<Persona *> condenados, int demonio){
     for(int i = 0 ; i < condenados.size() ; i++){
         qDebug()<<condenados[i];
         demonios[demonio]->insertar(condenados[i]);
     }
+    return condenacionLog(condenados);
 }
 /**
  * Recorre el arreglo de demonios pidiendoles el menos pecador de su arbol
@@ -24,14 +25,14 @@ void Infierno::condenar(QVector<Persona *> condenados, int demonio){
  * @return persona menos pecadora del infierno
  */
 Persona * Infierno::menosPecador(){
-    Persona * menosPecadorv = demonios[0]->arbol[0]->menosPecador();
+    Persona * menosPecadorv = NULL;
     qDebug()<<"menos pecador del demonio 0";
 
-    for(int i = 1 ; i < 3 ; i++){
+    for(int i = 0 ; i < 7 ; i++){
         qDebug()<<"i: "+QString::number(i);
-        if(demonios[i]->arbol[i]->menosPecador()->pureza() > menosPecadorv->pureza()){
+        if(!demonios[i]->arbol.isEmpty() && demonios[i]->menosPecador()->pureza() > menosPecadorv->pureza()){
             qDebug()<<"el nuevo es menos pecador";
-            Persona * p=demonios[i]->arbol[i]->menosPecador();
+            Persona * p=demonios[i]->menosPecador();
             p->imprimir();
             menosPecadorv = p;
         }
@@ -39,6 +40,7 @@ Persona * Infierno::menosPecador(){
     }
     qDebug()<<"llama a eliminar";
     eliminarHumano(menosPecadorv);
+    imprimir();
     qDebug()<<"antes de estado";
     menosPecadorv->estado = cielo;
     qDebug()<<"despues de estado";
@@ -59,6 +61,25 @@ void Infierno::eliminarHumano(Persona * humano){
         }
     }
     qDebug()<<"listo";
+}
+QString Infierno::condenacionLog(QVector<Persona *>condenados){
+        QString datos="";
+        for (int i = 0; i < condenados.size() ; i++){
+             datos += time()+"\t Humano \t"+QString::number(condenados[1]->getId())+" "+condenados[i]->getNombre()+"\t"+condenados[i]->getApellido()+"\t"+
+                     condenados[i]->getPais()+".\t Balance: "+QString::number(condenados[i]->getCantPecados())+" pecados vs "+
+                     QString::number(condenados[i]->getCantBuenasAcciones())+" buenas acciones."+"\t Condenado por *ISERTAR AQUI DEMONIOS";
+
+        }
+        return datos;
+
+
+
+}
+QString Infierno::time(){
+    QDateTime UTC(QDateTime::currentDateTimeUtc());
+    QDateTime local(UTC.toLocalTime());
+    QString x=local.toString(Qt::SystemLocaleShortDate);
+    return x;
 }
 void Infierno::imprimir(){
     for(int i = 0 ; i < 7 ; i++){

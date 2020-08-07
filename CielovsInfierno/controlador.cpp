@@ -200,14 +200,17 @@ void Controlador::condenacion(){
         qDebug()<<"Demonio "+QString::number(i);
         qDebug()<<condenados;
         infierno->condenar(condenados, i);
+        QString datos= infierno->condenacionLog(condenados);
+        qDebug()<<datos;
     }
+
 }
 
 void Controlador::salvacion(){
     QVector<Persona*> salvados;
     int generacion = cielo->generacion();
     qDebug()<<"cantidad de humano a salvar : "+QString::number(generacion);
-    for (int i =0 ; i < generacion-1 ; i++){
+    for (int i =0 ; i < generacion ; i++){
         qDebug()<<"-------------------------------------"+QString::number(i);
         Persona * p =infierno->menosPecador();
         qDebug()<<"humano recibido";
@@ -215,7 +218,9 @@ void Controlador::salvacion(){
         salvados.append(p);
         qDebug()<<"salvado";
     }
-    cielo->salvacion(salvados);
+    QString datos=cielo->salvacion(salvados);
+    qDebug()<<datos;
+    //SE LLAMA A LA FUNCION QUE VA A ESCRIBIR EN EL TEXTO
 }
 void Controlador::imprimirArbolHeapFamilia(){
     tablaFamilia->printAll();

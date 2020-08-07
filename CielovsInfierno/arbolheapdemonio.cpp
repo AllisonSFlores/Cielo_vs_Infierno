@@ -83,11 +83,20 @@ Persona * ArbolHeapDemonio::menosPecador(){
 
     Persona * menosPecadorv = arbol[0]->menosPecador();
     for(int i = 1 ; i < arbol.size() ; i++){
-        if( arbol[i]->menosPecador()->pureza() > menosPecadorv->pureza()){
+        if(arbol[i]->menosPecador()->pureza() > menosPecadorv->pureza()){
             menosPecadorv = arbol[i]->menosPecador();
         }
     }
     return menosPecadorv;
+}
+void ArbolHeapDemonio::limpiar(){
+    if(!arbol.isEmpty()){
+        for(int i = 0 ; i < arbol.size() ; i++){
+            if(arbol[i]->arbol.isEmpty()){
+                arbol.removeOne(arbol[i]);
+            }
+        }
+    }
 }
 /**
  * Recorre el arbol pidiendole a cada familia que borre a humano, si le retornan true es porque estaba y lo borro
@@ -99,6 +108,7 @@ bool ArbolHeapDemonio::eliminarHumano(Persona *humano){
     for(int i = 0 ; i < arbol.size() ; i++){
         if(arbol[i]->eliminarHumano(humano)){
             qDebug()<<"true de eliminar heap demonio";
+            limpiar();
             return true;
         }
     }

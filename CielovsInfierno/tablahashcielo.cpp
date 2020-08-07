@@ -37,3 +37,6 @@ void TablaHashCielo::imprimirTabla(){
         tabla[i].printAll(); //funcion de la lista
     }
 }
+QString TablaHashCielo::informacion(QVector<Persona *>){
+
+}
