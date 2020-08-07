@@ -89,7 +89,6 @@ bool TablaFamilia::isEmpty(){
 }
 NodoTabla * TablaFamilia::lookFor(QString pp){
     if (!isEmpty()){
-        qDebug()<<"no vacia tabla";
          NodoTabla * tmp = firstNode;
         while(tmp != NULL){
             if (tmp->apellido == pp){
@@ -100,8 +99,20 @@ NodoTabla * TablaFamilia::lookFor(QString pp){
         return NULL;
     }
     else{
-        qDebug()<<"vacia tabla";
         return NULL;
     }
+}
+
+
+ArbolHeapFamilia* TablaFamilia::buscarFamiliaPersona(QString apellido, QString pais){
+
+    NodoTabla * nodotable = lookFor(apellido);
+    if (nodotable != NULL){
+        NodoFamilia *nodoFamily = nodotable->lista->lookFor(pais);
+        if (nodoFamily != NULL){
+            return nodoFamily->arbol;
+        }
+    }
+    return NULL;
 }
 

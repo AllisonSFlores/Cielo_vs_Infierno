@@ -94,30 +94,7 @@ QString Persona::getHoraNacimiento(){
     return nac;
 }
 
-void Persona::imprimir(){
-    qDebug()<<"id: "+QString::number(id)+"  "+nombre+"  "+apellido+ "   de "+pais[0];
-    if(padre != NULL){
-        qDebug()<<"Mi padre es: "+QString::number(padre->id);
-    }
-    int i = 0;
-    if(hijos[i]==NULL){
-        qDebug()<<"No tengo familia";
-    }
 
-    else{
-        qDebug()<<"Los ids de mis hijos son: ";
-         while(i<5 && hijos[i]!=NULL){
-
-            qDebug()<<"                       "+QString::number(hijos[i]->id);
-            i++;
-        }
-    }
-    qDebug()<<"Mis pecados:";
-    for(int i =0 ; i<7 ;i++){
-        qDebug()<<pecados[i];
-    }
-    qDebug()<<"Mi pureza:"+QString::number(pureza());
-}
 int Persona::getCantPecados(){
     int c=0;
     for(int i=0 ; i<7 ; i++){
@@ -137,3 +114,111 @@ int Persona::getCantBuenasAcciones(){
 int Persona::pureza(){
     return getCantBuenasAcciones() - getCantPecados();
 }
+
+
+void Persona::imprimir(){
+    qDebug()<<"ID: "+QString::number(id)+"  "+nombre+"  "+apellido+ "   de  "+pais[0];
+    if(padre != NULL){
+        qDebug()<<"Mi padre es: "+QString::number(padre->id);
+    }
+    int i = 0;
+    if(hijos[i]==NULL){
+        qDebug()<<"No tengo familia";
+    }
+
+    else{
+        qDebug()<<"Los ids de mis hijos son: ";
+         while(i<5 && hijos[i]!=NULL){
+
+            qDebug()<<"                       "+QString::number(hijos[i]->id);
+            i++;
+        }
+    }
+
+    qDebug()<<"Mi pureza:"+QString::number(pureza());
+}
+
+
+QString  Persona::imprimirFamilia(){
+
+    QString informacion="";
+    informacion += "ID: "+QString::number(id)+"  "+nombre+"  "+apellido+ "   de  "+pais[0]+"\n";
+    informacion += "Creencia:   " +creencia+ "    Profesión:  "+profesion+ "    Correo:  "+correo+"\n";
+    if (estado==0){
+        informacion += "Estado: Mundo";
+    }
+    else if (estado==1){
+        informacion += "Estado: Infierno";
+    }
+    else{
+        informacion += "Estado: Cielo";
+    }
+    informacion += estado;
+    if(padre != NULL){
+        informacion +="ID del padre: "+ QString::number(padre->getId());
+    }
+    int i = 0;
+    if(hijos[i]==NULL){
+        qDebug()<<"Sin hijos\n";
+    }
+
+    else{
+         informacion += "ID de los hijos: ";
+         while(i<5 && hijos[i]!=NULL){
+
+            informacion += hijos[i]->getId();
+            i++;
+        }
+    }
+    return informacion;
+}
+
+
+QString Persona::imprimirEstadoPecados(){
+    QString informacion="";
+    QString pecado="";
+    informacion +="ID: "+QString::number(id)+"  "+nombre+"  "+apellido+ "   de  "+pais[0]+"\n";
+    informacion += "Pecados:\n";
+    for(int i =0 ; i<7 ;i++){
+        switch (i) {
+            case 0: pecado="orgullo";break;
+            case 1: pecado="envidia";break;
+            case 2: pecado="ira";break;
+            case 3: pecado="pereza";break;
+            case 4: pecado="codicia";break;
+            case 5: pecado="glotonería";break;
+            case 6: pecado="lujuria";break;
+        }
+        informacion+="Pecado de "+pecado+": "+pecados[i]+"\n";
+    }
+    return informacion;
+}
+
+QString Persona::imprimirEstadoBA(){
+    QString informacion="";
+    QString buenaA="";
+    informacion +="ID: "+QString::number(id)+"  "+nombre+"  "+apellido+ "   de "+pais[0];
+    informacion += "Buenas acciones:\n";
+    for(int i =0 ; i<7 ;i++){
+        switch (i) {
+            case 0: buenaA="castidad";break;
+            case 1: buenaA="ayuno";break;
+            case 2: buenaA="donación";break;
+            case 3: buenaA="diligencia";break;
+            case 4: buenaA="calma";break;
+            case 5: buenaA="solidaridad";break;
+            case 6: buenaA="humildad";break;
+        }
+        informacion+="Buena acción de "+buenaA+": "+buenasAcciones[i]+"\n";
+    }
+    return informacion;
+}
+
+
+
+
+
+
+
+
+

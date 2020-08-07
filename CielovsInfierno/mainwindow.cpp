@@ -43,23 +43,6 @@ void MainWindow::on_btnCieloSalvacion_clicked(){
     qDebug()<<QString::number(controlador->cielo->getAlturaArbol());
 }
 
-void MainWindow::on_btnBuscar_clicked(){
-
-    int id = (ui->txtBuscar->text()).toUInt();
-    if (controlador->getArbolMundo()->raiz != NULL){
-        if (!controlador->buscarPersona(id)){
-             QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
-        }
-        else{
-            QMessageBox::information(this,"Información","Persona encontrada",QMessageBox::Ok);
-        }
-    }
-    else{
-        QMessageBox::information(this,"Error","El mundo no tiene personas",QMessageBox::Ok);
-    }
-
-
-}
 
 void MainWindow::on_btnSumarPecados_clicked(){
 
@@ -180,4 +163,67 @@ void MainWindow::on_btnMasPecadores_clicked(){
         cadena = cadena + losPaises[t]+"\n\n";
     }
     ui->txtEdit->setText(cadena);
+}
+
+
+void MainWindow::on_btnBuscar_clicked(){
+
+    int id = (ui->txtBuscar->text()).toUInt();
+    if (controlador->getArbolMundo()->raiz != NULL){
+        if(ui->rbPecados->isChecked()){
+            if (!controlador->buscarPersonaPecados(id)){
+                 QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+            }
+            else{
+                QMessageBox::information(this,"Información","Persona encontrada",QMessageBox::Ok);
+            }
+        }
+        else if(ui->rbBuenasA->isChecked()){
+            if (controlador->getArbolMundo()->raiz != NULL){
+                if (!controlador->buscarPersonaBA(id)){
+                     QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+                }
+                else{
+                    QMessageBox::information(this,"Información","Persona encontrada",QMessageBox::Ok);
+                }
+            }
+        }
+
+    }
+    else{
+        QMessageBox::information(this,"Error","El mundo no tiene personas",QMessageBox::Ok);
+    }
+
+
+}
+
+
+
+void MainWindow::on_btnBuscarFamilia_clicked(){
+
+    QString apellido = (ui->txtApellido->text());
+    QString pais = (ui->txtPais->text());
+
+    if (controlador->getArbolMundo()->raiz != NULL){
+        if (ui->rbInformacion->isChecked()){
+            if (!controlador->buscarFamilia(apellido,pais)){
+                 QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+            }
+            else{
+                QMessageBox::information(this,"Información","Persona encontrada",QMessageBox::Ok);
+            }
+        }
+        else if(ui->rbPorcentajes->isChecked()){
+            if (!controlador->buscarFamiliaPorcentajes(apellido,pais)){
+                 QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+            }
+            else{
+                QMessageBox::information(this,"Información","Persona encontrada",QMessageBox::Ok);
+            }
+        }
+    }
+    else{
+        QMessageBox::information(this,"Error","El mundo no tiene personas",QMessageBox::Ok);
+    }
+
 }

@@ -39,6 +39,11 @@ void Controlador::cargarDatos(){
     getDatos()->cargarProfesiones();
     getDatos()->cargarPaises();
 }
+
+///  Crear humanos y añadirlos al mundo,llama a formar el arbol
+/// \brief Controlador::crearHumanos
+/// \param cantidadHumanos
+///
 void Controlador::crearHumanos(int cantidadHumanos){
 
     _arbolMundo->raiz=NULL;  //feo
@@ -70,35 +75,86 @@ void Controlador::crearHumanos(int cantidadHumanos){
 
 }
 
-///  Buscar persona por ID y mostrar su familia
+///  Buscar persona por ID y mostrar su familia (Pecados de todos)
 /// \brief Controlador::buscarPersona
 /// \param id
 /// \return bool
 ///
-bool Controlador::buscarPersona(int id){
+bool Controlador::buscarPersonaPecados(int id){
 
 
     NodoLd* nodoPersona = _arbolMundo->recorrerListaMundo(id);
     if(nodoPersona!=NULL){
-        qDebug()<<"IF 1";
-        NodoTabla * nodotable = tablaFamilia->lookFor(nodoPersona->persona->getApellido());
-        if (nodotable != NULL){
-            qDebug()<<"IF 2";
-            NodoFamilia *nodoFamily = nodotable->lista->lookFor(nodoPersona->persona->getPais());
-            qDebug()<<"nodofamilia"<<nodoFamily;
-            if (nodoFamily != NULL){
-                qDebug()<<"IF 3";
-                nodoFamily->arbol->imprimir();
-                return true;
-            }
+        ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(nodoPersona->persona->getApellido(),nodoPersona->persona->getPais());
+        if (familia != NULL){
+            qDebug()<<familia->imprimirEstadoPecados();
+            return true;
         }
+    }
+
+
+    return false;
+
+}
+
+/// Buscar persona por ID y mostrar su familia (Buenas acciones de todos)
+/// \brief Controlador::buscarPersonaBA
+/// \param id
+/// \return bool
+///
+bool Controlador::buscarPersonaBA(int id){
+
+    NodoLd* nodoPersona = _arbolMundo->recorrerListaMundo(id);
+    if(nodoPersona!=NULL){
+        ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(nodoPersona->persona->getApellido(),nodoPersona->persona->getPais());
+        if (familia != NULL){
+            qDebug()<<familia->imprimirEstadoBA();
+            return true;
+        }
+    }
+    return false;
+
+}
+
+/// Buscar una familia dado el apellido y país, y mostrar información
+/// \brief Controlador::buscarFamilia
+/// \param apellido
+/// \param pais
+/// \return bool
+///
+bool Controlador::buscarFamilia(QString apellido,QString pais){
+
+     ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(apellido,pais);
+     if (familia != NULL){
+        qDebug()<<familia->imprimirFamilia();
+        return true;
+    }
+
+    return false;
+}
+
+/// Buscar una familia dado el apellido y país, y mostrar porcentajes con respecto a ella
+/// \brief Controlador::buscarFamiliaPorcentajes
+/// \param apellido
+/// \param pais
+/// \return bool
+///
+bool  Controlador::buscarFamiliaPorcentajes(QString apellido,QString pais){
+    qDebug()<<"HOLA EN BUSCAR FAMILIA APELLIDO PAIS PORCENTAJESSS";
+     ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(apellido,pais);
+     if (familia != NULL){
+        qDebug()<<familia->imprimirPorcentajes();
+        return true;
     }
 
     return false;
 
 }
 
-
+/// Retorna una lista ordenada de los paise más a menos pecador
+/// \brief Controlador::masPecadores
+/// \return paises
+///
 QVector<QString> Controlador::masPecadores(){
 
 
@@ -116,6 +172,10 @@ QVector<QString> Controlador::masPecadores(){
     return paises;
 }
 
+/// Retorna una lista ordenada de los paises con más a menos buenas acciones
+/// \brief Controlador::masBuenos
+/// \return paises
+///
 QVector<QString> Controlador::masBuenos(){
 
     QVector<QString> losPaises;
@@ -161,6 +221,10 @@ void Controlador::pruebasAllison(){
   //  arbol->imprimir();
 }
 
+/// Ordena continentes de más pecador a menos pecador y los retorna
+/// \brief Controlador::ContinentesPecadores
+/// \return continentes
+///
 QVector<QString> Controlador::ContinentesPecadores(){
 
     QVector<QString> continentes = {"Asia","Oceania","Africa","America","Europa"};
@@ -186,6 +250,10 @@ QVector<QString> Controlador::ContinentesPecadores(){
     return continentes;
 }
 
+/// Ordena los contienentes de más bueno a menos bueno y los retorna
+/// \brief Controlador::ContinentesBuenos
+/// \return continentes
+///
 QVector<QString> Controlador::ContinentesBuenos(){
 
     QVector<QString> continentes = {"Asia","Oceania","Africa","America","Europa"};

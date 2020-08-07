@@ -23,6 +23,13 @@ struct ArbolHeapFamilia{
     bool eliminarHumano(Persona * humano);      //si esta lo borra  y retorna true sino retorna false
     int random();
     void imprimir();
+    QString imprimirEstadoBA();
+    QString imprimirEstadoPecados();
+    QString imprimirFamilia();
+    QString imprimirPorcentajes();
+    double porcentajeVivos();
+    double porcentajeCielo();
+    double porcentajeInfierno();
 
 };
 

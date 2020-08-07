@@ -12,6 +12,7 @@
 #include "consultas.h"
 
 struct Controlador{
+
        TablaHashID * tabla;
        Datos *datos;
        listaDoble *listaMundo;
@@ -38,7 +39,10 @@ struct Controlador{
        QVector<QString> ContinentesPecadores();
        QVector<QString> ContinentesBuenos();
 
-       bool buscarPersona(int);  //tal vez mejor que retorne la persona      efectivamente
+       bool buscarPersonaPecados(int);
+       bool buscarPersonaBA(int);
+       bool buscarFamilia(QString,QString);
+       bool buscarFamiliaPorcentajes(QString,QString);
        void imprimirArbolHeapFamilia();
        void pruebasAllison();
        QVector<QString> masPecadores(); //Me sirve para los 10 mas y los 5 menos

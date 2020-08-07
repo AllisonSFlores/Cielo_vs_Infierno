@@ -47,6 +47,8 @@ private slots:
 
     void on_btnMasPecadores_clicked();
 
+    void on_btnBuscarFamilia_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

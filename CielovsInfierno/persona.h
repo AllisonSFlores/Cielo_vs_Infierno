@@ -60,6 +60,9 @@ struct Persona{
     int getCantBuenasAcciones();
     int pureza();
     void imprimir();
+    QString imprimirEstadoBA();
+    QString imprimirEstadoPecados();
+    QString imprimirFamilia();
 
 
 };

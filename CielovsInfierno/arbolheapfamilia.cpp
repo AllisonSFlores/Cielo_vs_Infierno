@@ -119,7 +119,71 @@ int ArbolHeapFamilia::random(){
 void ArbolHeapFamilia::imprimir(){
 
     for (int i = 0 ; i < arbol.size() ; i++){
-        qDebug()<<"Imprimir desde el heapFamilia size: "<<arbol.size();
+        qDebug()<<"Familia size: "<<arbol.size();
         arbol[i]->imprimir();
     }
+}
+
+QString ArbolHeapFamilia::imprimirEstadoBA(){
+    QString informacion = "FAMILIA: "+apellidoFamilia+" PAÍS:   "+paisFamilia+"\n";
+    for (int i = 0 ; i < arbol.size() ; i++){
+        informacion += arbol[i]->imprimirEstadoBA()+"\n";
+    }
+    return informacion;
+}
+QString ArbolHeapFamilia::imprimirEstadoPecados(){
+    QString informacion = "FAMILIA: "+apellidoFamilia+" PAÍS:   "+paisFamilia+"\n";
+    for (int i = 0 ; i < arbol.size() ; i++){
+        informacion += arbol[i]->imprimirEstadoPecados()+"\n";
+    }
+    return informacion;
+}
+
+QString ArbolHeapFamilia::imprimirFamilia(){
+    QString informacion = "FAMILIA: "+apellidoFamilia+" PAÍS:   "+paisFamilia+"\n";
+    for (int i = 0 ; i < arbol.size() ; i++){
+        informacion += arbol[i]->imprimirFamilia()+"\t";
+    }
+    return informacion;
+}
+
+QString ArbolHeapFamilia::imprimirPorcentajes(){
+    QString informacion = "FAMILIA: "+apellidoFamilia+" PAÍS:   "+paisFamilia+"\n";
+    informacion += "El porcentaje vivos es: " +QString::number(porcentajeVivos())+"\n";
+    informacion += "El porcentaje muertos y en el infierno es: " +QString::number(porcentajeInfierno())+"\n";
+    informacion += "El porcentaje muertos y en el cielo es: " +QString::number(porcentajeCielo())+"\n";
+    return informacion;
+}
+
+double ArbolHeapFamilia::porcentajeVivos(){
+    double vivos=0;
+    for (int i = 0 ; i < arbol.size() ; i++){
+        if(arbol[i]->getEstado()==0){
+            vivos+= 1;
+        }
+    }
+    return vivos/arbol.size();
+}
+
+double ArbolHeapFamilia::porcentajeInfierno(){
+    double infierno=0;
+    for (int i = 0 ; i < arbol.size() ; i++){
+        if(arbol[i]->getEstado()==1){
+            infierno+= 1;
+        }
+    }
+    return infierno/arbol.size();
+
+}
+
+double ArbolHeapFamilia::porcentajeCielo(){
+
+    double cielo=0;
+    for (int i = 0 ; i < arbol.size() ; i++){
+        if(arbol[i]->getEstado()==2){
+            cielo+= 1;
+        }
+    }
+    return cielo/arbol.size();
+
 }

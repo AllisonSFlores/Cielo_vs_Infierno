@@ -2,6 +2,7 @@
 #define TABLAFAMILIA_H
 #include "lsfamilia.h"
 
+
 struct NodoTabla{
     QString apellido;
     LSFamilia * lista;
@@ -20,6 +21,8 @@ struct TablaFamilia{
     int len();
     bool isEmpty();
     NodoTabla *  lookFor(QString pp);
+    ArbolHeapFamilia* buscarFamiliaPersona(QString,QString);
+
 
 };
 

@@ -20,6 +20,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
@@ -41,9 +42,9 @@ public:
     QLabel *label_2;
     QWidget *verticalLayoutWidget_4;
     QVBoxLayout *VL2;
+    QLabel *label_28;
     QLineEdit *txtBuscar;
     QPushButton *btnBuscar;
-    QLabel *label_25;
     QPushButton *btnSumarPecados;
     QLabel *label_26;
     QPushButton *btnPecados;
@@ -56,11 +57,6 @@ public:
     QLabel *lblEuropa;
     QLabel *lblOceania;
     QLabel *lblAmerica;
-    QWidget *verticalLayoutWidget_5;
-    QVBoxLayout *VL2_2;
-    QLineEdit *txtBuscarBuenas;
-    QPushButton *btnBuscarBuenas;
-    QLabel *lblEstadoBuenas;
     QTextEdit *txtEdit;
     QWidget *verticalLayoutWidget_6;
     QVBoxLayout *VL2_3;
@@ -68,8 +64,7 @@ public:
     QLineEdit *txtApellido;
     QLabel *label_30;
     QLineEdit *txtPais;
-    QPushButton *btnBuscar_3;
-    QLabel *label_28;
+    QPushButton *btnBuscarFamilia;
     QWidget *verticalLayoutWidget_7;
     QVBoxLayout *verticalLayout_4;
     QPushButton *btnMasPecadores;
@@ -77,6 +72,14 @@ public:
     QPushButton *btnMenosPecadores;
     QPushButton *btnMenosBuenos;
     QLabel *label_31;
+    QWidget *verticalLayoutWidget_9;
+    QVBoxLayout *verticalLayout_5;
+    QRadioButton *rbInformacion;
+    QRadioButton *rbPorcentajes;
+    QWidget *verticalLayoutWidget_8;
+    QVBoxLayout *verticalLayout_6;
+    QRadioButton *rbPecados;
+    QRadioButton *rbBuenasA;
     QWidget *tab_2;
     QLabel *label_16;
     QLabel *label_17;
@@ -143,7 +146,7 @@ public:
         tab->setMaximumSize(QSize(1900, 990));
         verticalLayoutWidget_3 = new QWidget(tab);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(50, 160, 211, 111));
+        verticalLayoutWidget_3->setGeometry(QRect(50, 130, 211, 111));
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -160,13 +163,18 @@ public:
 
         label_2 = new QLabel(tab);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(40, 130, 211, 21));
+        label_2->setGeometry(QRect(40, 110, 211, 21));
         verticalLayoutWidget_4 = new QWidget(tab);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(50, 340, 211, 111));
+        verticalLayoutWidget_4->setGeometry(QRect(50, 310, 211, 91));
         VL2 = new QVBoxLayout(verticalLayoutWidget_4);
         VL2->setObjectName(QString::fromUtf8("VL2"));
         VL2->setContentsMargins(0, 0, 0, 0);
+        label_28 = new QLabel(verticalLayoutWidget_4);
+        label_28->setObjectName(QString::fromUtf8("label_28"));
+
+        VL2->addWidget(label_28);
+
         txtBuscar = new QLineEdit(verticalLayoutWidget_4);
         txtBuscar->setObjectName(QString::fromUtf8("txtBuscar"));
 
@@ -178,15 +186,12 @@ public:
 
         VL2->addWidget(btnBuscar);
 
-        label_25 = new QLabel(tab);
-        label_25->setObjectName(QString::fromUtf8("label_25"));
-        label_25->setGeometry(QRect(50, 300, 221, 21));
         btnSumarPecados = new QPushButton(tab);
         btnSumarPecados->setObjectName(QString::fromUtf8("btnSumarPecados"));
-        btnSumarPecados->setGeometry(QRect(320, 160, 211, 31));
+        btnSumarPecados->setGeometry(QRect(280, 140, 211, 31));
         label_26 = new QLabel(tab);
         label_26->setObjectName(QString::fromUtf8("label_26"));
-        label_26->setGeometry(QRect(50, 10, 381, 121));
+        label_26->setGeometry(QRect(50, 0, 381, 101));
         QFont font;
         font.setFamily(QString::fromUtf8("Constantia"));
         font.setPointSize(72);
@@ -235,32 +240,12 @@ public:
 
         gridLayout->addWidget(lblAmerica, 0, 0, 2, 1);
 
-        verticalLayoutWidget_5 = new QWidget(tab);
-        verticalLayoutWidget_5->setObjectName(QString::fromUtf8("verticalLayoutWidget_5"));
-        verticalLayoutWidget_5->setGeometry(QRect(320, 340, 211, 111));
-        VL2_2 = new QVBoxLayout(verticalLayoutWidget_5);
-        VL2_2->setObjectName(QString::fromUtf8("VL2_2"));
-        VL2_2->setContentsMargins(0, 0, 0, 0);
-        txtBuscarBuenas = new QLineEdit(verticalLayoutWidget_5);
-        txtBuscarBuenas->setObjectName(QString::fromUtf8("txtBuscarBuenas"));
-
-        VL2_2->addWidget(txtBuscarBuenas);
-
-        btnBuscarBuenas = new QPushButton(verticalLayoutWidget_5);
-        btnBuscarBuenas->setObjectName(QString::fromUtf8("btnBuscarBuenas"));
-        btnBuscarBuenas->setCursor(QCursor(Qt::PointingHandCursor));
-
-        VL2_2->addWidget(btnBuscarBuenas);
-
-        lblEstadoBuenas = new QLabel(tab);
-        lblEstadoBuenas->setObjectName(QString::fromUtf8("lblEstadoBuenas"));
-        lblEstadoBuenas->setGeometry(QRect(320, 300, 271, 21));
         txtEdit = new QTextEdit(tab);
         txtEdit->setObjectName(QString::fromUtf8("txtEdit"));
         txtEdit->setGeometry(QRect(660, 370, 171, 331));
         verticalLayoutWidget_6 = new QWidget(tab);
         verticalLayoutWidget_6->setObjectName(QString::fromUtf8("verticalLayoutWidget_6"));
-        verticalLayoutWidget_6->setGeometry(QRect(50, 520, 211, 134));
+        verticalLayoutWidget_6->setGeometry(QRect(50, 470, 211, 134));
         VL2_3 = new QVBoxLayout(verticalLayoutWidget_6);
         VL2_3->setObjectName(QString::fromUtf8("VL2_3"));
         VL2_3->setContentsMargins(0, 0, 0, 0);
@@ -284,15 +269,12 @@ public:
 
         VL2_3->addWidget(txtPais);
 
-        btnBuscar_3 = new QPushButton(verticalLayoutWidget_6);
-        btnBuscar_3->setObjectName(QString::fromUtf8("btnBuscar_3"));
-        btnBuscar_3->setCursor(QCursor(Qt::PointingHandCursor));
+        btnBuscarFamilia = new QPushButton(verticalLayoutWidget_6);
+        btnBuscarFamilia->setObjectName(QString::fromUtf8("btnBuscarFamilia"));
+        btnBuscarFamilia->setCursor(QCursor(Qt::PointingHandCursor));
 
-        VL2_3->addWidget(btnBuscar_3);
+        VL2_3->addWidget(btnBuscarFamilia);
 
-        label_28 = new QLabel(tab);
-        label_28->setObjectName(QString::fromUtf8("label_28"));
-        label_28->setGeometry(QRect(50, 480, 179, 21));
         verticalLayoutWidget_7 = new QWidget(tab);
         verticalLayoutWidget_7->setObjectName(QString::fromUtf8("verticalLayoutWidget_7"));
         verticalLayoutWidget_7->setGeometry(QRect(660, 131, 171, 221));
@@ -322,6 +304,38 @@ public:
         label_31 = new QLabel(tab);
         label_31->setObjectName(QString::fromUtf8("label_31"));
         label_31->setGeometry(QRect(710, 90, 81, 21));
+        verticalLayoutWidget_9 = new QWidget(tab);
+        verticalLayoutWidget_9->setObjectName(QString::fromUtf8("verticalLayoutWidget_9"));
+        verticalLayoutWidget_9->setGeometry(QRect(50, 420, 214, 51));
+        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_9);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
+        rbInformacion = new QRadioButton(verticalLayoutWidget_9);
+        rbInformacion->setObjectName(QString::fromUtf8("rbInformacion"));
+
+        verticalLayout_5->addWidget(rbInformacion);
+
+        rbPorcentajes = new QRadioButton(verticalLayoutWidget_9);
+        rbPorcentajes->setObjectName(QString::fromUtf8("rbPorcentajes"));
+
+        verticalLayout_5->addWidget(rbPorcentajes);
+
+        verticalLayoutWidget_8 = new QWidget(tab);
+        verticalLayoutWidget_8->setObjectName(QString::fromUtf8("verticalLayoutWidget_8"));
+        verticalLayoutWidget_8->setGeometry(QRect(50, 260, 214, 51));
+        verticalLayout_6 = new QVBoxLayout(verticalLayoutWidget_8);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        rbPecados = new QRadioButton(verticalLayoutWidget_8);
+        rbPecados->setObjectName(QString::fromUtf8("rbPecados"));
+
+        verticalLayout_6->addWidget(rbPecados);
+
+        rbBuenasA = new QRadioButton(verticalLayoutWidget_8);
+        rbBuenasA->setObjectName(QString::fromUtf8("rbBuenasA"));
+
+        verticalLayout_6->addWidget(rbBuenasA);
+
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -577,9 +591,9 @@ public:
         txtCant->setText(QCoreApplication::translate("MainWindow", "70", nullptr));
         btnGenerar->setText(QCoreApplication::translate("MainWindow", "Generar humanos", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "   Cantidad de humanos a generar", nullptr));
+        label_28->setText(QCoreApplication::translate("MainWindow", "ID de la persona:", nullptr));
         txtBuscar->setText(QCoreApplication::translate("MainWindow", "124", nullptr));
         btnBuscar->setText(QCoreApplication::translate("MainWindow", "Generar archivo de informaci\303\263n", nullptr));
-        label_25->setText(QCoreApplication::translate("MainWindow", "Estado de pecados de la familida de:", nullptr));
         btnSumarPecados->setText(QCoreApplication::translate("MainWindow", "Pecar y hacer buenas acciones", nullptr));
         label_26->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#001b47;\">Mundo</span></p></body></html>", nullptr));
         btnPecados->setText(QCoreApplication::translate("MainWindow", "Pecados", nullptr));
@@ -590,19 +604,19 @@ public:
         lblEuropa->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/europa.png\"/></p><p align=\"center\"><span style=\" font-size:14pt;\">Europa</span></p><p><br/></p></body></html>", nullptr));
         lblOceania->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/oceania.png\"/></p><p align=\"center\"><span style=\" font-size:14pt;\">Ocean\303\255a</span></p></body></html>", nullptr));
         lblAmerica->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/america (1).png\"/></p><p align=\"center\"><span style=\" font-size:14pt;\">Am\303\251rica</span></p></body></html>", nullptr));
-        txtBuscarBuenas->setText(QCoreApplication::translate("MainWindow", "124", nullptr));
-        btnBuscarBuenas->setText(QCoreApplication::translate("MainWindow", "Generar archivo de informaci\303\263n", nullptr));
-        lblEstadoBuenas->setText(QCoreApplication::translate("MainWindow", "Estado de buenas acciones de la familida de:", nullptr));
         label_29->setText(QCoreApplication::translate("MainWindow", "Apellido:", nullptr));
-        txtApellido->setText(QCoreApplication::translate("MainWindow", "124", nullptr));
+        txtApellido->setText(QString());
         label_30->setText(QCoreApplication::translate("MainWindow", "Pa\303\255s:", nullptr));
-        btnBuscar_3->setText(QCoreApplication::translate("MainWindow", "Generar archivo de informaci\303\263n", nullptr));
-        label_28->setText(QCoreApplication::translate("MainWindow", "Buscar familia", nullptr));
+        btnBuscarFamilia->setText(QCoreApplication::translate("MainWindow", "Generar archivo de informaci\303\263n", nullptr));
         btnMasPecadores->setText(QCoreApplication::translate("MainWindow", "10 pa\303\255ses m\303\241s pecadores", nullptr));
         btnMasBuenos->setText(QCoreApplication::translate("MainWindow", "10 pa\303\255ses m\303\241s buenos", nullptr));
         btnMenosPecadores->setText(QCoreApplication::translate("MainWindow", "5 pa\303\255ses menos pecadores", nullptr));
         btnMenosBuenos->setText(QCoreApplication::translate("MainWindow", "5 pa\303\255ses menos buenos", nullptr));
         label_31->setText(QCoreApplication::translate("MainWindow", "CONSULTAS", nullptr));
+        rbInformacion->setText(QCoreApplication::translate("MainWindow", "Buscar familia y mostrar  informaci\303\263n", nullptr));
+        rbPorcentajes->setText(QCoreApplication::translate("MainWindow", "Buscar familia y determinar porcentajes", nullptr));
+        rbPecados->setText(QCoreApplication::translate("MainWindow", "Estado de pecados de la familia", nullptr));
+        rbBuenasA->setText(QCoreApplication::translate("MainWindow", "Estado de buenas acciones de la familia", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Mundo", nullptr));
         label_16->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/alaaa.png\"/></p></body></html>", nullptr));
         label_17->setText(QCoreApplication::translate("MainWindow", "INFIERNO", nullptr));
