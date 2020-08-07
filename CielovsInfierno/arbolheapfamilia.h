@@ -13,6 +13,7 @@ struct ArbolHeapFamilia{
     ArbolHeapFamilia(){
     }
     void insertar(Persona*);
+    void insertara(Persona*);
     void ordenar();
     void ordenarAux(int,int);
     Persona * buscarDisponible();

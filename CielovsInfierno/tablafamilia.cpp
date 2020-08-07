@@ -22,16 +22,14 @@ void TablaFamilia::insert(Persona * ppersona){
     Input: LSNode
     Ouput: None
     */
-    qDebug()<<"insert tabla";
     qDebug()<<ppersona->getApellido();
 ;     if (lookFor(ppersona->getApellido()) != NULL){
-              qDebug()<<"diferente de nulo";
+
          NodoTabla * nodo = lookFor(ppersona->getApellido());
          nodo->lista->insert(ppersona);
 
      }
-     else
-     {  qDebug()<<"nulo tabla";
+     else{
          NodoTabla *newNode = new NodoTabla(ppersona->apellido);
          newNode->lista->insert(ppersona);
          insertAux(newNode);

@@ -5,8 +5,6 @@ ArbolHeapDemonio::ArbolHeapDemonio(QString nombreDemonio, int pidDemonio){
     idDemonio=pidDemonio;
 }
 void ArbolHeapDemonio::insertar(Persona *persona){
-    qDebug()<<"Insertando a";
-    persona->imprimir();
     ArbolHeapFamilia * familia = buscarFamilia(persona);
     if(familia != NULL){
         familia->insertar(persona);
@@ -57,10 +55,14 @@ void ArbolHeapDemonio::ordenarAux(int _izq,int _der){
     if( izq < _der )
        ordenarAux(izq,_der );
 }
-
+/**
+ * Busca si  ya esta creado el arbol de la familia que le corresponde a persona
+ * @brief ArbolHeapDemonio::buscarFamilia
+ * @param persona
+ * @return
+ */
 ArbolHeapFamilia *  ArbolHeapDemonio::buscarFamilia(Persona * persona){
 
-    qDebug()<<"buscar heap de mi familia";
     if(!arbol.isEmpty()){
         int largo = arbol.length();
         for(int i = 0;i<largo ; i++){
@@ -72,8 +74,13 @@ ArbolHeapFamilia *  ArbolHeapDemonio::buscarFamilia(Persona * persona){
     }
     return NULL;
 }
-
+/**
+ * Recorre el arbol pidiendole a cada familia el menos pecador y retorna el menos pecador
+ * @brief ArbolHeapDemonio::menosPecador
+ * @return Persona menos pecadora de todo el arbol
+ */
 Persona * ArbolHeapDemonio::menosPecador(){
+
     Persona * menosPecadorv = arbol[0]->menosPecador();
     for(int i = 1 ; i < arbol.size() ; i++){
         if( arbol[i]->menosPecador()->pureza() > menosPecadorv->pureza()){
@@ -82,6 +89,12 @@ Persona * ArbolHeapDemonio::menosPecador(){
     }
     return menosPecadorv;
 }
+/**
+ * Recorre el arbol pidiendole a cada familia que borre a humano, si le retornan true es porque estaba y lo borro
+ * @brief ArbolHeapDemonio::eliminarHumano
+ * @param humano
+ * @return true si el humano fue eliminado, false el humano no estaba en el arbol por lo que no lo pudo borrar;
+ */
 bool ArbolHeapDemonio::eliminarHumano(Persona *humano){
     for(int i = 0 ; i < arbol.size() ; i++){
         if(arbol[i]->eliminarHumano(humano)){

@@ -5,6 +5,9 @@ void ArbolHeapFamilia::insertar(Persona *persona){
     buscarFamilia(persona);
     arbol.append(persona);
 };
+void ArbolHeapFamilia::insertara(Persona *persona){
+    arbol.append(persona);
+};
 
 void ArbolHeapFamilia::ordenar(){
    ordenarAux(0,arbol.size()-1);
@@ -94,10 +97,16 @@ int ArbolHeapFamilia::sumarPecado(int d){
     }
     return cant;
 }
+/**
+ * Recorre el arbol buscando el humano menos pecador
+ * @brief ArbolHeapFamilia::menosPecador
+ * @return El humano menos pecador del arbol
+ */
 Persona * ArbolHeapFamilia::menosPecador(){
+
     Persona * menosPecadorv=arbol[0];
 
-    for(int i = 1 ; i < arbol.size() ; i++){
+    for(int i = 1 ; i < arbol.size()-1 ; i++){
 
         if( arbol[i]->pureza() > menosPecadorv->pureza()){
             menosPecadorv = arbol[i];
@@ -105,9 +114,19 @@ Persona * ArbolHeapFamilia::menosPecador(){
     }
     return menosPecadorv;
 }
+/**
+ * Elimina de arbol humano
+ * @brief ArbolHeapFamilia::eliminarHumano
+ * @param humano
+ * @return true si el humano estaba en el arbol, false si no estaba por lo que no lo pudo borrar
+ */
 bool ArbolHeapFamilia::eliminarHumano(Persona * humano){
-    qDebug()<<"eliminar de heap familia";
-    return arbol.removeOne(humano);
+    if(!arbol.isEmpty()){
+        return arbol.removeOne(humano);
+    }
+    else{
+        return false;
+    }
 }
 
 

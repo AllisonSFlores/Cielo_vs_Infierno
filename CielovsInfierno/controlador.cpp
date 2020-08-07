@@ -207,10 +207,13 @@ void Controlador::salvacion(){
     QVector<Persona*> salvados;
     int generacion = cielo->generacion();
     qDebug()<<"cantidad de humano a salvar : "+QString::number(generacion);
-    for (int i =0 ; i < generacion ; i++){
+    for (int i =0 ; i < generacion-1 ; i++){
         qDebug()<<"-------------------------------------"+QString::number(i);
-        salvados.append(infierno->menosPecador());
-        infierno->menosPecador()->imprimir();
+        Persona * p =infierno->menosPecador();
+        qDebug()<<"humano recibido";
+        p->imprimir();
+        salvados.append(p);
+        qDebug()<<"salvado";
     }
     cielo->salvacion(salvados);
 }

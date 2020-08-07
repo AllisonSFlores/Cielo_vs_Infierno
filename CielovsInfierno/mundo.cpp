@@ -390,16 +390,13 @@ void  listaDoble::sumarPecadosYbuenasAcciones(){
                int cantPecados = random(99);
                temporal->persona->pecados[i] += cantPecados;
                int cincuentaPorciento = cantPecados*0.5;
-               qDebug()<<"Le asigno pecado a persona";
                for (int j=0;j<5;j++){  //los 5 hijos
                     int veintiCincoPorciento = cantPecados*0.25;
                    if (temporal->persona->hijos[j] != NULL){
                        temporal->persona->hijos[j]->pecados[i]+=cincuentaPorciento;
-                       qDebug()<<"Le asigno pecado a los hijos";
                        for (int k=0;k<5;k++){
                            if (temporal->persona->hijos[j]->hijos[k]!= NULL){
                                temporal->persona->hijos[j]->hijos[k]->pecados[i] = veintiCincoPorciento;
-                               qDebug()<<"Le asigno pecado a los nietos";
                            }
                        }
                    }
