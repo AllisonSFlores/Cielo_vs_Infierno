@@ -138,7 +138,10 @@ void Persona::imprimir(){
     qDebug()<<"Mi pureza:"+QString::number(pureza());
 }
 
-
+/// Es la información de la persona y su familia si la tiene
+/// \brief Persona::imprimirFamilia
+/// \return QString
+///
 QString  Persona::imprimirFamilia(){
 
     QString informacion="";

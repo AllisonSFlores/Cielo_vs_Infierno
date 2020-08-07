@@ -75,6 +75,38 @@ void Controlador::crearHumanos(int cantidadHumanos){
 
 }
 
+QString Controlador::ultimoNivelArbol(){
+    QString informacion= "Información de las personas del último nivel del árbol\n";
+    QVector<Persona*> ultimoNivel = _arbolMundo->ultimoNivelAux();
+     qDebug()<<"hola antes de for controlador ";
+    for (int i=0;i<ultimoNivel.size();i++){
+        qDebug()<<"hola";
+        informacion+=ultimoNivel[i]->imprimirFamilia()+"\n";
+    }
+    return informacion;
+}
+
+int Controlador::cantidadHumanos(){
+    return listaMundo->largoLista();
+}
+
+int Controlador::cantidadNodosArbol(){
+    return _arbolMundo->cantidadNodosAux();
+}
+
+int Controlador::cantidadNiveles(){
+    return _arbolMundo->nivelesAux();
+}
+
+QString Controlador::informacionArbol(){
+    QString informacion= "-------Información del mundo-------\n";
+    informacion+= "Hay "+ QString::number(cantidadNodosArbol())+" nodos en el arbol\n";
+    informacion+= "El árbol tiene "+QString::number(cantidadNiveles())+" niveles\n";
+    informacion+= "El mundo tiene "+QString::number(cantidadHumanos())+" personas\n";
+    informacion+= ultimoNivelArbol();
+    return informacion;
+}
+
 ///  Buscar persona por ID y mostrar su familia (Pecados de todos)
 /// \brief Controlador::buscarPersona
 /// \param id

@@ -176,14 +176,13 @@ debug/qrc_Recursos.cpp: ../CielovsInfierno/Recursos.qrc \
 		../CielovsInfierno/imagenes/africa.png \
 		../CielovsInfierno/imagenes/infierno.jpg \
 		../CielovsInfierno/imagenes/angelviolin.png \
-		../CielovsInfierno/imagenes/mapa.jpg \
+		../CielovsInfierno/imagenes/mapaa3.jpg \
 		../CielovsInfierno/imagenes/cieloo.jpg \
 		../CielovsInfierno/imagenes/america.png \
 		../CielovsInfierno/imagenes/alaaa.png \
 		../CielovsInfierno/imagenes/europa.png \
 		../CielovsInfierno/imagenes/oceania.png \
 		../CielovsInfierno/imagenes/ala.png \
-		../CielovsInfierno/imagenes/cachos.webp \
 		../CielovsInfierno/imagenes/america\ (1).png \
 		../CielovsInfierno/imagenes/devil.png \
 		../CielovsInfierno/imagenes/alas.png \
@@ -457,6 +456,7 @@ debug/moc_mainwindow.cpp: ../CielovsInfierno/mainwindow.h \
 		../CielovsInfierno/lsfamilia.h \
 		../CielovsInfierno/arbolheapdemonio.h \
 		../CielovsInfierno/infierno.h \
+		../CielovsInfierno/consultas.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "D:/1 SEMESTRE 2020/ED/QT/Proyecto_2/Cielo_vs_Infierno/build-CielovsInfierno-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"D:/1 SEMESTRE 2020/ED/QT/Proyecto_2/Cielo_vs_Infierno/CielovsInfierno" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\CielovsInfierno\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -1553,7 +1553,181 @@ debug/consultas.o: ../CielovsInfierno/consultas.cpp ../CielovsInfierno/consultas
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstringliteral.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstringalgorithms.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstringview.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstringbuilder.h
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstringbuilder.h \
+		../CielovsInfierno/mundo.h \
+		../CielovsInfierno/persona.h \
+		../CielovsInfierno/estado.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QtCore \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QtCoreDepends \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qabstractanimation.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qabstracteventdispatcher.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qabstractnativeeventfilter.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qabstractproxymodel.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qabstractstate.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qabstracttransition.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qanimationgroup.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qarraydataops.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qarraydatapointer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qbitarray.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qbuffer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qbytearraymatcher.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcache.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcalendar.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcborarray.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcborvalue.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qdatetime.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcborcommon.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qurl.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/quuid.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcbormap.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcborstream.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcborstreamreader.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfloat16.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcborstreamwriter.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcollator.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcommandlineoption.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcommandlineparser.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qconcatenatetablesproxymodel.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qdatastream.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qelapsedtimer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qdir.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfileinfo.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfile.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qdiriterator.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qeasingcurve.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qendian.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qeventtransition.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qexception.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfactoryinterface.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfileselector.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QObject \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QStringList \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfilesystemwatcher.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfinalstate.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfuture.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfutureinterface.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qrunnable.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qresultstore.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfuturesynchronizer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qfuturewatcher.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qhistorystate.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qidentityproxymodel.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qisenum.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qjsonarray.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qjsonvalue.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qjsondocument.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qjsonobject.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qlibrary.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qlibraryinfo.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qversionnumber.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qline.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qlinkedlist.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qlockfile.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qloggingcategory.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qmargins.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qmath.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qmessageauthenticationcode.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qmetaobject.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qmimedata.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qmimedatabase.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qmimetype.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qobjectcleanuphandler.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qoperatingsystemversion.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qparallelanimationgroup.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qpauseanimation.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qplugin.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qpointer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qpluginloader.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qprocess.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qpropertyanimation.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qvariantanimation.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qqueue.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qrandom.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qreadwritelock.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qrect.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsize.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qresource.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsavefile.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qscopedvaluerollback.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qscopeguard.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsemaphore.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsequentialanimationgroup.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsettings.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsharedmemory.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsignalmapper.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsignaltransition.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsocketnotifier.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsortfilterproxymodel.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstack.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstandardpaths.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstate.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstatemachine.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstorageinfo.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qstringlistmodel.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qsystemsemaphore.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtemporarydir.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtemporaryfile.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtextboundaryfinder.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtextcodec.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qthread.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qthreadpool.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qthreadstorage.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtimeline.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtimer.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtimezone.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtranslator.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtransposeproxymodel.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtypetraits.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qwaitcondition.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDeadlineTimer \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qwineventnotifier.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qxmlstream.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qtcoreversion.h \
+		../CielovsInfierno/angel.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QVector
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\consultas.o ..\CielovsInfierno\consultas.cpp
 
 debug/controlador.o: ../CielovsInfierno/controlador.cpp ../CielovsInfierno/controlador.h \
@@ -1779,6 +1953,7 @@ debug/controlador.o: ../CielovsInfierno/controlador.cpp ../CielovsInfierno/contr
 		../CielovsInfierno/lsfamilia.h \
 		../CielovsInfierno/arbolheapdemonio.h \
 		../CielovsInfierno/infierno.h \
+		../CielovsInfierno/consultas.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QMessageBox \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qmessagebox.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qtwidgetsglobal.h \
@@ -3108,6 +3283,7 @@ debug/main.o: ../CielovsInfierno/main.cpp ../CielovsInfierno/mainwindow.h \
 		../CielovsInfierno/lsfamilia.h \
 		../CielovsInfierno/arbolheapdemonio.h \
 		../CielovsInfierno/infierno.h \
+		../CielovsInfierno/consultas.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QApplication \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qdesktopwidget.h \
@@ -3372,6 +3548,7 @@ debug/mainwindow.o: ../CielovsInfierno/mainwindow.cpp ../CielovsInfierno/mainwin
 		../CielovsInfierno/lsfamilia.h \
 		../CielovsInfierno/arbolheapdemonio.h \
 		../CielovsInfierno/infierno.h \
+		../CielovsInfierno/consultas.h \
 		ui_mainwindow.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QVariant \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/QIcon \
@@ -3404,6 +3581,8 @@ debug/mainwindow.o: ../CielovsInfierno/mainwindow.cpp ../CielovsInfierno/mainwin
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QRadioButton \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qradiobutton.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QStatusBar \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qstatusbar.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QTabWidget \

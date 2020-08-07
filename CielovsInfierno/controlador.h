@@ -47,6 +47,12 @@ struct Controlador{
        void pruebasAllison();
        QVector<QString> masPecadores(); //Me sirve para los 10 mas y los 5 menos
        QVector<QString> masBuenos();
+       QString informacionArbol();
+       QString ultimoNivelArbol();
+       int cantidadHumanos();
+       int cantidadNodosArbol();
+       int cantidadNiveles();
+
 
 };
 

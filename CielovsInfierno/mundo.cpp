@@ -4,6 +4,50 @@
 #include <conio.h>
 #include <QDebug>
 
+QVector<Persona*> arbolMundo::ultimoNivelAux(){
+    QVector<Persona*> ultimo;
+    return ultimoNivel(raiz, ultimo);
+}
+
+QVector<Persona*> arbolMundo::ultimoNivel(Nodo*nodo,QVector<Persona*> ultimo){
+
+    if (nodo!= NULL){
+        if(nodo->hijoizquierdo==NULL && nodo->hijoderecho==NULL){
+            qDebug()<<"persona desde arbol"<<nodo->punteroALista->persona->getId();
+            ultimo.append(nodo->punteroALista->persona);
+        }
+        ultimoNivel(nodo->hijoizquierdo,ultimo);
+        ultimoNivel(nodo->hijoderecho,ultimo);
+    }
+    return ultimo;
+}
+
+int arbolMundo::cantidadNodosAux(){
+
+    return cantidadNodos(raiz);
+}
+int arbolMundo::cantidadNodos(Nodo* nodo){
+    if (nodo == NULL)
+           return 0;
+    else
+           return 1+ cantidadNodos(nodo->hijoderecho)+cantidadNodos(nodo->hijoizquierdo);
+}
+
+
+int arbolMundo::nivelesAux(){
+
+    return niveles(raiz);
+}
+
+int arbolMundo::niveles(Nodo* nodo){
+
+    if (nodo == NULL)
+        return -1;
+    else
+        return 1 + niveles(nodo->hijoizquierdo);
+
+}
+
 
 void arbolMundo::pasarDatoAinsertar(QVector<NodoParaArbol*> nodosDelArbol){
 

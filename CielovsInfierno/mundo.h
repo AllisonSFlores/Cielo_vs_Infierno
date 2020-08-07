@@ -38,6 +38,13 @@ struct arbolMundo{
     void inOrder(Nodo*);
     NodoLd* recorrerArbol(int,Nodo*);
     NodoLd* recorrerListaMundo(int);
+    //Informacion en pantalla
+    QVector<Persona*> ultimoNivelAux();
+    QVector<Persona*> ultimoNivel(Nodo*,QVector<Persona*>);
+    int cantidadNodosAux();
+    int cantidadNodos(Nodo*);
+    int nivelesAux();
+    int niveles(Nodo*);
 
 };
 
@@ -85,10 +92,6 @@ struct listaDoble{
     void ordenarPorPecado();
     QVector<int> ordenarContinentesPecado();
     QVector<int> ordenarContinentesBuenasAcciones();
-   // QVector<QString> ordenarContinentes(int[5],QString[5]);
-
-
-
 
 };
 

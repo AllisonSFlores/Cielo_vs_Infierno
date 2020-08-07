@@ -23,6 +23,7 @@ void MainWindow::on_btnGenerar_clicked(){
     int cantidadHumanos = (ui->txtCant->text()).toUInt();
     controlador->crearHumanos(cantidadHumanos);
     controlador->imprimirArbolHeapFamilia();
+    ui->textEdit->setText(controlador->informacionArbol());
 
 }
 
