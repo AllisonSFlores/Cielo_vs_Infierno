@@ -207,18 +207,18 @@ void MainWindow::on_btnBuscarFamilia_clicked(){
     if (controlador->getArbolMundo()->raiz != NULL){
         if (ui->rbInformacion->isChecked()){
             if (!controlador->buscarFamilia(apellido,pais)){
-                 QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+                 QMessageBox::information(this,"Error","Familia no existe",QMessageBox::Ok);
             }
             else{
-                QMessageBox::information(this,"Información","Persona encontrada",QMessageBox::Ok);
+                QMessageBox::information(this,"Información","Familia encontrada",QMessageBox::Ok);
             }
         }
         else if(ui->rbPorcentajes->isChecked()){
-            if (!controlador->buscarFamiliaPorcentajes(apellido,pais)){
-                 QMessageBox::information(this,"Error","Persona no existe",QMessageBox::Ok);
+            if (!controlador->buscarFamilia(apellido,pais)){
+                 QMessageBox::information(this,"Error","Familia no existe",QMessageBox::Ok);
             }
             else{
-                QMessageBox::information(this,"Información","Persona encontrada",QMessageBox::Ok);
+                QMessageBox::information(this,"Información","Familia encontrada",QMessageBox::Ok);
             }
         }
     }

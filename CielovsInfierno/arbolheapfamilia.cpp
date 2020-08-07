@@ -149,9 +149,9 @@ QString ArbolHeapFamilia::imprimirFamilia(){
 
 QString ArbolHeapFamilia::imprimirPorcentajes(){
     QString informacion = "FAMILIA: "+apellidoFamilia+" PAÍS:   "+paisFamilia+"\n";
-    informacion += "El porcentaje vivos es: " +QString::number(porcentajeVivos())+"\n";
-    informacion += "El porcentaje muertos y en el infierno es: " +QString::number(porcentajeInfierno())+"\n";
-    informacion += "El porcentaje muertos y en el cielo es: " +QString::number(porcentajeCielo())+"\n";
+    informacion += "El porcentaje vivos es: " +QString::number(porcentajeVivos())+" porciento\n";
+    informacion += "El porcentaje muertos y en el infierno es: " +QString::number(porcentajeInfierno())+"   porciento\n";
+    informacion += "El porcentaje muertos y en el cielo es: " +QString::number(porcentajeCielo())+" porciento\n";
     return informacion;
 }
 
@@ -162,7 +162,7 @@ double ArbolHeapFamilia::porcentajeVivos(){
             vivos+= 1;
         }
     }
-    return vivos/arbol.size();
+    return (vivos/arbol.size())*100;
 }
 
 double ArbolHeapFamilia::porcentajeInfierno(){
@@ -172,7 +172,7 @@ double ArbolHeapFamilia::porcentajeInfierno(){
             infierno+= 1;
         }
     }
-    return infierno/arbol.size();
+    return (infierno/arbol.size())*100;
 
 }
 
@@ -184,6 +184,6 @@ double ArbolHeapFamilia::porcentajeCielo(){
             cielo+= 1;
         }
     }
-    return cielo/arbol.size();
+    return (cielo/arbol.size())*100;
 
 }
