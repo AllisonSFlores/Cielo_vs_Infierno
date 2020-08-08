@@ -104,7 +104,6 @@ public:
     QLabel *label_3;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
-    QPushButton *btnCieloGeneracion;
     QPushButton *btnCieloSalvacion;
     QPushButton *btnCieloReporte;
     QLabel *label_4;
@@ -121,6 +120,19 @@ public:
     QLabel *label_13;
     QLabel *label_14;
     QFrame *line;
+    QPushButton *btnCieloGeneracion;
+    QWidget *tab_3;
+    QTextEdit *textEdit_Infierno;
+    QPushButton *btnGanador;
+    QTextEdit *textEdit_Cielo;
+    QLabel *label_34;
+    QLabel *label_35;
+    QLabel *label_36;
+    QLabel *label_37;
+    QLabel *label_netoInfierno;
+    QLabel *label_netoCielo;
+    QLabel *label_38;
+    QLabel *label_39;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -140,7 +152,7 @@ public:
         centralwidget->setMaximumSize(QSize(1900, 900));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 1500, 941));
+        tabWidget->setGeometry(QRect(0, 0, 1500, 931));
         tabWidget->setMinimumSize(QSize(1400, 900));
         tabWidget->setMaximumSize(QSize(1900, 1000));
         tabWidget->setCursor(QCursor(Qt::ArrowCursor));
@@ -150,7 +162,7 @@ public:
         tab->setMaximumSize(QSize(1900, 990));
         verticalLayoutWidget_3 = new QWidget(tab);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(250, 120, 191, 71));
+        verticalLayoutWidget_3->setGeometry(QRect(250, 120, 231, 84));
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -178,7 +190,7 @@ public:
 
         verticalLayoutWidget_4 = new QWidget(tab);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(370, 540, 241, 111));
+        verticalLayoutWidget_4->setGeometry(QRect(370, 560, 271, 111));
         VL2 = new QVBoxLayout(verticalLayoutWidget_4);
         VL2->setObjectName(QString::fromUtf8("VL2"));
         VL2->setContentsMargins(0, 0, 0, 0);
@@ -203,13 +215,13 @@ public:
 
         btnSumarPecados = new QPushButton(tab);
         btnSumarPecados->setObjectName(QString::fromUtf8("btnSumarPecados"));
-        btnSumarPecados->setGeometry(QRect(250, 210, 191, 31));
+        btnSumarPecados->setGeometry(QRect(250, 210, 231, 31));
         btnSumarPecados->setFont(font);
         btnSumarPecados->setStyleSheet(QString::fromUtf8("background-color: rgb(29, 41, 81);\n"
 "color: rgb(255, 255, 255);"));
         label_26 = new QLabel(tab);
         label_26->setObjectName(QString::fromUtf8("label_26"));
-        label_26->setGeometry(QRect(190, 10, 381, 101));
+        label_26->setGeometry(QRect(220, 0, 381, 101));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Constantia"));
         font1.setPointSize(72);
@@ -218,24 +230,24 @@ public:
         label_26->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         btnPecados = new QPushButton(tab);
         btnPecados->setObjectName(QString::fromUtf8("btnPecados"));
-        btnPecados->setGeometry(QRect(910, 130, 151, 41));
+        btnPecados->setGeometry(QRect(950, 170, 151, 41));
         btnPecados->setFont(font);
         btnPecados->setStyleSheet(QString::fromUtf8("background-color: rgb(29, 41, 81);\n"
 "color: rgb(255, 255, 255);"));
         btnBuenasAcciones = new QPushButton(tab);
         btnBuenasAcciones->setObjectName(QString::fromUtf8("btnBuenasAcciones"));
-        btnBuenasAcciones->setGeometry(QRect(1100, 130, 151, 41));
+        btnBuenasAcciones->setGeometry(QRect(1130, 170, 151, 41));
         btnBuenasAcciones->setFont(font);
         btnBuenasAcciones->setStyleSheet(QString::fromUtf8("background-color: rgb(29, 41, 81);\n"
 "color: rgb(255, 255, 255);"));
         label_27 = new QLabel(tab);
         label_27->setObjectName(QString::fromUtf8("label_27"));
-        label_27->setGeometry(QRect(960, 20, 341, 51));
+        label_27->setGeometry(QRect(960, 60, 341, 51));
         label_27->setFont(font1);
         label_27->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         gridLayoutWidget = new QWidget(tab);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(810, 240, 561, 517));
+        gridLayoutWidget->setGeometry(QRect(850, 240, 561, 517));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -266,10 +278,10 @@ public:
 
         txtEdit = new QTextEdit(tab);
         txtEdit->setObjectName(QString::fromUtf8("txtEdit"));
-        txtEdit->setGeometry(QRect(640, 430, 151, 321));
+        txtEdit->setGeometry(QRect(660, 430, 181, 321));
         verticalLayoutWidget_6 = new QWidget(tab);
         verticalLayoutWidget_6->setObjectName(QString::fromUtf8("verticalLayoutWidget_6"));
-        verticalLayoutWidget_6->setGeometry(QRect(70, 540, 241, 111));
+        verticalLayoutWidget_6->setGeometry(QRect(70, 563, 271, 111));
         VL2_3 = new QVBoxLayout(verticalLayoutWidget_6);
         VL2_3->setObjectName(QString::fromUtf8("VL2_3"));
         VL2_3->setContentsMargins(0, 0, 0, 0);
@@ -303,7 +315,7 @@ public:
 
         verticalLayoutWidget_7 = new QWidget(tab);
         verticalLayoutWidget_7->setObjectName(QString::fromUtf8("verticalLayoutWidget_7"));
-        verticalLayoutWidget_7->setGeometry(QRect(640, 250, 151, 171));
+        verticalLayoutWidget_7->setGeometry(QRect(660, 250, 181, 171));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_7);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -341,52 +353,56 @@ public:
 
         label_31 = new QLabel(tab);
         label_31->setObjectName(QString::fromUtf8("label_31"));
-        label_31->setGeometry(QRect(650, 210, 161, 41));
+        label_31->setGeometry(QRect(680, 210, 161, 41));
         verticalLayoutWidget_9 = new QWidget(tab);
         verticalLayoutWidget_9->setObjectName(QString::fromUtf8("verticalLayoutWidget_9"));
-        verticalLayoutWidget_9->setGeometry(QRect(70, 480, 241, 53));
+        verticalLayoutWidget_9->setGeometry(QRect(70, 490, 271, 53));
         verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_9);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
         rbInformacion = new QRadioButton(verticalLayoutWidget_9);
         rbInformacion->setObjectName(QString::fromUtf8("rbInformacion"));
-        rbInformacion->setFont(font);
+        QFont font2;
+        font2.setPointSize(9);
+        font2.setBold(true);
+        font2.setWeight(75);
+        rbInformacion->setFont(font2);
 
         verticalLayout_5->addWidget(rbInformacion);
 
         rbPorcentajes = new QRadioButton(verticalLayoutWidget_9);
         rbPorcentajes->setObjectName(QString::fromUtf8("rbPorcentajes"));
-        rbPorcentajes->setFont(font);
+        rbPorcentajes->setFont(font2);
 
         verticalLayout_5->addWidget(rbPorcentajes);
 
         verticalLayoutWidget_8 = new QWidget(tab);
         verticalLayoutWidget_8->setObjectName(QString::fromUtf8("verticalLayoutWidget_8"));
-        verticalLayoutWidget_8->setGeometry(QRect(370, 480, 241, 53));
+        verticalLayoutWidget_8->setGeometry(QRect(370, 490, 271, 53));
         verticalLayout_6 = new QVBoxLayout(verticalLayoutWidget_8);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         verticalLayout_6->setContentsMargins(0, 0, 0, 0);
         rbPecados = new QRadioButton(verticalLayoutWidget_8);
         rbPecados->setObjectName(QString::fromUtf8("rbPecados"));
-        rbPecados->setFont(font);
+        rbPecados->setFont(font2);
 
         verticalLayout_6->addWidget(rbPecados);
 
         rbBuenasA = new QRadioButton(verticalLayoutWidget_8);
         rbBuenasA->setObjectName(QString::fromUtf8("rbBuenasA"));
-        rbBuenasA->setFont(font);
+        rbBuenasA->setFont(font2);
 
         verticalLayout_6->addWidget(rbBuenasA);
 
         label_25 = new QLabel(tab);
         label_25->setObjectName(QString::fromUtf8("label_25"));
-        label_25->setGeometry(QRect(70, 20, 541, 451));
+        label_25->setGeometry(QRect(70, 10, 571, 471));
         textEdit = new QTextEdit(tab);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(140, 290, 401, 171));
+        textEdit->setGeometry(QRect(130, 300, 461, 171));
         label_33 = new QLabel(tab);
         label_33->setObjectName(QString::fromUtf8("label_33"));
-        label_33->setGeometry(QRect(200, 250, 301, 31));
+        label_33->setGeometry(QRect(220, 250, 301, 31));
         tabWidget->addTab(tab, QString());
         label_25->raise();
         verticalLayoutWidget_3->raise();
@@ -413,14 +429,14 @@ public:
         label_17 = new QLabel(tab_2);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(110, 60, 391, 151));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("Microsoft Himalaya"));
-        font2.setPointSize(72);
-        font2.setBold(false);
-        font2.setItalic(false);
-        font2.setWeight(50);
-        font2.setStrikeOut(true);
-        label_17->setFont(font2);
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("Microsoft Himalaya"));
+        font3.setPointSize(72);
+        font3.setBold(false);
+        font3.setItalic(false);
+        font3.setWeight(50);
+        font3.setStrikeOut(true);
+        label_17->setFont(font3);
         horizontalLayoutWidget = new QWidget(tab_2);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(70, 730, 1301, 80));
@@ -429,56 +445,56 @@ public:
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         label_24 = new QLabel(horizontalLayoutWidget);
         label_24->setObjectName(QString::fromUtf8("label_24"));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("Microsoft Himalaya"));
-        font3.setPointSize(36);
-        label_24->setFont(font3);
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("Microsoft Himalaya"));
+        font4.setPointSize(36);
+        label_24->setFont(font4);
         label_24->setStyleSheet(QString::fromUtf8("color:rgb(158, 94, 72)"));
 
         horizontalLayout->addWidget(label_24);
 
         label_23 = new QLabel(horizontalLayoutWidget);
         label_23->setObjectName(QString::fromUtf8("label_23"));
-        label_23->setFont(font3);
+        label_23->setFont(font4);
         label_23->setStyleSheet(QString::fromUtf8("color:rgb(158, 94, 72)"));
 
         horizontalLayout->addWidget(label_23);
 
         label_19 = new QLabel(horizontalLayoutWidget);
         label_19->setObjectName(QString::fromUtf8("label_19"));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("Microsoft Himalaya"));
-        font4.setPointSize(36);
-        font4.setStrikeOut(false);
-        label_19->setFont(font4);
+        QFont font5;
+        font5.setFamily(QString::fromUtf8("Microsoft Himalaya"));
+        font5.setPointSize(36);
+        font5.setStrikeOut(false);
+        label_19->setFont(font5);
         label_19->setStyleSheet(QString::fromUtf8("color:rgb(158, 94, 72)"));
 
         horizontalLayout->addWidget(label_19);
 
         label_20 = new QLabel(horizontalLayoutWidget);
         label_20->setObjectName(QString::fromUtf8("label_20"));
-        label_20->setFont(font3);
+        label_20->setFont(font4);
         label_20->setStyleSheet(QString::fromUtf8("color:rgb(158, 94, 72)"));
 
         horizontalLayout->addWidget(label_20);
 
         label_21 = new QLabel(horizontalLayoutWidget);
         label_21->setObjectName(QString::fromUtf8("label_21"));
-        label_21->setFont(font3);
+        label_21->setFont(font4);
         label_21->setStyleSheet(QString::fromUtf8("color:rgb(158, 94, 72)"));
 
         horizontalLayout->addWidget(label_21);
 
         label_18 = new QLabel(horizontalLayoutWidget);
         label_18->setObjectName(QString::fromUtf8("label_18"));
-        label_18->setFont(font3);
+        label_18->setFont(font4);
         label_18->setStyleSheet(QString::fromUtf8("color:rgb(158, 94, 72)"));
 
         horizontalLayout->addWidget(label_18);
 
         label_22 = new QLabel(horizontalLayoutWidget);
         label_22->setObjectName(QString::fromUtf8("label_22"));
-        label_22->setFont(font3);
+        label_22->setFont(font4);
         label_22->setStyleSheet(QString::fromUtf8("color:rgb(158, 94, 72)"));
 
         horizontalLayout->addWidget(label_22);
@@ -486,11 +502,11 @@ public:
         btnReporte = new QPushButton(tab_2);
         btnReporte->setObjectName(QString::fromUtf8("btnReporte"));
         btnReporte->setGeometry(QRect(630, 420, 171, 41));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("Microsoft Himalaya"));
-        font5.setPointSize(22);
-        font5.setStrikeOut(false);
-        btnReporte->setFont(font5);
+        QFont font6;
+        font6.setFamily(QString::fromUtf8("Microsoft Himalaya"));
+        font6.setPointSize(22);
+        font6.setStrikeOut(false);
+        btnReporte->setFont(font6);
         btnReporte->setCursor(QCursor(Qt::ForbiddenCursor));
         btnReporte->setStyleSheet(QString::fromUtf8("background-color: rgb(181, 0, 0);"));
         label_15 = new QLabel(tab_2);
@@ -499,10 +515,10 @@ public:
         btnCondenar = new QPushButton(tab_2);
         btnCondenar->setObjectName(QString::fromUtf8("btnCondenar"));
         btnCondenar->setGeometry(QRect(630, 370, 171, 41));
-        QFont font6;
-        font6.setFamily(QString::fromUtf8("Microsoft Himalaya"));
-        font6.setPointSize(22);
-        btnCondenar->setFont(font6);
+        QFont font7;
+        font7.setFamily(QString::fromUtf8("Microsoft Himalaya"));
+        font7.setPointSize(22);
+        btnCondenar->setFont(font7);
         btnCondenar->setCursor(QCursor(Qt::ForbiddenCursor));
         btnCondenar->setStyleSheet(QString::fromUtf8("background-color: rgb(181, 0, 0);"));
         label_32 = new QLabel(tab_2);
@@ -538,27 +554,20 @@ public:
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        btnCieloGeneracion = new QPushButton(verticalLayoutWidget);
-        btnCieloGeneracion->setObjectName(QString::fromUtf8("btnCieloGeneracion"));
-        QFont font7;
-        font7.setFamily(QString::fromUtf8("Constantia"));
-        font7.setPointSize(14);
-        font7.setItalic(true);
-        btnCieloGeneracion->setFont(font7);
-        btnCieloGeneracion->setCursor(QCursor(Qt::PointingHandCursor));
-
-        verticalLayout->addWidget(btnCieloGeneracion);
-
         btnCieloSalvacion = new QPushButton(verticalLayoutWidget);
         btnCieloSalvacion->setObjectName(QString::fromUtf8("btnCieloSalvacion"));
-        btnCieloSalvacion->setFont(font7);
+        QFont font8;
+        font8.setFamily(QString::fromUtf8("Constantia"));
+        font8.setPointSize(14);
+        font8.setItalic(true);
+        btnCieloSalvacion->setFont(font8);
         btnCieloSalvacion->setCursor(QCursor(Qt::PointingHandCursor));
 
         verticalLayout->addWidget(btnCieloSalvacion);
 
         btnCieloReporte = new QPushButton(verticalLayoutWidget);
         btnCieloReporte->setObjectName(QString::fromUtf8("btnCieloReporte"));
-        btnCieloReporte->setFont(font7);
+        btnCieloReporte->setFont(font8);
         btnCieloReporte->setCursor(QCursor(Qt::PointingHandCursor));
 
         verticalLayout->addWidget(btnCieloReporte);
@@ -569,50 +578,50 @@ public:
         label_8 = new QLabel(Cielo);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(860, 270, 504, 96));
-        QFont font8;
-        font8.setFamily(QString::fromUtf8("Constantia"));
-        font8.setPointSize(12);
-        font8.setItalic(true);
-        label_8->setFont(font8);
+        QFont font9;
+        font9.setFamily(QString::fromUtf8("Constantia"));
+        font9.setPointSize(12);
+        font9.setItalic(true);
+        label_8->setFont(font9);
         label_8->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_7 = new QLabel(Cielo);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(830, 210, 148, 64));
-        QFont font9;
-        font9.setFamily(QString::fromUtf8("Constantia"));
-        font9.setPointSize(18);
-        font9.setItalic(true);
-        label_7->setFont(font9);
+        QFont font10;
+        font10.setFamily(QString::fromUtf8("Constantia"));
+        font10.setPointSize(18);
+        font10.setItalic(true);
+        label_7->setFont(font10);
         label_7->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_6 = new QLabel(Cielo);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(870, 120, 537, 72));
-        label_6->setFont(font8);
+        label_6->setFont(font9);
         label_6->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_5 = new QLabel(Cielo);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(840, 50, 115, 64));
-        label_5->setFont(font9);
+        label_5->setFont(font10);
         label_5->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_9 = new QLabel(Cielo);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(830, 390, 161, 51));
-        label_9->setFont(font9);
+        label_9->setFont(font10);
         label_9->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_10 = new QLabel(Cielo);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(860, 450, 501, 81));
-        label_10->setFont(font8);
+        label_10->setFont(font9);
         label_10->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_11 = new QLabel(Cielo);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(830, 580, 171, 41));
-        label_11->setFont(font9);
+        label_11->setFont(font10);
         label_11->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_12 = new QLabel(Cielo);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setGeometry(QRect(830, 640, 491, 111));
-        label_12->setFont(font8);
+        label_12->setFont(font9);
         label_12->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         verticalLayoutWidget_2 = new QWidget(Cielo);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
@@ -622,14 +631,14 @@ public:
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         label_13 = new QLabel(verticalLayoutWidget_2);
         label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setFont(font9);
+        label_13->setFont(font10);
         label_13->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_2->addWidget(label_13);
 
         label_14 = new QLabel(verticalLayoutWidget_2);
         label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setFont(font8);
+        label_14->setFont(font9);
         label_14->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_2->addWidget(label_14);
@@ -639,7 +648,82 @@ public:
         line->setGeometry(QRect(790, 90, 16, 681));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
+        btnCieloGeneracion = new QPushButton(Cielo);
+        btnCieloGeneracion->setObjectName(QString::fromUtf8("btnCieloGeneracion"));
+        btnCieloGeneracion->setGeometry(QRect(1410, 850, 16, 16));
+        btnCieloGeneracion->setFont(font8);
+        btnCieloGeneracion->setCursor(QCursor(Qt::PointingHandCursor));
         tabWidget->addTab(Cielo, QString());
+        tab_3 = new QWidget();
+        tab_3->setObjectName(QString::fromUtf8("tab_3"));
+        textEdit_Infierno = new QTextEdit(tab_3);
+        textEdit_Infierno->setObjectName(QString::fromUtf8("textEdit_Infierno"));
+        textEdit_Infierno->setGeometry(QRect(70, 270, 391, 311));
+        btnGanador = new QPushButton(tab_3);
+        btnGanador->setObjectName(QString::fromUtf8("btnGanador"));
+        btnGanador->setGeometry(QRect(630, 170, 101, 41));
+        QFont font11;
+        font11.setPointSize(12);
+        btnGanador->setFont(font11);
+        textEdit_Cielo = new QTextEdit(tab_3);
+        textEdit_Cielo->setObjectName(QString::fromUtf8("textEdit_Cielo"));
+        textEdit_Cielo->setGeometry(QRect(900, 270, 391, 311));
+        label_34 = new QLabel(tab_3);
+        label_34->setObjectName(QString::fromUtf8("label_34"));
+        label_34->setGeometry(QRect(130, 100, 331, 131));
+        QFont font12;
+        font12.setFamily(QString::fromUtf8("Microsoft Himalaya"));
+        font12.setPointSize(72);
+        font12.setStrikeOut(true);
+        label_34->setFont(font12);
+        label_34->setStyleSheet(QString::fromUtf8(""));
+        label_35 = new QLabel(tab_3);
+        label_35->setObjectName(QString::fromUtf8("label_35"));
+        label_35->setGeometry(QRect(1000, 110, 261, 91));
+        QFont font13;
+        font13.setFamily(QString::fromUtf8("Constantia"));
+        font13.setPointSize(48);
+        label_35->setFont(font13);
+        label_35->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label_36 = new QLabel(tab_3);
+        label_36->setObjectName(QString::fromUtf8("label_36"));
+        label_36->setGeometry(QRect(590, 390, 181, 81));
+        QFont font14;
+        font14.setPointSize(18);
+        label_36->setFont(font14);
+        label_37 = new QLabel(tab_3);
+        label_37->setObjectName(QString::fromUtf8("label_37"));
+        label_37->setGeometry(QRect(640, 320, 101, 41));
+        label_37->setFont(font14);
+        label_netoInfierno = new QLabel(tab_3);
+        label_netoInfierno->setObjectName(QString::fromUtf8("label_netoInfierno"));
+        label_netoInfierno->setGeometry(QRect(230, 230, 55, 16));
+        QFont font15;
+        font15.setPointSize(10);
+        label_netoInfierno->setFont(font15);
+        label_netoInfierno->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label_netoCielo = new QLabel(tab_3);
+        label_netoCielo->setObjectName(QString::fromUtf8("label_netoCielo"));
+        label_netoCielo->setGeometry(QRect(1050, 220, 71, 20));
+        label_netoCielo->setFont(font15);
+        label_38 = new QLabel(tab_3);
+        label_38->setObjectName(QString::fromUtf8("label_38"));
+        label_38->setGeometry(QRect(0, 0, 681, 881));
+        label_39 = new QLabel(tab_3);
+        label_39->setObjectName(QString::fromUtf8("label_39"));
+        label_39->setGeometry(QRect(680, 0, 741, 881));
+        tabWidget->addTab(tab_3, QString());
+        label_39->raise();
+        label_38->raise();
+        textEdit_Infierno->raise();
+        btnGanador->raise();
+        textEdit_Cielo->raise();
+        label_34->raise();
+        label_35->raise();
+        label_36->raise();
+        label_37->raise();
+        label_netoInfierno->raise();
+        label_netoCielo->raise();
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -708,7 +792,6 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Infierno", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/cieloo.jpg\"/></p></body></html>", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Cielo", nullptr));
-        btnCieloGeneracion->setText(QCoreApplication::translate("MainWindow", "Generaci\303\263n", nullptr));
         btnCieloSalvacion->setText(QCoreApplication::translate("MainWindow", "Salvaci\303\263n", nullptr));
         btnCieloReporte->setText(QCoreApplication::translate("MainWindow", "Reporte", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/angelviolin.png\"/></p></body></html>", nullptr));
@@ -736,7 +819,18 @@ public:
 "\342\200\242 Raguel\n"
 "\342\200\242 UrielAzrael\n"
 "\342\200\242 Sariel", nullptr));
+        btnCieloGeneracion->setText(QCoreApplication::translate("MainWindow", "Generaci\303\263n", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Cielo), QCoreApplication::translate("MainWindow", "Cielo", nullptr));
+        btnGanador->setText(QCoreApplication::translate("MainWindow", "Ganador", nullptr));
+        label_34->setText(QCoreApplication::translate("MainWindow", "Infierno", nullptr));
+        label_35->setText(QCoreApplication::translate("MainWindow", "Cielo", nullptr));
+        label_36->setText(QString());
+        label_37->setText(QCoreApplication::translate("MainWindow", "Ganador:", nullptr));
+        label_netoInfierno->setText(QCoreApplication::translate("MainWindow", "NETO", nullptr));
+        label_netoCielo->setText(QCoreApplication::translate("MainWindow", "NETO", nullptr));
+        label_38->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/87b1f6ab429fb46c70d4588f3f792cd4.jpg\"/></p></body></html>", nullptr));
+        label_39->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/cieloo.jpg\"/></p></body></html>", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Ganador", nullptr));
     } // retranslateUi
 
 };
