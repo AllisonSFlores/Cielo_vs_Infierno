@@ -140,13 +140,6 @@ Persona * ArbolHeapFamilia::menosPecador(){
         }
     }
     return menosPecadorv;
-    /*for(int i = 0 ; i < arbol.size() ; i++){
-
-        if((menosPecadorv == NULL &&arbol[i]->pureza()> -1) ||(arbol[i]->pureza()> -1 && (arbol[i]->pureza() > menosPecadorv->pureza()))){
-            menosPecadorv = arbol[i];
-        }
-    }
-    return menosPecadorv;}*/
 }
 /**
  * Elimina de arbol humano

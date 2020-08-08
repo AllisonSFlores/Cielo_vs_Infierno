@@ -11,6 +11,7 @@ void Controlador::__init__(){
     this->tablaFamilia = new TablaFamilia();
     this->infierno = new Infierno();
     this->consultas = new Consultas();
+    this->archivo = new Archivos();
 
 }
 
@@ -72,17 +73,15 @@ void Controlador::crearHumanos(int cantidadHumanos){
      QVector<NodoParaArbol*> datosArbol= listaMundo->listaParaArbol();
      _arbolMundo->pasarDatoAinsertar(datosArbol);
      _arbolMundo->inOrder(_arbolMundo->raiz);
-
+     _arbolMundo->mostrarMundo(_arbolMundo->raiz,0);
 }
 
 QString Controlador::ultimoNivelArbol(){
-    QString informacion= "Información de las personas del último nivel del árbol\n";
-    QVector<Persona*> ultimoNivel = _arbolMundo->ultimoNivelAux();
-     qDebug()<<"hola antes de for controlador ";
-    for (int i=0;i<ultimoNivel.size();i++){
-        qDebug()<<"hola";
-        informacion+=ultimoNivel[i]->imprimirFamilia()+"\n";
-    }
+     QString informacion= "Información de las personas del último nivel del árbol\n";
+     QString ultimoNivel = _arbolMundo->ultimoNivelAux();
+
+     informacion+=ultimoNivel+"\n";
+
     return informacion;
 }
 
@@ -99,11 +98,12 @@ int Controlador::cantidadNiveles(){
 }
 
 QString Controlador::informacionArbol(){
-    QString informacion= "-------Información del mundo-------\n";
+    QString informacion= "---------------------------------Información del mundo---------------------------------\n";
     informacion+= "Hay "+ QString::number(cantidadNodosArbol())+" nodos en el arbol\n";
     informacion+= "El árbol tiene "+QString::number(cantidadNiveles())+" niveles\n";
     informacion+= "El mundo tiene "+QString::number(cantidadHumanos())+" personas\n";
     informacion+= ultimoNivelArbol();
+    archivo->openDirectory(0,"Informacion_Arbol_"+nombreArchivoFecha(),informacion);
     return informacion;
 }
 
@@ -119,7 +119,8 @@ bool Controlador::buscarPersonaPecados(int id){
     if(nodoPersona!=NULL){
         ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(nodoPersona->persona->getApellido(),nodoPersona->persona->getPais());
         if (familia != NULL){
-            qDebug()<<familia->imprimirEstadoPecados();
+            QString informacion = familia->imprimirEstadoPecados();
+            archivo->openDirectory(0,"Pecados_"+nombreArchivoFecha(),informacion);
             return true;
         }
     }
@@ -140,7 +141,8 @@ bool Controlador::buscarPersonaBA(int id){
     if(nodoPersona!=NULL){
         ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(nodoPersona->persona->getApellido(),nodoPersona->persona->getPais());
         if (familia != NULL){
-            qDebug()<<familia->imprimirEstadoBA();
+            QString informacion = familia->imprimirEstadoBA();
+            archivo->openDirectory(0,"BuenasA_"+nombreArchivoFecha(),informacion);
             return true;
         }
     }
@@ -158,7 +160,8 @@ bool Controlador::buscarFamilia(QString apellido,QString pais){
 
      ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(apellido,pais);
      if (familia != NULL){
-        qDebug()<<familia->imprimirFamilia();
+        QString informacion = familia->imprimirFamilia();
+        archivo->openDirectory(0,"Buscar_Familia_"+nombreArchivoFecha(),informacion);
         return true;
     }
 
@@ -172,10 +175,10 @@ bool Controlador::buscarFamilia(QString apellido,QString pais){
 /// \return bool
 ///
 bool  Controlador::buscarFamiliaPorcentajes(QString apellido,QString pais){
-    qDebug()<<"HOLA EN BUSCAR FAMILIA APELLIDO PAIS PORCENTAJESSS";
      ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(apellido,pais);
      if (familia != NULL){
-        qDebug()<<familia->imprimirPorcentajes();
+        QString informacion =familia->imprimirPorcentajes();
+        archivo->openDirectory(0,"Porcentajes_"+nombreArchivoFecha(),informacion);
         return true;
     }
 
@@ -227,15 +230,14 @@ QVector<QString> Controlador::masBuenos(){
 
 
 void Controlador::condenacion(){
-    QString datos ="";
     for(int i=0 ; i<7 ; i++){
         QVector<Persona*> condenados = listaMundo->condenados(i);
         qDebug()<<"Demonio "+QString::number(i);
         qDebug()<<condenados;
-        datos+= infierno->condenar(condenados, i);
-
+        QString datos=infierno->condenar(condenados, i);
+        archivo->openDirectory(1,"Condenación_"+nombreArchivoFecha(),datos);
+        qDebug()<<datos;
     }
-    //SE LLAMA A LA FUNCION QUE VA A ESCRIBIR EN EL TEXTO
 
 }
 
@@ -248,23 +250,22 @@ bool Controlador::salvacion(){
             qDebug()<<"nulo";
         }
         salvados.append(p);
-
     }
     if(salvados[0]!=NULL){
         QString datos=cielo->salvacion(salvados);
         qDebug()<<datos;
+        archivo->openDirectory(2,"Salvacion_"+nombreArchivoFecha(),datos);
         return true;
     }
     else{
         return false;
     }
-    //SE LLAMA A LA FUNCION QUE VA A ESCRIBIR EN EL TEXTO
+
 }
+
+
 void Controlador::imprimirArbolHeapFamilia(){
     tablaFamilia->printAll();
-}
-void Controlador::pruebasAllison(){
-  //  arbol->imprimir();
 }
 
 /// Ordena continentes de más pecador a menos pecador y los retorna
@@ -323,6 +324,22 @@ QVector<QString> Controlador::ContinentesBuenos(){
     }
       return continentes;
 }
+
+
+
+
+QString Controlador::nombreArchivoFecha(){
+
+    QDateTime UTC(QDateTime::currentDateTimeUtc());
+    QDateTime local(UTC.toLocalTime());
+    QString nom = local.toString(Qt::SystemLocaleShortDate);
+
+    QStringList datetime = nom.split(" ");
+    QStringList time = datetime[1].split(":");
+    QStringList date = datetime[0].split("/");
+
+    return date[0]+date[1]+date[2]+"_"+time[0]+time[1];
+}
 /**
  * @brief Controlador::ganador
  * @return true si gana el infierno y false si gana el cielo
@@ -348,7 +365,10 @@ QVector<QString> Controlador::ganadorCielo(){
 }
 void Controlador::consultaInfierno(){
     QString datos = infierno->consultasInfierno();
+    archivo->openDirectory(1,"ConsultaInfierno_"+nombreArchivoFecha(),datos);
+
 }
 void Controlador::consultaCielo(){
     QString datos = cielo->tabla->informacion();
+    archivo->openDirectory(2,"ConsultaCielo_"+nombreArchivoFecha(),datos);
 }

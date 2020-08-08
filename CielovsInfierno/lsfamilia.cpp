@@ -30,10 +30,8 @@ void LSFamilia::insert(Persona * ppersona){
     Input: LSNode
     Ouput: None
     */
-    qDebug()<<"insert";
     qDebug()<<ppersona->pais[0];
      if (lookFor(ppersona->pais[0]) != NULL){
-              qDebug()<<"diferente de nulo";
          // they both point to the new one in memory
          NodoFamilia * nodo = lookFor(ppersona->getPais());
          nodo->arbol->insertar(ppersona);
@@ -44,6 +42,7 @@ void LSFamilia::insert(Persona * ppersona){
          NodoFamilia *newNode = new NodoFamilia(ppersona->pais[0]);
          newNode->arbol->insertar(ppersona);
          newNode->arbol->apellidoFamilia=ppersona->getApellido();
+         newNode->arbol->paisFamilia=ppersona->pais[0];
          insertAux(newNode);
 
      }

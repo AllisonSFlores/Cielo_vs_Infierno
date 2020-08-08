@@ -162,7 +162,7 @@ QString  Persona::imprimirFamilia(){
     }
     int i = 0;
     if(hijos[i]==NULL){
-        qDebug()<<"Sin hijos\n";
+        informacion+="Sin hijos\n";
     }
 
     else{
@@ -192,7 +192,7 @@ QString Persona::imprimirEstadoPecados(){
             case 5: pecado="glotonería";break;
             case 6: pecado="lujuria";break;
         }
-        informacion+="Pecado\tde\t"+pecado+":\t"+pecados[i]+"\n";
+        informacion+="Pecado\tde\t"+pecado+":\t"+QString::number(pecados[i])+"\n";
     }
     return informacion;
 }
@@ -212,7 +212,7 @@ QString Persona::imprimirEstadoBA(){
             case 5: buenaA="ayuno";break;
             case 6: buenaA="castidad";break;
         }
-        informacion+="Buena\tacción\tde\t"+buenaA+":\t"+buenasAcciones[i]+"\n";
+        informacion+="Buena\tacción\tde\t"+buenaA+":\t"+QString::number(buenasAcciones[i])+"\n";
     }
     return informacion;
 }

@@ -206,7 +206,7 @@ void MainWindow::on_btnBuscarFamilia_clicked(){
             }
         }
         else if(ui->rbPorcentajes->isChecked()){
-            if (!controlador->buscarFamilia(apellido,pais)){
+            if (!controlador->buscarFamiliaPorcentajes(apellido,pais)){
                  QMessageBox::information(this,"Error","Familia no existe",QMessageBox::Ok);
             }
             else{
