@@ -145,20 +145,20 @@ void Persona::imprimir(){
 QString  Persona::imprimirFamilia(){
 
     QString informacion="";
-    informacion += "ID: "+QString::number(id)+"  "+nombre+"  "+apellido+ "   de  "+pais[0]+"\n";
-    informacion += "Creencia:   " +creencia+ "    Profesión:  "+profesion+ "    Correo:  "+correo+"\n";
+    informacion += "ID:\t"+QString::number(id)+"\t"+nombre+"\t"+apellido+ "\tde\t"+pais[0]+"\t";
+    informacion += "\tCreencia:\t" +creencia+ "\tProfesión:\t"+profesion+ "\tCorreo:\t"+correo+"\t";
     if (estado==0){
-        informacion += "Estado: Mundo";
+        informacion += "Estado: Mundo\n";
     }
     else if (estado==1){
-        informacion += "Estado: Infierno";
+        informacion += "Estado: Infierno\n";
     }
     else{
-        informacion += "Estado: Cielo";
+        informacion += "Estado: Cielo\n";
     }
     informacion += estado;
     if(padre != NULL){
-        informacion +="ID del padre: "+ QString::number(padre->getId());
+        informacion +="ID del padre: "+ QString::number(padre->getId())+"\n";
     }
     int i = 0;
     if(hijos[i]==NULL){
@@ -169,7 +169,7 @@ QString  Persona::imprimirFamilia(){
          informacion += "ID de los hijos: ";
          while(i<5 && hijos[i]!=NULL){
 
-            informacion += hijos[i]->getId();
+            informacion += QString::number(hijos[i]->getId())+"\n";
             i++;
         }
     }
@@ -180,7 +180,7 @@ QString  Persona::imprimirFamilia(){
 QString Persona::imprimirEstadoPecados(){
     QString informacion="";
     QString pecado="";
-    informacion +="ID: "+QString::number(id)+"  "+nombre+"  "+apellido+ "   de  "+pais[0]+"\n";
+    informacion +="ID:\t"+QString::number(id)+"\n"+nombre+"\t"+apellido+ "\tde\t"+pais[0]+"\n";
     informacion += "Pecados:\n";
     for(int i =0 ; i<7 ;i++){
         switch (i) {
@@ -192,7 +192,7 @@ QString Persona::imprimirEstadoPecados(){
             case 5: pecado="glotonería";break;
             case 6: pecado="lujuria";break;
         }
-        informacion+="Pecado de "+pecado+": "+pecados[i]+"\n";
+        informacion+="Pecado\tde\t"+pecado+":\t"+pecados[i]+"\n";
     }
     return informacion;
 }
@@ -200,7 +200,7 @@ QString Persona::imprimirEstadoPecados(){
 QString Persona::imprimirEstadoBA(){
     QString informacion="";
     QString buenaA="";
-    informacion +="ID: "+QString::number(id)+"  "+nombre+"  "+apellido+ "   de "+pais[0];
+    informacion +="ID:\t"+QString::number(id)+"\n"+nombre+"\t"+apellido+ "\tde\t"+pais[0]+"\n";
     informacion += "Buenas acciones:\n";
     for(int i =0 ; i<7 ;i++){
         switch (i) {
@@ -212,7 +212,7 @@ QString Persona::imprimirEstadoBA(){
             case 5: buenaA="ayuno";break;
             case 6: buenaA="castidad";break;
         }
-        informacion+="Buena acción de "+buenaA+": "+buenasAcciones[i]+"\n";
+        informacion+="Buena\tacción\tde\t"+buenaA+":\t"+buenasAcciones[i]+"\n";
     }
     return informacion;
 }

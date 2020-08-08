@@ -2,6 +2,7 @@ release/angel.o
 release/arbolangeles.o
 release/arbolheapdemonio.o
 release/arbolheapfamilia.o
+release/archivos.o
 release/cielo.o
 release/consultas.o
 release/controlador.o

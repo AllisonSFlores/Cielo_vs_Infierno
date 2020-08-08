@@ -39,8 +39,8 @@ struct arbolMundo{
     NodoLd* recorrerArbol(int,Nodo*);
     NodoLd* recorrerListaMundo(int);
     //Informacion en pantalla
-    QVector<Persona*> ultimoNivelAux();
-    QVector<Persona*> ultimoNivel(Nodo*,QVector<Persona*>);
+    QString ultimoNivelAux();
+    QString ultimoNivel(Nodo*nodo, QString ultimo);
     int cantidadNodosAux();
     int cantidadNodos(Nodo*);
     int nivelesAux();

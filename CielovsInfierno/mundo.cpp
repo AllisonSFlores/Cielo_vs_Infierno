@@ -4,22 +4,23 @@
 #include <conio.h>
 #include <QDebug>
 
-QVector<Persona*> arbolMundo::ultimoNivelAux(){
-    QVector<Persona*> ultimo;
+
+QString arbolMundo::ultimoNivelAux(){
+    QString ultimo="";
     return ultimoNivel(raiz, ultimo);
 }
 
-QVector<Persona*> arbolMundo::ultimoNivel(Nodo*nodo,QVector<Persona*> ultimo){
+QString arbolMundo::ultimoNivel(Nodo* nodo,QString ultimo){
 
-    if (nodo!= NULL){
-        if(nodo->hijoizquierdo==NULL && nodo->hijoderecho==NULL){
-            qDebug()<<"persona desde arbol"<<nodo->punteroALista->persona->getId();
-            ultimo.append(nodo->punteroALista->persona);
+    if (nodo != NULL){
+        if (nodo->hijoizquierdo==NULL && nodo->hijoderecho==NULL){
+            ultimo+= nodo->punteroALista->persona->imprimirFamilia();
         }
-        ultimoNivel(nodo->hijoizquierdo,ultimo);
-        ultimoNivel(nodo->hijoderecho,ultimo);
+        return ultimoNivel(nodo->hijoizquierdo,ultimo)+ultimoNivel(nodo->hijoderecho,ultimo);
     }
+
     return ultimo;
+
 }
 
 int arbolMundo::cantidadNodosAux(){
@@ -48,57 +49,30 @@ int arbolMundo::niveles(Nodo* nodo){
 
 }
 
-
+/// Saca la mitad de un vector y lo inserta en el arbol
+/// \brief arbolMundo::pasarDatoAinsertar
+/// \param nodosDelArbol
+///
 void arbolMundo::pasarDatoAinsertar(QVector<NodoParaArbol*> nodosDelArbol){
 
-
-    int largo = nodosDelArbol.length();
-    if (largo>3){
-        while (largo>4){
-            int mitad=largo/2;
-            //solo es impar una vez
-            if(largo%2 == 1){
-                NodoParaArbol* borrado = nodosDelArbol[mitad];
-                insertar(borrado->persona->getId(),borrado->puntero); //falta el puntero lo paso al insertar
-                nodosDelArbol.remove(mitad);
-
-            }
-            else{
-                int mediaMitad = mitad/2;
-                NodoParaArbol* borrado1 = nodosDelArbol[mediaMitad];
-                insertar(borrado1->persona->getId(),borrado1->puntero);
-                nodosDelArbol.remove(mediaMitad);
-                NodoParaArbol* borrado2 = nodosDelArbol[(mitad+mediaMitad)-1];
-                insertar(borrado2->persona->getId(),borrado2->puntero);
-                nodosDelArbol.remove((mitad+mediaMitad)-1);
-            }
-
-            largo = nodosDelArbol.length();
-        }
-    //cuando solo quedan 4 noditos, metalos
-        for (int i=0;i<largo;i++){
-            NodoParaArbol* borrado = nodosDelArbol[i];
+    if (!nodosDelArbol.isEmpty()){
+        int largo = nodosDelArbol.size();
+        int mitad = largo/2;
+        if (largo%2==1){
+            NodoParaArbol* borrado = nodosDelArbol[mitad];
+            nodosDelArbol.remove(mitad);
             insertar(borrado->persona->getId(),borrado->puntero);
         }
-    }
-    else if (largo==1){
-        NodoParaArbol* borrado = nodosDelArbol[0];
-        insertar(borrado->persona->getId(),borrado->puntero);
-    }
-    else{
-        //si es un arbol de 3, el del medio es la raiz
-        int mitad=largo/2;
-       // qDebug()<<"mitad arbol de 3 nodos "<<mitad;
-        NodoParaArbol* borrado = nodosDelArbol[mitad];
-        insertar(borrado->persona->getId(),borrado->puntero); //falta el puntero lo paso al insertar
-        nodosDelArbol.remove(mitad);
-       // qDebug()<<"mitad arbol de 3 nodos "<<mitad;
-        largo = nodosDelArbol.length();
-        //insertar los otros 2
-        for (int i=0;i<largo;i++){
-            NodoParaArbol* borrado = nodosDelArbol[i];
-            insertar(borrado->persona->getId(),borrado->puntero);
+        QVector<NodoParaArbol*> v1;
+        QVector<NodoParaArbol*> v2;
+        for (int i=0; i<mitad;i++){
+            v1.append(nodosDelArbol[i]);
         }
+        for (int i=mitad; i<nodosDelArbol.size();i++){
+            v2.append(nodosDelArbol[i]);
+        }
+        pasarDatoAinsertar(v1);
+        pasarDatoAinsertar(v2);
     }
 }
 
@@ -108,36 +82,34 @@ void arbolMundo::insertar(int id, NodoLd* puntero){
     raiz = insertar(id, raiz,puntero);
 }
 
+
 Nodo* arbolMundo::insertar(int id, Nodo* nodo,NodoLd* puntero){
 
-    /*Cuando el nodo es nulo ahí debe insertar*/
     if (nodo == nullptr){
-        nodo = new Nodo(id,puntero); //return new Nodo(valor);  es lo mismo
+        nodo = new Nodo(id,puntero);
     }
-    /*Si el dato del nodo a insertar es mayor busca donde insertar
-    a la derecha
-    */
+
     else if (nodo->ID < id){
         nodo->hijoderecho = insertar(id, nodo->hijoderecho,puntero);
     }
-    /*Si el dato del nodo a insertar es menor busca donde insertar
-    a la izquierda
-    */
     else if (nodo->ID >= id){
         nodo->hijoizquierdo = insertar(id, nodo->hijoizquierdo,puntero);
     }
     return nodo;
 }
 
+
+
 void arbolMundo::mostrarMundo(Nodo* nodo, int contador){
     if (nodo == nullptr)
         return;
     else{
+        QString e;
         mostrarMundo(nodo->hijoderecho,contador+1); //se muestra toda la derecha
         for (int i=0;i<contador;i++){
-            qDebug()<<"         ";
+            e+="         ";
         }
-        qDebug()<<nodo->ID<<Qt::endl<<Qt::endl;
+        qDebug()<<e<<nodo->ID<<Qt::endl<<Qt::endl;
         mostrarMundo(nodo->hijoizquierdo,contador+1);//luego toda la izquierda
     }
 }
@@ -145,11 +117,11 @@ void arbolMundo::mostrarMundo(Nodo* nodo, int contador){
 void arbolMundo::inOrder(Nodo* nodo){
     if (nodo != NULL){
         inOrder(nodo->hijoizquierdo);
-        //Nomás para comprobar
         qDebug()<<"Nodo ID: "<<nodo->ID << " -- Puntero a sí mismo en lista "<<nodo->punteroALista<< " -- con ID de persona "<<nodo->punteroALista->persona->getId();
         inOrder(nodo->hijoderecho);
     }
 }
+
 
 /// Recorre el arbol buscando en el mejor camino para recorrer la lista
 /// \brief arbolMundo::recorrerArbol
