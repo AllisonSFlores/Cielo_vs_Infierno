@@ -10,6 +10,7 @@
 #include "arbolheapdemonio.h"
 #include "infierno.h"
 #include "consultas.h"
+#include "archivos.h"
 
 struct Controlador{
 
@@ -22,6 +23,7 @@ struct Controlador{
        TablaFamilia * tablaFamilia;
        Infierno * infierno;
        Consultas *consultas;
+       Archivos *archivo;
 
        Controlador(){}
        void __init__();
@@ -52,7 +54,7 @@ struct Controlador{
        int cantidadHumanos();
        int cantidadNodosArbol();
        int cantidadNiveles();
-
+       QString nombreArchivoFecha();
 
 };
 

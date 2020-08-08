@@ -1,0 +1,25 @@
+Filipinas	Asia
+China	Asia
+India	Asia
+Japón	Asia
+Singapur	Asia
+Australia	Oceania
+Samoa	Oceania
+Tonga	Oceania
+Micronesia	Oceania
+Nueva Zelanda	Oceania
+Costa de Marfil	Africa
+Congo	Africa
+Eritrea	Africa
+Egipto	Africa
+Zimbabue	Africa
+Brasil	America
+Canadá	America
+Costa Rica	America
+Colombia	America
+Argentina	America
+Dinamarca	Europa
+Francia	Europa
+Alemania	Europa
+España	Europa
+Bielorrusia	Europa

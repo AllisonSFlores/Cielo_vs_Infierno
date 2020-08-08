@@ -11,6 +11,7 @@ void Controlador::__init__(){
     this->tablaFamilia = new TablaFamilia();
     this->infierno = new Infierno();
     this->consultas = new Consultas();
+    this->archivo = new Archivos();
 
 }
 
@@ -72,17 +73,16 @@ void Controlador::crearHumanos(int cantidadHumanos){
      QVector<NodoParaArbol*> datosArbol= listaMundo->listaParaArbol();
      _arbolMundo->pasarDatoAinsertar(datosArbol);
      _arbolMundo->inOrder(_arbolMundo->raiz);
-
+     _arbolMundo->mostrarMundo(_arbolMundo->raiz,0);
 }
 
 QString Controlador::ultimoNivelArbol(){
-    QString informacion= "Información de las personas del último nivel del árbol\n";
-    QVector<Persona*> ultimoNivel = _arbolMundo->ultimoNivelAux();
+     QString informacion= "Información de las personas del último nivel del árbol\n";
+     QString ultimoNivel = _arbolMundo->ultimoNivelAux();
      qDebug()<<"hola antes de for controlador ";
-    for (int i=0;i<ultimoNivel.size();i++){
-        qDebug()<<"hola";
-        informacion+=ultimoNivel[i]->imprimirFamilia()+"\n";
-    }
+
+     informacion+=ultimoNivel+"\n";
+
     return informacion;
 }
 
@@ -99,11 +99,12 @@ int Controlador::cantidadNiveles(){
 }
 
 QString Controlador::informacionArbol(){
-    QString informacion= "-------Información del mundo-------\n";
+    QString informacion= "---------------------------------Información del mundo---------------------------------\n";
     informacion+= "Hay "+ QString::number(cantidadNodosArbol())+" nodos en el arbol\n";
     informacion+= "El árbol tiene "+QString::number(cantidadNiveles())+" niveles\n";
     informacion+= "El mundo tiene "+QString::number(cantidadHumanos())+" personas\n";
     informacion+= ultimoNivelArbol();
+    archivo->openDirectory(1,"Informacion_Arbol_"+nombreArchivoFecha(),informacion);
     return informacion;
 }
 
@@ -119,7 +120,9 @@ bool Controlador::buscarPersonaPecados(int id){
     if(nodoPersona!=NULL){
         ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(nodoPersona->persona->getApellido(),nodoPersona->persona->getPais());
         if (familia != NULL){
-            qDebug()<<familia->imprimirEstadoPecados();
+            QString informacion = familia->imprimirEstadoPecados();
+           // qDebug()<<informacion;
+            archivo->openDirectory(1,"Pecados_"+nombreArchivoFecha(),informacion);
             return true;
         }
     }
@@ -140,7 +143,8 @@ bool Controlador::buscarPersonaBA(int id){
     if(nodoPersona!=NULL){
         ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(nodoPersona->persona->getApellido(),nodoPersona->persona->getPais());
         if (familia != NULL){
-            qDebug()<<familia->imprimirEstadoBA();
+            QString informacion = familia->imprimirEstadoBA();
+            archivo->openDirectory(1,"BuenasA_"+nombreArchivoFecha(),informacion);
             return true;
         }
     }
@@ -158,7 +162,8 @@ bool Controlador::buscarFamilia(QString apellido,QString pais){
 
      ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(apellido,pais);
      if (familia != NULL){
-        qDebug()<<familia->imprimirFamilia();
+        QString informacion = familia->imprimirFamilia();
+        archivo->openDirectory(1,"Buscar_Familia_"+nombreArchivoFecha(),informacion);
         return true;
     }
 
@@ -175,7 +180,8 @@ bool  Controlador::buscarFamiliaPorcentajes(QString apellido,QString pais){
     qDebug()<<"HOLA EN BUSCAR FAMILIA APELLIDO PAIS PORCENTAJESSS";
      ArbolHeapFamilia * familia = tablaFamilia->buscarFamiliaPersona(apellido,pais);
      if (familia != NULL){
-        qDebug()<<familia->imprimirPorcentajes();
+        QString informacion =familia->imprimirPorcentajes();
+        archivo->openDirectory(1,"Porcentajes_"+nombreArchivoFecha(),informacion);
         return true;
     }
 
@@ -233,6 +239,7 @@ void Controlador::condenacion(){
         qDebug()<<condenados;
         infierno->condenar(condenados, i);
         QString datos= infierno->condenacionLog(condenados);
+        archivo->openDirectory(1,"Condenación_"+nombreArchivoFecha(),datos);
         qDebug()<<datos;
     }
 
@@ -252,13 +259,10 @@ void Controlador::salvacion(){
     }
     QString datos=cielo->salvacion(salvados);
     qDebug()<<datos;
-    //SE LLAMA A LA FUNCION QUE VA A ESCRIBIR EN EL TEXTO
+    archivo->openDirectory(1,"Condenación_"+nombreArchivoFecha(),datos);
 }
 void Controlador::imprimirArbolHeapFamilia(){
     tablaFamilia->printAll();
-}
-void Controlador::pruebasAllison(){
-  //  arbol->imprimir();
 }
 
 /// Ordena continentes de más pecador a menos pecador y los retorna
@@ -316,4 +320,31 @@ QVector<QString> Controlador::ContinentesBuenos(){
         }
     }
       return continentes;
+}
+
+
+
+
+QString Controlador::nombreArchivoFecha(){
+
+    /*QDateTime UTC(QDateTime::currentDateTimeUtc());
+    QDateTime local(UTC.toLocalTime());
+    QString x=QString::number(pclient)+local.toString(Qt::SystemLocaleShortDate);
+
+    QStringList datetime = x.split(" ");
+    QStringList time = datetime[1].split(":");
+    QStringList date = datetime[0].split("/");
+
+    QString path = "C:/AllFolders/receipts/"+QString::number(porden)+"_"+QString::number(pclient)+"_"+date[0]+date[1]+date[2]+"_"+time[0]+time[1]+".txt";
+    */
+
+    QDateTime UTC(QDateTime::currentDateTimeUtc());
+    QDateTime local(UTC.toLocalTime());
+    QString nom = local.toString(Qt::SystemLocaleShortDate);
+
+    QStringList datetime = nom.split(" ");
+    QStringList time = datetime[1].split(":");
+    QStringList date = datetime[0].split("/");
+
+    return date[0]+date[1]+date[2]+"_"+time[0]+time[1];
 }
