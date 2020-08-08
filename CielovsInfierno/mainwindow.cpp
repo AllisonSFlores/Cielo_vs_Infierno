@@ -235,3 +235,59 @@ void MainWindow::on_btnGanador_clicked()
         ui->label_36->setText("Cielo");
     }
 }
+
+void MainWindow::on_btn1_clicked(){
+    QString apellido = (ui->txt1->text());
+    //Radio de pecado 1
+    if (ui->rbP1->isChecked()){
+        controlador->pecadoresApellido(apellido);
+    }
+    else if(ui->rbB1->isChecked()){  //Radio de buenos 1
+        controlador->buenosApellido(apellido);
+    }
+
+}
+
+void MainWindow::on_btn2_clicked(){
+    QString continente = (ui->txt2->text());
+    //Radio de pecado 1
+    if (ui->rbP1_2->isChecked()){
+        controlador->pecadoresContininente(continente);
+    }
+    else if(ui->rbB1_2->isChecked()){  //Radio de buenos 1
+        controlador->buenosContininente(continente);
+    }
+}
+
+void MainWindow::on_btn3_clicked(){
+    QString pais = (ui->txt3->text());
+    //Radio de pecado 1
+    if (ui->rbP1_3->isChecked()){
+        controlador->pecadoresPais(pais);
+    }
+    else if(ui->rbB1_3->isChecked()){  //Radio de buenos 1
+        controlador->buenosPais(pais);
+    }
+}
+
+void MainWindow::on_btn4_clicked(){
+    QString creencia = (ui->txt4->text());
+    //Radio de pecado 1
+    if (ui->rbP1_4->isChecked()){
+        controlador->pecadoresCreencia(creencia);
+    }
+    else if(ui->rbB1_4->isChecked()){  //Radio de buenos 1
+        controlador->buenosCreencia(creencia);
+    }
+}
+
+void MainWindow::on_btn5_clicked(){
+    QString profesion = (ui->txt5->text());
+    //Radio de pecado 1
+    if (ui->rbP1_5->isChecked()){
+        controlador->pecadoresProfesion(profesion);
+    }
+    else if(ui->rbB1_5->isChecked()){  //Radio de buenos 1
+        controlador->buenosProfesion(profesion);
+    }
+}

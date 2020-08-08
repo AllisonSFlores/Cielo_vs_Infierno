@@ -83,6 +83,38 @@ public:
     QLabel *label_25;
     QTextEdit *textEdit;
     QLabel *label_33;
+    QWidget *verticalLayoutWidget_5;
+    QVBoxLayout *verticalLayout_7;
+    QVBoxLayout *verticalLayout_8;
+    QLabel *label_40;
+    QRadioButton *rbP1;
+    QRadioButton *rbB1;
+    QLineEdit *txt1;
+    QPushButton *btn1;
+    QVBoxLayout *verticalLayout_9;
+    QLabel *label_41;
+    QRadioButton *rbP1_2;
+    QRadioButton *rbB1_2;
+    QLineEdit *txt2;
+    QPushButton *btn2;
+    QVBoxLayout *verticalLayout_10;
+    QLabel *label_42;
+    QRadioButton *rbP1_3;
+    QRadioButton *rbB1_3;
+    QLineEdit *txt3;
+    QPushButton *btn3;
+    QVBoxLayout *verticalLayout_11;
+    QLabel *label_43;
+    QRadioButton *rbP1_4;
+    QRadioButton *rbB1_4;
+    QLineEdit *txt4;
+    QPushButton *btn4;
+    QVBoxLayout *verticalLayout_12;
+    QLabel *label_44;
+    QRadioButton *rbP1_5;
+    QRadioButton *rbB1_5;
+    QLineEdit *txt5;
+    QPushButton *btn5;
     QWidget *tab_2;
     QLabel *label_16;
     QLabel *label_17;
@@ -190,7 +222,7 @@ public:
 
         verticalLayoutWidget_4 = new QWidget(tab);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(370, 560, 271, 111));
+        verticalLayoutWidget_4->setGeometry(QRect(370, 540, 271, 111));
         VL2 = new QVBoxLayout(verticalLayoutWidget_4);
         VL2->setObjectName(QString::fromUtf8("VL2"));
         VL2->setContentsMargins(0, 0, 0, 0);
@@ -230,24 +262,24 @@ public:
         label_26->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         btnPecados = new QPushButton(tab);
         btnPecados->setObjectName(QString::fromUtf8("btnPecados"));
-        btnPecados->setGeometry(QRect(950, 170, 151, 41));
+        btnPecados->setGeometry(QRect(990, 290, 151, 41));
         btnPecados->setFont(font);
         btnPecados->setStyleSheet(QString::fromUtf8("background-color: rgb(29, 41, 81);\n"
 "color: rgb(255, 255, 255);"));
         btnBuenasAcciones = new QPushButton(tab);
         btnBuenasAcciones->setObjectName(QString::fromUtf8("btnBuenasAcciones"));
-        btnBuenasAcciones->setGeometry(QRect(1130, 170, 151, 41));
+        btnBuenasAcciones->setGeometry(QRect(1200, 290, 151, 41));
         btnBuenasAcciones->setFont(font);
         btnBuenasAcciones->setStyleSheet(QString::fromUtf8("background-color: rgb(29, 41, 81);\n"
 "color: rgb(255, 255, 255);"));
         label_27 = new QLabel(tab);
         label_27->setObjectName(QString::fromUtf8("label_27"));
-        label_27->setGeometry(QRect(960, 60, 341, 51));
+        label_27->setGeometry(QRect(1050, 240, 271, 51));
         label_27->setFont(font1);
         label_27->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         gridLayoutWidget = new QWidget(tab);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(850, 240, 561, 517));
+        gridLayoutWidget->setGeometry(QRect(925, 380, 481, 361));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -278,10 +310,10 @@ public:
 
         txtEdit = new QTextEdit(tab);
         txtEdit->setObjectName(QString::fromUtf8("txtEdit"));
-        txtEdit->setGeometry(QRect(660, 430, 181, 321));
+        txtEdit->setGeometry(QRect(1180, 50, 181, 191));
         verticalLayoutWidget_6 = new QWidget(tab);
         verticalLayoutWidget_6->setObjectName(QString::fromUtf8("verticalLayoutWidget_6"));
-        verticalLayoutWidget_6->setGeometry(QRect(70, 563, 271, 111));
+        verticalLayoutWidget_6->setGeometry(QRect(70, 540, 271, 115));
         VL2_3 = new QVBoxLayout(verticalLayoutWidget_6);
         VL2_3->setObjectName(QString::fromUtf8("VL2_3"));
         VL2_3->setContentsMargins(0, 0, 0, 0);
@@ -315,7 +347,7 @@ public:
 
         verticalLayoutWidget_7 = new QWidget(tab);
         verticalLayoutWidget_7->setObjectName(QString::fromUtf8("verticalLayoutWidget_7"));
-        verticalLayoutWidget_7->setGeometry(QRect(660, 250, 181, 171));
+        verticalLayoutWidget_7->setGeometry(QRect(990, 40, 181, 201));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_7);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -353,7 +385,7 @@ public:
 
         label_31 = new QLabel(tab);
         label_31->setObjectName(QString::fromUtf8("label_31"));
-        label_31->setGeometry(QRect(680, 210, 161, 41));
+        label_31->setGeometry(QRect(1190, 10, 161, 41));
         verticalLayoutWidget_9 = new QWidget(tab);
         verticalLayoutWidget_9->setObjectName(QString::fromUtf8("verticalLayoutWidget_9"));
         verticalLayoutWidget_9->setGeometry(QRect(70, 490, 271, 53));
@@ -403,6 +435,162 @@ public:
         label_33 = new QLabel(tab);
         label_33->setObjectName(QString::fromUtf8("label_33"));
         label_33->setGeometry(QRect(220, 250, 301, 31));
+        verticalLayoutWidget_5 = new QWidget(tab);
+        verticalLayoutWidget_5->setObjectName(QString::fromUtf8("verticalLayoutWidget_5"));
+        verticalLayoutWidget_5->setGeometry(QRect(660, 10, 221, 606));
+        verticalLayout_7 = new QVBoxLayout(verticalLayoutWidget_5);
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        verticalLayout_7->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        label_40 = new QLabel(verticalLayoutWidget_5);
+        label_40->setObjectName(QString::fromUtf8("label_40"));
+
+        verticalLayout_8->addWidget(label_40);
+
+        rbP1 = new QRadioButton(verticalLayoutWidget_5);
+        rbP1->setObjectName(QString::fromUtf8("rbP1"));
+
+        verticalLayout_8->addWidget(rbP1);
+
+        rbB1 = new QRadioButton(verticalLayoutWidget_5);
+        rbB1->setObjectName(QString::fromUtf8("rbB1"));
+
+        verticalLayout_8->addWidget(rbB1);
+
+
+        verticalLayout_7->addLayout(verticalLayout_8);
+
+        txt1 = new QLineEdit(verticalLayoutWidget_5);
+        txt1->setObjectName(QString::fromUtf8("txt1"));
+
+        verticalLayout_7->addWidget(txt1);
+
+        btn1 = new QPushButton(verticalLayoutWidget_5);
+        btn1->setObjectName(QString::fromUtf8("btn1"));
+
+        verticalLayout_7->addWidget(btn1);
+
+        verticalLayout_9 = new QVBoxLayout();
+        verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
+        label_41 = new QLabel(verticalLayoutWidget_5);
+        label_41->setObjectName(QString::fromUtf8("label_41"));
+
+        verticalLayout_9->addWidget(label_41);
+
+        rbP1_2 = new QRadioButton(verticalLayoutWidget_5);
+        rbP1_2->setObjectName(QString::fromUtf8("rbP1_2"));
+
+        verticalLayout_9->addWidget(rbP1_2);
+
+        rbB1_2 = new QRadioButton(verticalLayoutWidget_5);
+        rbB1_2->setObjectName(QString::fromUtf8("rbB1_2"));
+
+        verticalLayout_9->addWidget(rbB1_2);
+
+
+        verticalLayout_7->addLayout(verticalLayout_9);
+
+        txt2 = new QLineEdit(verticalLayoutWidget_5);
+        txt2->setObjectName(QString::fromUtf8("txt2"));
+
+        verticalLayout_7->addWidget(txt2);
+
+        btn2 = new QPushButton(verticalLayoutWidget_5);
+        btn2->setObjectName(QString::fromUtf8("btn2"));
+
+        verticalLayout_7->addWidget(btn2);
+
+        verticalLayout_10 = new QVBoxLayout();
+        verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
+        label_42 = new QLabel(verticalLayoutWidget_5);
+        label_42->setObjectName(QString::fromUtf8("label_42"));
+
+        verticalLayout_10->addWidget(label_42);
+
+        rbP1_3 = new QRadioButton(verticalLayoutWidget_5);
+        rbP1_3->setObjectName(QString::fromUtf8("rbP1_3"));
+
+        verticalLayout_10->addWidget(rbP1_3);
+
+        rbB1_3 = new QRadioButton(verticalLayoutWidget_5);
+        rbB1_3->setObjectName(QString::fromUtf8("rbB1_3"));
+
+        verticalLayout_10->addWidget(rbB1_3);
+
+
+        verticalLayout_7->addLayout(verticalLayout_10);
+
+        txt3 = new QLineEdit(verticalLayoutWidget_5);
+        txt3->setObjectName(QString::fromUtf8("txt3"));
+
+        verticalLayout_7->addWidget(txt3);
+
+        btn3 = new QPushButton(verticalLayoutWidget_5);
+        btn3->setObjectName(QString::fromUtf8("btn3"));
+
+        verticalLayout_7->addWidget(btn3);
+
+        verticalLayout_11 = new QVBoxLayout();
+        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
+        label_43 = new QLabel(verticalLayoutWidget_5);
+        label_43->setObjectName(QString::fromUtf8("label_43"));
+
+        verticalLayout_11->addWidget(label_43);
+
+        rbP1_4 = new QRadioButton(verticalLayoutWidget_5);
+        rbP1_4->setObjectName(QString::fromUtf8("rbP1_4"));
+
+        verticalLayout_11->addWidget(rbP1_4);
+
+        rbB1_4 = new QRadioButton(verticalLayoutWidget_5);
+        rbB1_4->setObjectName(QString::fromUtf8("rbB1_4"));
+
+        verticalLayout_11->addWidget(rbB1_4);
+
+
+        verticalLayout_7->addLayout(verticalLayout_11);
+
+        txt4 = new QLineEdit(verticalLayoutWidget_5);
+        txt4->setObjectName(QString::fromUtf8("txt4"));
+
+        verticalLayout_7->addWidget(txt4);
+
+        btn4 = new QPushButton(verticalLayoutWidget_5);
+        btn4->setObjectName(QString::fromUtf8("btn4"));
+
+        verticalLayout_7->addWidget(btn4);
+
+        verticalLayout_12 = new QVBoxLayout();
+        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
+        label_44 = new QLabel(verticalLayoutWidget_5);
+        label_44->setObjectName(QString::fromUtf8("label_44"));
+
+        verticalLayout_12->addWidget(label_44);
+
+        rbP1_5 = new QRadioButton(verticalLayoutWidget_5);
+        rbP1_5->setObjectName(QString::fromUtf8("rbP1_5"));
+
+        verticalLayout_12->addWidget(rbP1_5);
+
+        rbB1_5 = new QRadioButton(verticalLayoutWidget_5);
+        rbB1_5->setObjectName(QString::fromUtf8("rbB1_5"));
+
+        verticalLayout_12->addWidget(rbB1_5);
+
+
+        verticalLayout_7->addLayout(verticalLayout_12);
+
+        txt5 = new QLineEdit(verticalLayoutWidget_5);
+        txt5->setObjectName(QString::fromUtf8("txt5"));
+
+        verticalLayout_7->addWidget(txt5);
+
+        btn5 = new QPushButton(verticalLayoutWidget_5);
+        btn5->setObjectName(QString::fromUtf8("btn5"));
+
+        verticalLayout_7->addWidget(btn5);
+
         tabWidget->addTab(tab, QString());
         label_25->raise();
         verticalLayoutWidget_3->raise();
@@ -421,6 +609,7 @@ public:
         verticalLayoutWidget_8->raise();
         textEdit->raise();
         label_33->raise();
+        verticalLayoutWidget_5->raise();
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         label_16 = new QLabel(tab_2);
@@ -511,7 +700,7 @@ public:
         btnReporte->setStyleSheet(QString::fromUtf8("background-color: rgb(181, 0, 0);"));
         label_15 = new QLabel(tab_2);
         label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setGeometry(QRect(20, 0, 1391, 881));
+        label_15->setGeometry(QRect(0, 0, 1431, 891));
         btnCondenar = new QPushButton(tab_2);
         btnCondenar->setObjectName(QString::fromUtf8("btnCondenar"));
         btnCondenar->setGeometry(QRect(630, 370, 171, 41));
@@ -775,6 +964,26 @@ public:
         rbBuenasA->setText(QCoreApplication::translate("MainWindow", "Estado de buenas acciones de la familia", nullptr));
         label_25->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/mapaa3.jpg\"/></p></body></html>", nullptr));
         label_33->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">INFORMACI\303\223N DEL \303\201RBOL</span></p></body></html>", nullptr));
+        label_40->setText(QCoreApplication::translate("MainWindow", "Buscar por Apellido", nullptr));
+        rbP1->setText(QCoreApplication::translate("MainWindow", "Pecados", nullptr));
+        rbB1->setText(QCoreApplication::translate("MainWindow", "Buenas acciones", nullptr));
+        btn1->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
+        label_41->setText(QCoreApplication::translate("MainWindow", "Buscar por continente", nullptr));
+        rbP1_2->setText(QCoreApplication::translate("MainWindow", "Pecados", nullptr));
+        rbB1_2->setText(QCoreApplication::translate("MainWindow", "Buenas acciones", nullptr));
+        btn2->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
+        label_42->setText(QCoreApplication::translate("MainWindow", "Buscar por pa\303\255s", nullptr));
+        rbP1_3->setText(QCoreApplication::translate("MainWindow", "Pecados", nullptr));
+        rbB1_3->setText(QCoreApplication::translate("MainWindow", "Buenas acciones", nullptr));
+        btn3->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
+        label_43->setText(QCoreApplication::translate("MainWindow", "Buscar por creencia", nullptr));
+        rbP1_4->setText(QCoreApplication::translate("MainWindow", "Pecados", nullptr));
+        rbB1_4->setText(QCoreApplication::translate("MainWindow", "Buenas acciones", nullptr));
+        btn4->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
+        label_44->setText(QCoreApplication::translate("MainWindow", "Buscar por profesi\303\263n", nullptr));
+        rbP1_5->setText(QCoreApplication::translate("MainWindow", "Pecados", nullptr));
+        rbB1_5->setText(QCoreApplication::translate("MainWindow", "Buenas acciones", nullptr));
+        btn5->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Mundo", nullptr));
         label_16->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><img src=\":/imagenes/alaaa.png\"/></p></body></html>", nullptr));
         label_17->setText(QCoreApplication::translate("MainWindow", "INFIERNO", nullptr));

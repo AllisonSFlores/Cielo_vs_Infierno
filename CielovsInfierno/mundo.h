@@ -92,7 +92,21 @@ struct listaDoble{
     void ordenarPorPecado();
     QVector<int> ordenarContinentesPecado();
     QVector<int> ordenarContinentesBuenasAcciones();
-
+    //Consultas
+    QString devolverPecadores();
+    QString devolverBuenos();
+    void ordenarPecadores();
+    void ordenarBuenos();
+    QString pecadoresApellido(QString);
+    QString pecadoresContininente(QString);
+    QString pecadoresPais(QString);
+    QString pecadoresCreencia(QString);
+    QString pecadoresProfesion(QString);
+    QString buenosApellido(QString);
+    QString buenosContininente(QString);
+    QString buenosPais(QString);
+    QString buenosCreencia(QString);
+    QString buenosProfesion(QString);
 };
 
 struct NodoParaArbol{

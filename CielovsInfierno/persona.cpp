@@ -82,6 +82,10 @@ QString Persona::getCorreo(){
     return correo;
 }
 
+QString Persona::getProfesion(){
+    return profesion;
+}
+
 ///
 /// \brief Persona::getHoraNacimiento
 /// \return nac
@@ -173,6 +177,27 @@ QString  Persona::imprimirFamilia(){
             i++;
         }
     }
+    return informacion;
+}
+
+
+QString  Persona::imprimirPersonaP(){
+
+    QString informacion="";
+    informacion += "ID:\t"+QString::number(id)+"\t"+nombre+"\t"+apellido+ "\tde\t"+pais[0]+"\t";
+    informacion += "\tCreencia:\t" +creencia+ "\tProfesión:\t"+profesion+ "\tCorreo:\t"+correo+"\t";
+    informacion += "Cantidad\tpecados:\t"+QString::number(getCantPecados())+"\n";
+
+    return informacion;
+}
+
+QString  Persona::imprimirPersonaB(){
+
+    QString informacion="";
+    informacion += "ID:\t"+QString::number(id)+"\t"+nombre+"\t"+apellido+ "\tde\t"+pais[0]+"\t";
+    informacion += "\tCreencia:\t" +creencia+ "\tProfesión:\t"+profesion+ "\tCorreo:\t"+correo+"\t";
+    informacion += "Cantidad\tbuenas acciones:\t"+QString::number(getCantBuenasAcciones())+"\n";
+
     return informacion;
 }
 

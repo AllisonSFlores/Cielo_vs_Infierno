@@ -60,7 +60,17 @@ struct Controlador{
        QVector<int> ganador();
        QVector<QString> ganadorInfierno();
        QVector<QString> ganadorCielo();
-
+       //CONSULTAS
+       void pecadoresApellido(QString); //HECHA
+       void pecadoresContininente(QString);
+       void pecadoresPais(QString);
+       void pecadoresCreencia(QString);
+       void pecadoresProfesion(QString);
+       void buenosApellido(QString); //HECHA
+       void buenosContininente(QString);
+       void buenosPais(QString);
+       void buenosCreencia(QString);
+       void buenosProfesion(QString);
 
 
 };

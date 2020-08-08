@@ -54,6 +54,7 @@ struct Persona{
     QString getPais();
     QString getContinente();
     QString getCreencia ();
+    QString getProfesion();
     Estado getEstado();
     QString getHoraNacimiento();
     int getCantPecados();
@@ -63,8 +64,8 @@ struct Persona{
     QString imprimirEstadoBA();
     QString imprimirEstadoPecados();
     QString imprimirFamilia();
-
-
+    QString imprimirPersonaP();
+    QString imprimirPersonaB(); //Para buenas acciones
 };
 
 #endif // PERSONA_H

@@ -136,7 +136,7 @@ color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>560</y>
+        <y>540</y>
         <width>271</width>
         <height>111</height>
        </rect>
@@ -225,8 +225,8 @@ color: rgb(255, 255, 255);</string>
      <widget class="QPushButton" name="btnPecados">
       <property name="geometry">
        <rect>
-        <x>950</x>
-        <y>170</y>
+        <x>990</x>
+        <y>290</y>
         <width>151</width>
         <height>41</height>
        </rect>
@@ -247,8 +247,8 @@ color: rgb(255, 255, 255);</string>
      <widget class="QPushButton" name="btnBuenasAcciones">
       <property name="geometry">
        <rect>
-        <x>1130</x>
-        <y>170</y>
+        <x>1200</x>
+        <y>290</y>
         <width>151</width>
         <height>41</height>
        </rect>
@@ -269,9 +269,9 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_27">
       <property name="geometry">
        <rect>
-        <x>960</x>
-        <y>60</y>
-        <width>341</width>
+        <x>1050</x>
+        <y>240</y>
+        <width>271</width>
         <height>51</height>
        </rect>
       </property>
@@ -292,10 +292,10 @@ color: rgb(255, 255, 255);</string>
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>850</x>
-        <y>240</y>
-        <width>561</width>
-        <height>517</height>
+        <x>925</x>
+        <y>380</y>
+        <width>481</width>
+        <height>361</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
@@ -339,10 +339,10 @@ color: rgb(255, 255, 255);</string>
      <widget class="QTextEdit" name="txtEdit">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>430</y>
+        <x>1180</x>
+        <y>50</y>
         <width>181</width>
-        <height>321</height>
+        <height>191</height>
        </rect>
       </property>
      </widget>
@@ -350,9 +350,9 @@ color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>563</y>
+        <y>540</y>
         <width>271</width>
-        <height>111</height>
+        <height>115</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="VL2_3">
@@ -399,10 +399,10 @@ color: rgb(255, 255, 255);</string>
      <widget class="QWidget" name="verticalLayoutWidget_7">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>250</y>
+        <x>990</x>
+        <y>40</y>
         <width>181</width>
-        <height>171</height>
+        <height>201</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -475,8 +475,8 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_31">
       <property name="geometry">
        <rect>
-        <x>680</x>
-        <y>210</y>
+        <x>1190</x>
+        <y>10</y>
         <width>161</width>
         <height>41</height>
        </rect>
@@ -601,6 +601,193 @@ color: rgb(255, 255, 255);</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;INFORMACIÓN DEL ÁRBOL&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>10</y>
+        <width>221</width>
+        <height>606</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QLabel" name="label_40">
+           <property name="text">
+            <string>Buscar por Apellido</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbP1">
+           <property name="text">
+            <string>Pecados</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbB1">
+           <property name="text">
+            <string>Buenas acciones</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="txt1"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn1">
+         <property name="text">
+          <string>Buscar</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QLabel" name="label_41">
+           <property name="text">
+            <string>Buscar por continente</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbP1_2">
+           <property name="text">
+            <string>Pecados</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbB1_2">
+           <property name="text">
+            <string>Buenas acciones</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="txt2"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn2">
+         <property name="text">
+          <string>Buscar</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <widget class="QLabel" name="label_42">
+           <property name="text">
+            <string>Buscar por país</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbP1_3">
+           <property name="text">
+            <string>Pecados</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbB1_3">
+           <property name="text">
+            <string>Buenas acciones</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="txt3"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn3">
+         <property name="text">
+          <string>Buscar</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <item>
+          <widget class="QLabel" name="label_43">
+           <property name="text">
+            <string>Buscar por creencia</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbP1_4">
+           <property name="text">
+            <string>Pecados</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbB1_4">
+           <property name="text">
+            <string>Buenas acciones</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="txt4"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn4">
+         <property name="text">
+          <string>Buscar</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_12">
+         <item>
+          <widget class="QLabel" name="label_44">
+           <property name="text">
+            <string>Buscar por profesión</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbP1_5">
+           <property name="text">
+            <string>Pecados</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbB1_5">
+           <property name="text">
+            <string>Buenas acciones</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="txt5"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn5">
+         <property name="text">
+          <string>Buscar</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <zorder>label_25</zorder>
      <zorder>verticalLayoutWidget_3</zorder>
      <zorder>verticalLayoutWidget_4</zorder>
@@ -618,6 +805,7 @@ color: rgb(255, 255, 255);</string>
      <zorder>verticalLayoutWidget_8</zorder>
      <zorder>textEdit</zorder>
      <zorder>label_33</zorder>
+     <zorder>verticalLayoutWidget_5</zorder>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -813,10 +1001,10 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_15">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>0</x>
         <y>0</y>
-        <width>1391</width>
-        <height>881</height>
+        <width>1431</width>
+        <height>891</height>
        </rect>
       </property>
       <property name="text">

@@ -51,6 +51,16 @@ private slots:
 
     void on_btnGanador_clicked();
 
+    void on_btn1_clicked();
+
+    void on_btn2_clicked();
+
+    void on_btn3_clicked();
+
+    void on_btn4_clicked();
+
+    void on_btn5_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

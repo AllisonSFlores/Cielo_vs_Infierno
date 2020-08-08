@@ -612,7 +612,266 @@ QVector<int> listaDoble::ordenarContinentesBuenasAcciones(){
     return continentes;
 }
 
+QString listaDoble::devolverPecadores(){
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+
+    while(temporal != NULL){
+        filtro+=temporal->persona->imprimirPersonaP();
+        temporal = temporal->siguiente;
+    }
+    return filtro;
+}
 
 
+QString listaDoble::devolverBuenos(){
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+
+    while(temporal != NULL){
+        filtro+=temporal->persona->imprimirPersonaB();
+        temporal = temporal->siguiente;
+    }
+    return filtro;
+}
+
+
+
+void listaDoble::ordenarPecadores(){
+
+    Persona *temp;
+    NodoLd *actual = primerNodo;
+    NodoLd *siguiente = primerNodo;
+
+    if (primerNodo != NULL){
+
+        while(actual != NULL){
+
+            siguiente = actual->siguiente;
+
+            while(siguiente!= NULL){
+
+                if(actual->persona->getCantPecados() < siguiente->persona->getCantPecados()){
+                    temp = siguiente->persona;
+                    siguiente->persona = actual->persona;
+                    actual->persona = temp;
+                }
+                siguiente = siguiente->siguiente;
+            }
+            actual = actual->siguiente;
+        }
+    }
+}
+void listaDoble::ordenarBuenos(){
+
+    Persona *temp;
+    NodoLd *actual = primerNodo;
+    NodoLd *siguiente = primerNodo;
+
+    if (primerNodo != NULL){
+
+        while(actual != NULL){
+
+            siguiente = actual->siguiente;
+
+            while(siguiente!= NULL){
+
+                if(actual->persona->getCantBuenasAcciones()< siguiente->persona->getCantBuenasAcciones()){
+                    temp = siguiente->persona;
+                    siguiente->persona = actual->persona;
+                    actual->persona = temp;
+                }
+                siguiente = siguiente->siguiente;
+            }
+            actual = actual->siguiente;
+        }
+    }
+
+}
+
+
+
+QString listaDoble::pecadoresApellido(QString apellido){
+   QString filtro;
+   NodoLd *temporal= primerNodo;
+   listaDoble *subLista=new listaDoble();
+
+    while(temporal != NULL){
+        if (temporal->persona->getApellido()==apellido){
+            subLista->insertarAlFinal(temporal->persona);
+        }
+        temporal = temporal->siguiente;
+    }
+
+    subLista->ordenarPecadores();
+    filtro = subLista->devolverPecadores();
+    return filtro;
+
+}
+
+QString listaDoble::buenosApellido(QString apellido){
+   QString filtro;
+   NodoLd *temporal= primerNodo;
+   listaDoble *subLista=new listaDoble();
+
+    while(temporal != NULL){
+        if (temporal->persona->getApellido()==apellido){
+            subLista->insertarAlFinal(temporal->persona);
+        }
+        temporal = temporal->siguiente;
+    }
+
+    subLista->ordenarBuenos();
+    filtro = subLista->devolverBuenos();
+    return filtro;
+
+}
+
+
+QString listaDoble::pecadoresPais(QString pais){
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+    listaDoble *subLista=new listaDoble();
+
+     while(temporal != NULL){
+         if (temporal->persona->getPais()==pais){
+             subLista->insertarAlFinal(temporal->persona);
+         }
+         temporal = temporal->siguiente;
+     }
+
+     subLista->ordenarPecadores();
+     filtro = subLista->devolverPecadores();
+     return filtro;
+}
+
+
+
+QString listaDoble::buenosPais(QString pais){
+
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+    listaDoble *subLista=new listaDoble();
+
+     while(temporal != NULL){
+         if (temporal->persona->getPais()==pais){
+             subLista->insertarAlFinal(temporal->persona);
+         }
+         temporal = temporal->siguiente;
+     }
+
+     subLista->ordenarBuenos();
+     filtro = subLista->devolverBuenos();
+     return filtro;
+}
+
+
+
+QString listaDoble::pecadoresContininente(QString continente){
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+    listaDoble *subLista=new listaDoble();
+
+     while(temporal != NULL){
+         if (temporal->persona->getContinente()==continente){
+             subLista->insertarAlFinal(temporal->persona);
+         }
+         temporal = temporal->siguiente;
+     }
+
+     subLista->ordenarPecadores();
+     filtro = subLista->devolverPecadores();
+     return filtro;
+}
+
+
+QString listaDoble::buenosContininente(QString continente){
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+    listaDoble *subLista=new listaDoble();
+
+     while(temporal != NULL){
+         if (temporal->persona->getContinente()==continente){
+             subLista->insertarAlFinal(temporal->persona);
+         }
+         temporal = temporal->siguiente;
+     }
+
+     subLista->ordenarBuenos();
+     filtro = subLista->devolverBuenos();
+     return filtro;
+}
+
+
+QString listaDoble::pecadoresCreencia(QString creencia){
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+    listaDoble *subLista=new listaDoble();
+
+     while(temporal != NULL){
+         if (temporal->persona->getCreencia()==creencia){
+             subLista->insertarAlFinal(temporal->persona);
+         }
+         temporal = temporal->siguiente;
+     }
+
+     subLista->ordenarPecadores();
+     filtro = subLista->devolverPecadores();
+     return filtro;
+
+}
+QString listaDoble::buenosCreencia(QString creencia){
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+    listaDoble *subLista=new listaDoble();
+
+     while(temporal != NULL){
+         if (temporal->persona->getCreencia()==creencia){
+             subLista->insertarAlFinal(temporal->persona);
+         }
+         temporal = temporal->siguiente;
+     }
+
+     subLista->ordenarBuenos();
+     filtro = subLista->devolverBuenos();
+     return filtro;
+
+}
+
+QString listaDoble::pecadoresProfesion(QString profesion){
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+    listaDoble *subLista=new listaDoble();
+
+     while(temporal != NULL){
+         if (temporal->persona->getProfesion()==profesion){
+             subLista->insertarAlFinal(temporal->persona);
+         }
+         temporal = temporal->siguiente;
+     }
+
+     subLista->ordenarPecadores();
+     filtro = subLista->devolverPecadores();
+     return filtro;
+
+}
+
+QString listaDoble::buenosProfesion(QString profesion){
+    QString filtro;
+    NodoLd *temporal= primerNodo;
+    listaDoble *subLista=new listaDoble();
+
+     while(temporal != NULL){
+         if (temporal->persona->getProfesion()==profesion){
+             subLista->insertarAlFinal(temporal->persona);
+         }
+         temporal = temporal->siguiente;
+     }
+
+     subLista->ordenarBuenos();
+     filtro = subLista->devolverBuenos();
+     return filtro;
+
+}
 
 

@@ -372,3 +372,54 @@ void Controlador::consultaCielo(){
     QString datos = cielo->tabla->informacion();
     archivo->openDirectory(2,"ConsultaCielo_"+nombreArchivoFecha(),datos);
 }
+
+
+void Controlador::pecadoresApellido(QString apellido){
+     QString datos = listaMundo->pecadoresApellido(apellido);
+     archivo->openDirectory(0,"PecadoresApellido_"+nombreArchivoFecha(),datos);
+}
+
+void Controlador::buenosApellido(QString apellido){
+     QString datos = listaMundo->buenosApellido(apellido);
+     archivo->openDirectory(0,"BuenasApellido_"+nombreArchivoFecha(),datos);
+}
+
+void Controlador::pecadoresContininente(QString continente){
+   QString datos = listaMundo->pecadoresContininente(continente);
+   archivo->openDirectory(0,"PecadoresContinente_"+nombreArchivoFecha(),datos);
+}
+void Controlador::buenosContininente(QString continente){
+    QString datos = listaMundo->buenosContininente(continente);
+    archivo->openDirectory(0,"BuenosContinente_"+nombreArchivoFecha(),datos);
+}
+
+void Controlador::pecadoresPais(QString pais){
+    QString datos = listaMundo->pecadoresPais(pais);
+    archivo->openDirectory(0,"PecadoresPais_"+nombreArchivoFecha(),datos);
+}
+void Controlador::buenosPais(QString pais){
+    QString datos = listaMundo->buenosPais(pais);
+    archivo->openDirectory(0,"BuenosPais_"+nombreArchivoFecha(),datos);
+}
+
+void Controlador::pecadoresCreencia(QString creencia){
+    QString datos = listaMundo->pecadoresCreencia(creencia);
+    archivo->openDirectory(0,"PecadoresCreencia_"+nombreArchivoFecha(),datos);
+}
+void Controlador::buenosCreencia(QString creencia){
+    QString datos = listaMundo->buenosCreencia(creencia);
+    archivo->openDirectory(0,"BuenosCreencia_"+nombreArchivoFecha(),datos);
+}
+
+void Controlador::pecadoresProfesion(QString profesion){
+    QString datos = listaMundo->pecadoresProfesion(profesion);
+    archivo->openDirectory(0,"PecadoresProfesion_"+nombreArchivoFecha(),datos);
+}
+
+void Controlador::buenosProfesion(QString profesion){
+    QString datos = listaMundo->buenosProfesion(profesion);
+    archivo->openDirectory(0,"BuenosProfesion_"+nombreArchivoFecha(),datos);
+}
+
+
+
