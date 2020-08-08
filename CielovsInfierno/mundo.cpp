@@ -245,7 +245,9 @@ int listaDoble::porcentaje(){
     //Devuelve el porcentaje en cantidad con la suma de potencias de 2 mayor al 10%
     return cercanoAux(porcentaje);
 }
-
+int listaDoble::porcentaje(int x,int y){
+    return (x*100)/y;
+}
 int listaDoble::cercanoAux(int num){
     return cercanoAlaPotencia(num,0,0);
 }
@@ -704,7 +706,7 @@ QString listaDoble::pecadoresApellido(QString apellido){
     }
 
     subLista->ordenarPecadores();
-    filtro = subLista->devolverPecadores();
+    filtro = porcentajeConsulta(subLista,true)+subLista->devolverPecadores();
     return filtro;
 
 }
@@ -722,7 +724,7 @@ QString listaDoble::buenosApellido(QString apellido){
     }
 
     subLista->ordenarBuenos();
-    filtro = subLista->devolverBuenos();
+    filtro = porcentajeConsulta(subLista,false)+subLista->devolverBuenos();
     return filtro;
 
 }
@@ -741,7 +743,7 @@ QString listaDoble::pecadoresPais(QString pais){
      }
 
      subLista->ordenarPecadores();
-     filtro = subLista->devolverPecadores();
+     filtro = porcentajeConsulta(subLista,true)+subLista->devolverPecadores();
      return filtro;
 }
 
@@ -761,7 +763,7 @@ QString listaDoble::buenosPais(QString pais){
      }
 
      subLista->ordenarBuenos();
-     filtro = subLista->devolverBuenos();
+     filtro = porcentajeConsulta(subLista,false)+subLista->devolverBuenos();
      return filtro;
 }
 
@@ -780,7 +782,7 @@ QString listaDoble::pecadoresContininente(QString continente){
      }
 
      subLista->ordenarPecadores();
-     filtro = subLista->devolverPecadores();
+     filtro = porcentajeConsulta(subLista,true)+subLista->devolverPecadores();
      return filtro;
 }
 
@@ -798,7 +800,7 @@ QString listaDoble::buenosContininente(QString continente){
      }
 
      subLista->ordenarBuenos();
-     filtro = subLista->devolverBuenos();
+     filtro = porcentajeConsulta(subLista,false)+subLista->devolverBuenos();
      return filtro;
 }
 
@@ -816,7 +818,7 @@ QString listaDoble::pecadoresCreencia(QString creencia){
      }
 
      subLista->ordenarPecadores();
-     filtro = subLista->devolverPecadores();
+     filtro = porcentajeConsulta(subLista,true)+subLista->devolverPecadores();
      return filtro;
 
 }
@@ -833,7 +835,7 @@ QString listaDoble::buenosCreencia(QString creencia){
      }
 
      subLista->ordenarBuenos();
-     filtro = subLista->devolverBuenos();
+     filtro = porcentajeConsulta(subLista,false)+subLista->devolverBuenos();
      return filtro;
 
 }
@@ -851,7 +853,7 @@ QString listaDoble::pecadoresProfesion(QString profesion){
      }
 
      subLista->ordenarPecadores();
-     filtro = subLista->devolverPecadores();
+     filtro = porcentajeConsulta(subLista,true)+subLista->devolverPecadores();
      return filtro;
 
 }
@@ -869,9 +871,40 @@ QString listaDoble::buenosProfesion(QString profesion){
      }
 
      subLista->ordenarBuenos();
-     filtro = subLista->devolverBuenos();
+     filtro = porcentajeConsulta(subLista,false)+ subLista->devolverBuenos();
      return filtro;
 
 }
 
-
+int listaDoble::sumarPecados(NodoLd *pn){
+    int cant=0;
+    NodoLd *temporal= pn;
+    while(temporal != NULL){
+        cant+= temporal->persona->getCantPecados();
+        temporal=temporal->siguiente;
+    }
+    qDebug()<<cant;
+    return cant;
+}
+int listaDoble::sumarBA(NodoLd *pn){
+    int cant=0;
+    NodoLd *temporal= pn;
+    while(temporal != NULL){
+        cant+= temporal->persona->getCantBuenasAcciones();
+        cant++;
+        temporal=temporal->siguiente;
+    }
+    return cant;
+}
+QString listaDoble::porcentajeConsulta(listaDoble * listad,bool a){
+    QString datos="Estos humanos representan el "+QString::number(porcentaje(listad->largoLista(),largoLista()));
+    if(a){
+        datos+="% y representan el "+QString::number(porcentaje(listad->sumarPecados(listad->primerNodo),sumarPecados(primerNodo)))+
+                "% de pecados en el mundo \n";
+    }
+    else{
+        datos+="% y representan el "+QString::number(porcentaje(listad->sumarBA(listad->primerNodo),sumarBA(primerNodo)))+
+                "% de buenas acciones en el mundo \n";
+    }
+    return datos;
+}

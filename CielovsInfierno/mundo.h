@@ -75,6 +75,7 @@ struct listaDoble{
     int largoLista();
     void imprimir();
     int porcentaje();
+    int porcentaje(int,int);
     void metodoOrdenamiento();
     QVector<int> devolverRandom();
     QVector<NodoParaArbol*> listaParaArbol();
@@ -107,6 +108,10 @@ struct listaDoble{
     QString buenosPais(QString);
     QString buenosCreencia(QString);
     QString buenosProfesion(QString);
+    int sumarPecados(NodoLd *);
+    int sumarBA(NodoLd *);
+    QString porcentajeConsulta(listaDoble *,bool);
+
 };
 
 struct NodoParaArbol{
