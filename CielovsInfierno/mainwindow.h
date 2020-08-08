@@ -49,6 +49,8 @@ private slots:
 
     void on_btnBuscarFamilia_clicked();
 
+    void on_btnGanador_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -32,6 +32,7 @@ void TablaFamilia::insert(Persona * ppersona){
      else{
          NodoTabla *newNode = new NodoTabla(ppersona->apellido);
          newNode->lista->insert(ppersona);
+
          insertAux(newNode);
 
      }

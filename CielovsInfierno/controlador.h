@@ -33,7 +33,7 @@ struct Controlador{
        void crearHumanos(int);
        void cargarDatos();
 
-       void salvacion();
+       bool salvacion();
        void condenacion();
 
        QVector<QString> ContinentesPecadores();
@@ -50,8 +50,13 @@ struct Controlador{
        QString informacionArbol();
        QString ultimoNivelArbol();
        int cantidadHumanos();
+       void consultaCielo();
+       void consultaInfierno();
        int cantidadNodosArbol();
        int cantidadNiveles();
+       QVector<int> ganador();
+       QVector<QString> ganadorInfierno();
+       QVector<QString> ganadorCielo();
 
 
 };

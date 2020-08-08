@@ -43,6 +43,7 @@ void LSFamilia::insert(Persona * ppersona){
      {  qDebug()<<"nulo";
          NodoFamilia *newNode = new NodoFamilia(ppersona->pais[0]);
          newNode->arbol->insertar(ppersona);
+         newNode->arbol->apellidoFamilia=ppersona->getApellido();
          insertAux(newNode);
 
      }

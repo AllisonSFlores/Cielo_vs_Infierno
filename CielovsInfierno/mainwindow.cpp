@@ -28,20 +28,10 @@ void MainWindow::on_btnGenerar_clicked(){
 }
 
 void MainWindow::on_btnCieloSalvacion_clicked(){
-    /*TablaHashCielo *tabla=new TablaHashCielo();
-    Persona * uno = new Persona(475891,"Allison","Solano","Atea","Ingeniera");
-    Persona * dos = new Persona(1,"Melvin","Solano","adca","estudiante");
-    Persona * tres = new Persona(475892,"Sebas","Campos","Catolismo","Mecatronico");
-    tabla->insertar(uno);
-    tabla->insertar(dos);
-    tabla->insertar(tres);
-    tabla->imprimirTabla();
-    qDebug()<<tabla->tabla[47].len();
-    Cielo * cielo =new Cielo();
-    qDebug()<<QString::number(cielo->getAlturaArbol());*/
+    if(!controlador->salvacion()){
+        QMessageBox::information(this,"Error","El infierno esta vacio o no hay personas con mas buena acciones",QMessageBox::Ok);
+    }
 
-    controlador->salvacion();
-    qDebug()<<QString::number(controlador->cielo->getAlturaArbol());
 }
 
 
@@ -113,7 +103,7 @@ void MainWindow::on_btnCieloGeneracion_clicked(){
 }
 
 void MainWindow::on_btnCieloReporte_clicked(){
-
+    controlador->consultaCielo();
 }
 
 void MainWindow::on_btnCondenar_clicked(){
@@ -123,6 +113,7 @@ void MainWindow::on_btnCondenar_clicked(){
 
 void MainWindow::on_btnReporte_clicked(){
     controlador->infierno->imprimir();
+    controlador->consultaInfierno();
 }
 
 //consultas
@@ -227,4 +218,20 @@ void MainWindow::on_btnBuscarFamilia_clicked(){
         QMessageBox::information(this,"Error","El mundo no tiene personas",QMessageBox::Ok);
     }
 
+}
+
+void MainWindow::on_btnGanador_clicked()
+{
+    ui->textEdit_Infierno->setText(controlador->ganadorInfierno()[0]+controlador->ganadorInfierno()[1]);
+    ui->textEdit_Cielo->setText(controlador->ganadorCielo()[0]+controlador->ganadorCielo()[1]);
+    int f=controlador->ganador()[0];
+    int c=controlador->ganador()[1];
+    ui->label_netoInfierno->setText(QString::number(f));
+    ui->label_netoCielo->setText(QString::number(c));
+    if(f>c){
+        ui->label_36->setText("Infierno");
+    }
+    else{
+        ui->label_36->setText("Cielo");
+    }
 }

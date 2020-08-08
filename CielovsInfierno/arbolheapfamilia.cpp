@@ -47,13 +47,40 @@ void ArbolHeapFamilia::ordenarAux(int _izq,int _der){
     if( izq < _der )
        ordenarAux(izq,_der );
 }
+void ArbolHeapFamilia::ordenarAuxPecados(int _izq,int _der,int demonio){
+
+    int izq = 0;
+    int der =arbol.size()-1;
+    int piv = arbol[(izq+der)/2]->pecados[demonio];
+    Persona *tmp;
+
+    do{
+        while( (arbol[izq]->pecados[demonio] < piv) && (der <= _der) ){
+            izq++;
+        }
+        while( (piv < arbol[der]->pecados[demonio]) && (der > _izq) ){
+            der--;
+        }
+        if( izq <= der ){
+            tmp = arbol[izq];
+            arbol[izq] = arbol[der];
+            arbol[der] = tmp;
+            izq++;
+            der--;
+        }
+    }while( izq <= der );
+
+
+    if( _izq < der )
+        ordenarAux(_izq, der);
+    if( izq < _der )
+       ordenarAux(izq,_der );
+}
 
 void ArbolHeapFamilia::buscarFamilia(Persona * persona){
 
-    qDebug()<<"buscar familia";
     if(!arbol.isEmpty()){
         int hijos = random();
-        qDebug()<<"buscandole a "+QString::number(persona->id)+"  "+QString::number(hijos)+" hijos";
         for (int i=1 ; i<=hijos ; i++){
             Persona * disponible =buscarDisponible();
             if (disponible == NULL){
@@ -69,12 +96,9 @@ void ArbolHeapFamilia::buscarFamilia(Persona * persona){
 
 
 Persona * ArbolHeapFamilia::buscarDisponible(){
-    qDebug()<<"buscar disponible";
     if (arbol.first()->padre == NULL){
-        qDebug()<<"raiz padre nulo";
         return arbol.first();
     }
-    qDebug()<<"largo del arbol"+ QString::number(arbol.size());
     int largo = arbol.size();
     for (int i=0 ; i<largo ; i++){
         if(arbol[i] != NULL && arbol[i]->padre==NULL){
@@ -103,16 +127,27 @@ int ArbolHeapFamilia::sumarPecado(int d){
  * @return El humano menos pecador del arbol
  */
 Persona * ArbolHeapFamilia::menosPecador(){
-    Persona * menosPecadorv=arbol[0];
+    Persona * menosPecadorv=NULL;
+    for(int i = 0 ; i < arbol.size() ; i++){
+        if(arbol[i]->pureza()> -1){
+            menosPecadorv=arbol[i];
+            for(int j = 0 ; j < arbol.size() ; j++){
+                if(arbol[j]->pureza()>menosPecadorv->pureza()){
+                    menosPecadorv=arbol[j];
+                }
+            }
+            return menosPecadorv;
+        }
+    }
+    return menosPecadorv;
+    /*for(int i = 0 ; i < arbol.size() ; i++){
 
-    for(int i = 1 ; i < arbol.size() ; i++){
-
-        if(arbol[i]->pureza() > menosPecadorv->pureza()){
+        if((menosPecadorv == NULL &&arbol[i]->pureza()> -1) ||(arbol[i]->pureza()> -1 && (arbol[i]->pureza() > menosPecadorv->pureza()))){
             menosPecadorv = arbol[i];
         }
     }
-    return menosPecadorv;}
-
+    return menosPecadorv;}*/
+}
 /**
  * Elimina de arbol humano
  * @brief ArbolHeapFamilia::eliminarHumano

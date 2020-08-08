@@ -1,11 +1,16 @@
 #include "arbolheapdemonio.h"
 
-ArbolHeapDemonio::ArbolHeapDemonio(QString nombreDemonio, int pidDemonio){
+ArbolHeapDemonio::ArbolHeapDemonio(QString nombreDemonio, int pidDemonio,QString ppecado){
     demonio= nombreDemonio;
     idDemonio=pidDemonio;
+    pecado = ppecado;
+    cantAB=0;
+    cantPecados=0;
+    cantPecadosHeap=0;
 }
 void ArbolHeapDemonio::insertar(Persona *persona){
     ArbolHeapFamilia * familia = buscarFamilia(persona);
+    cantPecadosHeap += persona->pecados[idDemonio];
     if(familia != NULL){
         familia->insertar(persona);
     }
@@ -15,6 +20,7 @@ void ArbolHeapDemonio::insertar(Persona *persona){
         arbol.append(familia);
         ordenar();
     }
+    familia->ordenarAuxPecados(0,familia->arbol.size()-1, idDemonio);
 };
 
 void ArbolHeapDemonio::ordenar(){
@@ -80,11 +86,25 @@ ArbolHeapFamilia *  ArbolHeapDemonio::buscarFamilia(Persona * persona){
  * @return Persona menos pecadora de todo el arbol
  */
 Persona * ArbolHeapDemonio::menosPecador(){
-
-    Persona * menosPecadorv = arbol[0]->menosPecador();
-    for(int i = 1 ; i < arbol.size() ; i++){
-        if(arbol[i]->menosPecador()->pureza() > menosPecadorv->pureza()){
+/*
+    Persona * menosPecadorv = NULL;
+    for(int i = 0 ; i < arbol.size() ; i++){
+        if((menosPecadorv == NULL && !arbol[i]->arbol.isEmpty()) ||arbol[i]->menosPecador()->pureza() > menosPecadorv->pureza()){
             menosPecadorv = arbol[i]->menosPecador();
+        }
+    }
+    return menosPecadorv;*/
+    Persona * menosPecadorv = NULL;
+    for(int i = 0 ; i < arbol.size() ; i++){
+        if(arbol[i]->menosPecador()!=NULL ){
+            if(menosPecadorv != NULL){
+                if(arbol[i]->menosPecador()->pureza() > menosPecadorv->pureza()){
+                    menosPecadorv=arbol[i]->menosPecador();
+                }
+            }
+            else{
+                menosPecadorv=arbol[i]->menosPecador();
+            }
         }
     }
     return menosPecadorv;
@@ -107,15 +127,56 @@ void ArbolHeapDemonio::limpiar(){
 bool ArbolHeapDemonio::eliminarHumano(Persona *humano){
     for(int i = 0 ; i < arbol.size() ; i++){
         if(arbol[i]->eliminarHumano(humano)){
-            qDebug()<<"true de eliminar heap demonio";
             limpiar();
             return true;
         }
     }
-    qDebug()<<"false de eliminar heap demonio";
     return false;
 }
+QString ArbolHeapDemonio::consultas(){
+    QString datos = "";
+        qDebug()<<demonio;
+        maxPecadormin();
+        datos += demonio+"\t"+pecado+"\t Cantidad de humanos:"+QString::number(canHumano())+"\t Promedio: "+
+                QString::number(promedioDePecados())+"\t";
+        if(!pecadoresv.isEmpty()){
+            datos+=" Maximo de pecados: "+QString::number(pecadoresv[pecadoresv.size()-1]->getCantPecados())+
+                    " Minimo de pecados: "+QString::number(pecadoresv[0]->getCantPecados())+"\nPecadores:";
+            qDebug()<<"datos max y min "+datos;
+            for(int k =pecadoresv.size()-1 ; k>=0 ; k--){
 
+                datos+=pecadoresv[k]->imprimirFamilia();
+            }
+        }
+    qDebug()<<datos;
+    return datos;
+}
+void ArbolHeapDemonio::maxPecadormin(){
+    if(!arbol.isEmpty()){
+            for(int i =0 ; i < arbol.size() ; i++){
+                for(int j =0 ; j < arbol[j]->arbol.size() ; j++){
+                    pecadoresv.append(arbol[i]->arbol[j]);
+                }
+            }
+            ordenara();
+    }
+}
+
+
+double ArbolHeapDemonio::promedioDePecados(){
+    return cantPecadosHeap / canHumano();
+
+
+
+}
+
+int ArbolHeapDemonio::canHumano(){
+    int n=0;
+    for(int i =0 ; i<arbol.size() ; i++){
+        n += arbol[i]->arbol.size();
+    }
+    return n;
+}
 void ArbolHeapDemonio::imprimir(){
     qDebug()<<"--------------------------------------------"+demonio;
     if(!arbol.isEmpty()){
@@ -127,10 +188,47 @@ void ArbolHeapDemonio::imprimir(){
         }
         }
     else{
-        qDebug()<<"vacia";
+        qDebug()<<"vacio";
     }
 }
+void ArbolHeapDemonio::ordenara(){
+   ordenarAuxa(0,pecadoresv.size()-1);
+}
 
+/// Ordenamiento QuickSort recursivo, ordenar dividiendo.
+/// \brief ArbolHeap::ordenarAux
+/// \param _izq
+/// \param _der
+///
+void ArbolHeapDemonio::ordenarAuxa(int _izq,int _der){
+    qDebug()<<pecadoresv;
+    int izq = _izq;
+    int der =_der;
+    int piv = pecadoresv[(izq+der)/2]->getCantPecados();
+    Persona *tmp;
+
+    do{
+        while( (pecadoresv[izq]->getCantPecados() < piv) && (der <= _der) ){
+            izq++;
+        }
+        while( (piv < pecadoresv[der]->getCantPecados()) && (der > _izq) ){
+            der--;
+        }
+        if( izq <= der ){
+            tmp = pecadoresv[izq];
+            pecadoresv[izq] = pecadoresv[der];
+            pecadoresv[der] = tmp;
+            izq++;
+            der--;
+        }
+    }while( izq <= der );
+
+
+    if( _izq < der )
+        ordenarAux(_izq, der);
+    if( izq < _der )
+       ordenarAux(izq,_der );
+}
 
 
 

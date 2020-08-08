@@ -41,6 +41,18 @@ void LSCielo::printAll(){
 
 
 }
+QString LSCielo::consultas(){
+    QString datos="";
+    if(!isEmpty()){
+        LSNodeAngel * tmp = firstNode;
+        while(tmp!=NULL){
+            datos+= tmp->humano->imprimirFamilia();
+            tmp = tmp->next;
+        }
+    }
+    return datos;
+}
+
 int LSCielo::len(){
     /*
     Function: len of the list

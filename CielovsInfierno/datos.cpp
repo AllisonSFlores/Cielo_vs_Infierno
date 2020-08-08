@@ -36,7 +36,6 @@ QStringList Datos::leerArchivo(int pn){
 
         if (all.exists()){
                 if(! all.isEmpty()){
-                    //qDebug()<<"no vacio";
                     switch (pn) {
                         case 1:
                             path = all.path()+"/Nombres.txt";
@@ -70,61 +69,33 @@ QStringList Datos::leerArchivo(int pn){
 }
 void Datos::cargarNombres(){
     QStringList listaNombres =leerArchivo(1);
-   // qDebug()<<listaNombres;
-  //  qDebug()<<listaNombres.size();
     for (int i =0 ; i<listaNombres.size();i++){
         nombres[i]=listaNombres[i];
     }
-    /*
-    for(int i = 0 ; i<1000; i++){
-        qDebug()<<nombres[i];
-    }*/
 }
 void Datos::cargarApellidos(){
     QStringList listaApellidos =leerArchivo(2);
-   // qDebug()<<listaApellidos;
-   // qDebug()<<listaApellidos.size();
     for (int i =0 ; i<listaApellidos.size();i++){
 
         apellidos[i]=listaApellidos[i];
     }
-    /*
-    for(int i = 0 ; i<200; i++){
-        qDebug()<<apellidos[i];
-    }*/
 }
 void Datos::cargarPaises(){
     QStringList listaPaises =leerArchivo(3);
-    //qDebug()<<listaPaises;
-    //qDebug()<<listaPaises.size();
     for (int i =0 ; i<listaPaises.size();i++){
-       // qDebug()<<i;
         paises[i]=listaPaises[i].split("\t")[0];
         paises[i+25]=listaPaises[i].split("\t")[1];
     }
-/*
-    for(int i = 0 ; i<25; i++){
-        qDebug()<<paises[i]+" en "+ paises[i+25];
-
-    }*/
 }
 void Datos::cargarCreencias(){
     QStringList listaCreencias =leerArchivo(4);
-    //qDebug()<<listaCreencias;
-    //qDebug()<<listaCreencias.size();
     for (int i =0 ; i<listaCreencias.size();i++){
 
         creencias[i]=listaCreencias[i];
     }
-    /*
-    for(int i = 0 ; i<10; i++){
-        qDebug()<<creencias[i];
-    }*/
 }
 void Datos::cargarProfesiones(){
     QStringList listaProfesiones=leerArchivo(5);
-   // qDebug()<<listaProfesiones;
-   // qDebug()<<listaProfesiones.size();
     for (int i =0 ; i<listaProfesiones.size();i++){
 
         profesiones[i]=listaProfesiones[i];

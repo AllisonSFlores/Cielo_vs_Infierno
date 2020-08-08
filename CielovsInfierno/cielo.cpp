@@ -24,30 +24,30 @@ int Cielo::generacion(){
 }
 QString Cielo::salvacion(QVector<Persona * > salvados){
     int n = generacion();
+    qDebug()<<salvados.size();
     qDebug()<<"Angeles nuevos: "+QString::number(n);
     for(int i = 0 ; i < n ; i++){
         int j = ramdom();
-        qDebug()<<"ramdom+"+QString::number(i);
         Angel * angel = new Angel(nombres[0][j],version(j),0);
-        qDebug()<<"angel"+nombres[0][j];
-        salvados[i]->angel = angel;
-        qDebug()<<"angel en persona";
-        tabla->insertar(salvados[i]);
-        qDebug()<<" personna insertado en tabla";
+
+        if(salvados[i] != NULL){
+            salvados[i]->angel = angel;
+            tabla->insertar(salvados[i]);
+        }
         arbol->insertar(angel,salvados[i]);
-        qDebug()<<"angel insertado en arbol";
     }
-    qDebug()<<"reporte";
     return salvacionLog(salvados);
 }
 QString Cielo::salvacionLog(QVector<Persona *>salvados){
     QString datos="";
     for (int i = 0; i < salvados.size() ; i++){
-         datos += time()+"\t Humano \t"+salvados[i]->getNombre()+"\t"+salvados[i]->getApellido()+"\t"+
-                 salvados[i]->getPais()+".\t Balance: "+QString::number(salvados[i]->getCantPecados())+" pecados vs "+
-                 QString::number(salvados[i]->getCantBuenasAcciones())+" buenas acciones."+"\t Salvacion por"+
-                 salvados[i]->angel->nombre+" "+QString::number(salvados[i]->angel->version)+"\t generacion: "+
-                 QString::number(salvados[i]->angel->generacion)+"\n";
+        if(salvados[i] != NULL){
+             datos += time()+"\t Humano \t"+salvados[i]->getNombre()+"\t"+salvados[i]->getApellido()+"\t"+
+                     salvados[i]->getPais()+".\t Balance: "+QString::number(salvados[i]->getCantPecados())+" pecados vs "+
+                     QString::number(salvados[i]->getCantBuenasAcciones())+" buenas acciones."+"\t Salvacion por"+
+                     salvados[i]->angel->nombre+" "+QString::number(salvados[i]->angel->version)+"\t generacion: "+
+                     QString::number(salvados[i]->angel->generacion)+"\n";
+        }
     }
     return datos;
 
@@ -56,7 +56,7 @@ QString Cielo::salvacionLog(QVector<Persona *>salvados){
 QString Cielo::time(){
     QDateTime UTC(QDateTime::currentDateTimeUtc());
     QDateTime local(UTC.toLocalTime());
-    return local.toString(Qt::SystemLocaleLongDate);
+    return local.toString(Qt::SystemLocaleShortDate);
 }
 int Cielo::version(int p){
     int v =nombres[1][p].toInt();

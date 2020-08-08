@@ -227,31 +227,37 @@ QVector<QString> Controlador::masBuenos(){
 
 
 void Controlador::condenacion(){
+    QString datos ="";
     for(int i=0 ; i<7 ; i++){
         QVector<Persona*> condenados = listaMundo->condenados(i);
         qDebug()<<"Demonio "+QString::number(i);
         qDebug()<<condenados;
-        infierno->condenar(condenados, i);
-        QString datos= infierno->condenacionLog(condenados);
-        qDebug()<<datos;
+        datos+= infierno->condenar(condenados, i);
+
     }
+    //SE LLAMA A LA FUNCION QUE VA A ESCRIBIR EN EL TEXTO
 
 }
 
-void Controlador::salvacion(){
+bool Controlador::salvacion(){
     QVector<Persona*> salvados;
     int generacion = cielo->generacion();
-    qDebug()<<"cantidad de humano a salvar : "+QString::number(generacion);
     for (int i =0 ; i < generacion ; i++){
-        qDebug()<<"-------------------------------------"+QString::number(i);
         Persona * p =infierno->menosPecador();
-        qDebug()<<"humano recibido";
-        p->imprimir();
+        if(p==NULL){
+            qDebug()<<"nulo";
+        }
         salvados.append(p);
-        qDebug()<<"salvado";
+
     }
-    QString datos=cielo->salvacion(salvados);
-    qDebug()<<datos;
+    if(salvados[0]!=NULL){
+        QString datos=cielo->salvacion(salvados);
+        qDebug()<<datos;
+        return true;
+    }
+    else{
+        return false;
+    }
     //SE LLAMA A LA FUNCION QUE VA A ESCRIBIR EN EL TEXTO
 }
 void Controlador::imprimirArbolHeapFamilia(){
@@ -316,4 +322,33 @@ QVector<QString> Controlador::ContinentesBuenos(){
         }
     }
       return continentes;
+}
+/**
+ * @brief Controlador::ganador
+ * @return true si gana el infierno y false si gana el cielo
+ */
+QVector<int> Controlador::ganador(){
+    QVector<int> netos;
+    netos.append(infierno->neto());
+    netos.append(cielo->tabla->neto());
+    return netos;
+
+}
+QVector<QString> Controlador::ganadorInfierno(){
+    QVector<QString> vector;
+    vector.append(infierno->cantxPecados());
+    vector.append(infierno->cantxPecadosAB());
+    return vector;
+}
+QVector<QString> Controlador::ganadorCielo(){
+    QVector<QString> vector;
+    vector.append(cielo->tabla->cantxPecados());
+    vector.append(cielo->tabla->cantxAB());
+    return vector;
+}
+void Controlador::consultaInfierno(){
+    QString datos = infierno->consultasInfierno();
+}
+void Controlador::consultaCielo(){
+    QString datos = cielo->tabla->informacion();
 }

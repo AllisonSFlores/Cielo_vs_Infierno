@@ -26,6 +26,7 @@ struct LSCielo
     void insert(int pkey);
     void insert(Persona *  pn);
     int len();
+    QString consultas();
     bool isEmpty();
     bool  lookFor(int pp);
 };

@@ -204,13 +204,13 @@ QString Persona::imprimirEstadoBA(){
     informacion += "Buenas acciones:\n";
     for(int i =0 ; i<7 ;i++){
         switch (i) {
-            case 0: buenaA="castidad";break;
-            case 1: buenaA="ayuno";break;
-            case 2: buenaA="donación";break;
+            case 0: buenaA="humildad";break;
+            case 1: buenaA="solidaridad";break;
+            case 2: buenaA="calma";break;
             case 3: buenaA="diligencia";break;
-            case 4: buenaA="calma";break;
-            case 5: buenaA="solidaridad";break;
-            case 6: buenaA="humildad";break;
+            case 4: buenaA="donación";break;
+            case 5: buenaA="ayuno";break;
+            case 6: buenaA="castidad";break;
         }
         informacion+="Buena acción de "+buenaA+": "+buenasAcciones[i]+"\n";
     }
