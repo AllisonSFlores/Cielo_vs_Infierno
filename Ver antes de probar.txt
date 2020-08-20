@@ -1,0 +1,1 @@
+La carpeta datos tiene que estar en C 
